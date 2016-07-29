@@ -1,0 +1,21 @@
+.welcomeJumbotron {
+
+	color: white;
+	background-color: #062F4F; 
+	height: 100vh; 
+	margin-bottom: 0px;
+
+}
+
+.aboutMeColumns {
+
+	color: white; 
+	background-color: #813772; 
+	text-align: center; 
+	padding: 20px;
+
+	border-style: solid;
+	border-color: white;
+	border-radius: 20px;
+
+}
