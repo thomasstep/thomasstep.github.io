@@ -28,13 +28,43 @@
 	text-align: center;
 	padding: 20px;
 
+	border-width: 20px;
 	border-style: solid;
 	border-color: #062F4F;
+	border-radius: 30px;
+
+}
+
+.aboutMeColumns h3 {
+
+	text-decoration: underline;
 
 }
 
 /* This section is for the jumbotrons */
 /******************************************************************************/
+
+.aboutMeJumbotron {
+
+	color: white;
+	background-color: #062F4F;
+	height: 100vh;
+	margin-bottom: 0px;
+
+}
+
+.aboutMeJumbotron h1 {
+
+	padding: 10vh;
+	text-align: center;
+
+}
+
+.aboutMeJumbotron p {
+
+	text-align: center;
+
+}
 
 .welcomeJumbotron {
 
@@ -57,27 +87,6 @@
 
 	font-size: 15px;
 	padding-top: 10vh;
-	text-align: center;
-
-}
-
-.aboutMeJumbotron {
-
-	color: white;
-	background-color: #062F4F;
-	margin-bottom: 0px;
-
-}
-
-.aboutMeJumbotron h1 {
-
-	padding: 10vh;
-	text-align: center;
-
-}
-
-.aboutMeJumbotron p {
-
 	text-align: center;
 
 }
