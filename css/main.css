@@ -1,21 +1,83 @@
+/*
+	I have attempted to keep my CSS as organized as I can.
+	I do not know of any conventions to do this but I am creating a table of contents
+
+	Table:
+	Buttons (anything with Bootstrap btn)
+	Columns (anything with Bootstrap col)
+	jumbotrons (anything with Bootstrap jumbotron)
+
+*/
+
+/* This section is for the columns */
+/******************************************************************************/
+
+.downButton {
+
+	background-color: #062F4F;
+
+}
+
+/* This section is for the columns */
+/******************************************************************************/
+
+.aboutMeColumns {
+
+	color: white;
+	background-color: #5E2A54;
+	text-align: center;
+	padding: 20px;
+
+	border-style: solid;
+	border-color: #062F4F;
+
+}
+
+/* This section is for the jumbotrons */
+/******************************************************************************/
+
 .welcomeJumbotron {
 
 	color: white;
-	background-color: #062F4F; 
-	height: 100vh; 
+	background-color: #062F4F;
+	height: 100vh;
+	margin-bottom: 0px;
+	border-bottom-color: gray;
+
+}
+
+.welcomeJumbotron h1 {
+
+	padding-top: 30vh;
+	text-align: center;
+
+}
+
+.welcomeJumbotron p {
+
+	font-size: 15px;
+	padding-top: 10vh;
+	text-align: center;
+
+}
+
+.aboutMeJumbotron {
+
+	color: white;
+	background-color: #062F4F;
 	margin-bottom: 0px;
 
 }
 
-.aboutMeColumns {
+.aboutMeJumbotron h1 {
 
-	color: white; 
-	background-color: #813772; 
-	text-align: center; 
-	padding: 20px;
+	padding: 10vh;
+	text-align: center;
 
-	border-style: solid;
-	border-color: white;
-	border-radius: 20px;
+}
+
+.aboutMeJumbotron p {
+
+	text-align: center;
 
 }
