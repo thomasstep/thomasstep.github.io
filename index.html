@@ -30,13 +30,13 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
-  <body style="margin: 0; padding: 0;">
+  <body data-spy="scroll" style="margin: 0; padding: 0;">
 
 	 <!-- Nav bar -->
 	 <!-- Notes: Add different topics, create links -->
 
   <nav class="navbar navbar-inverse navbar-fixed-top">
-	  <div class="container-fluid">
+	  <div class="container-fluid" id="navbar-id">
 	      <!-- Brand and toggle get grouped for better mobile display -->
 	      <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#thomas-navbar-collapse" aria-expanded="false">
@@ -51,7 +51,7 @@
 	    <!-- Collect the nav links, forms, and other content for toggling -->
 	    <div class="collapse navbar-collapse" id="thomas-navbar-collapse">
 	     	<ul class="nav navbar-nav navbar-right">
-	    		<li><a href="#">Home</a></li>
+	    		<li><a href="#home">Home</a></li>
           <li><a href="#aboutMe">About Me</a></li>
           <li><a href="#projects">Projects</a></li>
           <li><a href="#contactMe">Contact Me</a></li>
@@ -64,7 +64,7 @@
 
   	<!-- Welcome Jumbotron welcome -->
   	<!-- Notes: Add background picture(Academic Building, me, etc.) -->
-  	<div class="jumbotron welcomeJumbotron">
+  	<div id="home" class="jumbotron welcomeJumbotron">
   		<h1>Welcome to my homepage</h1>
   		<p>Here you can get to know me better by learning about what I do and what types of projects I have worked on.<br>
       I have never used much HTML, CSS, or JavaScript, so this whole page is a work in progress.
