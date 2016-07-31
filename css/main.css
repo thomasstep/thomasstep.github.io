@@ -18,6 +18,12 @@
 
 }
 
+.homeButton {
+
+	background-color: #062F4F;
+
+}
+
 /* This section is for the columns */
 /******************************************************************************/
 
@@ -59,6 +65,14 @@
 .projectsColumns p {
 
 	font-size: 15px;
+
+}
+
+.contactMeColumns {
+
+	color: white;
+	background-color: #062F4F;
+	text-align: center;
 
 }
 
@@ -126,5 +140,14 @@
 
 	padding: 10vh;
 	text-align: center;
+
+}
+
+.contactMeJumbotron {
+
+	color: white;
+	background-color: #062F4F;
+	height: 60vh;
+	margin-bottom: 0px;
 
 }
