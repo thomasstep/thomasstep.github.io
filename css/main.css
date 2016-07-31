@@ -27,6 +27,7 @@
 	background-color: #5E2A54;
 	text-align: center;
 	padding: 20px;
+	font-family: sans-serif;
 
 	border-width: 20px;
 	border-style: solid;
@@ -35,14 +36,60 @@
 
 }
 
-.aboutMeColumns h3 {
+.aboutMeColumns p {
 
-	text-decoration: underline;
+	font-size: 15px;
+
+}
+
+.projectsColumns {
+
+	color: white;
+	background-color: #5E2A54;
+	text-align: center;
+	padding: 20px;
+
+	border-width: 20px;
+	border-style: solid;
+	border-color: #062F4F;
+	border-radius: 30px;
+
+}
+
+.projectsColumns p {
+
+	font-size: 15px;
 
 }
 
 /* This section is for the jumbotrons */
+/* The classes are configured as they are shown in the page */
 /******************************************************************************/
+
+.welcomeJumbotron {
+
+	color: white;
+	background-color: #062F4F;
+	height: 100vh;
+	margin-bottom: 0px;
+	border-bottom-color: gray;
+
+}
+
+.welcomeJumbotron h1 {
+
+	padding-top: 30vh;
+	text-align: center;
+
+}
+
+.welcomeJumbotron p {
+
+	font-size: 15px;
+	padding-top: 10vh;
+	text-align: center;
+
+}
 
 .aboutMeJumbotron {
 
@@ -66,27 +113,18 @@
 
 }
 
-.welcomeJumbotron {
+.projectsJumbotron {
 
 	color: white;
 	background-color: #062F4F;
 	height: 100vh;
 	margin-bottom: 0px;
-	border-bottom-color: gray;
 
 }
 
-.welcomeJumbotron h1 {
+.projectsJumbotron h1 {
 
-	padding-top: 30vh;
-	text-align: center;
-
-}
-
-.welcomeJumbotron p {
-
-	font-size: 15px;
-	padding-top: 10vh;
+	padding: 10vh;
 	text-align: center;
 
 }
