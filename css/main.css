@@ -9,16 +9,10 @@
 
 */
 
-/* This section is for the columns */
+/* This section is for the buttons */
 /******************************************************************************/
 
-.downButton {
-
-	background-color: #e1e8f0;
-
-}
-
-.homeButton {
+.myButton {
 
 	background-color: #e1e8f0;
 
@@ -57,84 +51,27 @@
 }
 
 /* This section is for the jumbotrons */
-/* The classes are configured as they are shown in the page */
 /******************************************************************************/
 
-.welcomeJumbotron {
+.myJumbotron {
 
 	color: black;
 	background-color: #e1e8f0;
 	height: 100vh;
 	margin-bottom: 0px;
-	border-bottom-color: gray;
 
 }
 
-.welcomeJumbotron h1 {
+.myJumbotron h1 {
 
 	padding-top: 30vh;
 	text-align: center;
 
 }
 
-.welcomeJumbotron p {
+.myJumbotron p {
 
 	font-size: 15px;
-	padding-top: 10vh;
-	text-align: center;
-
-}
-
-.aboutMeJumbotron {
-
-	color: black;
-	background-color: #e1e8f0;
-	height: 100vh;
-	margin-bottom: 0px;
-
-}
-
-.aboutMeJumbotron h1 {
-
-	padding: 10vh;
-	text-align: center;
-
-}
-
-.aboutMeJumbotron p {
-
-	text-align: center;
-
-}
-
-.projectsJumbotron {
-
-	color: black;
-	background-color: #e1e8f0;
-	height: 100vh;
-	margin-bottom: 0px;
-
-}
-
-.projectsJumbotron h1 {
-
-	padding: 10vh;
-	text-align: center;
-
-}
-
-.contactMeJumbotron {
-
-	color: black;
-	background-color: #e1e8f0;
-	height: 90vh;
-	margin-bottom: 0px;
-
-}
-
-.contactMeJumbotron h1 {
-
-	padding: 10vh;
 	text-align: center;
 
 }

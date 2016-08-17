@@ -64,13 +64,13 @@
 
   	<!-- Welcome Jumbotron welcome -->
   	<!-- Notes: Add background picture(Academic Building, me, etc.) -->
-  	<div id="home" class="jumbotron welcomeJumbotron">
+  	<div id="home" class="jumbotron myJumbotron">
   		<h1>Hello, I am Thomas Step</h1>
   		<p>
         Keep scrolling or click the button below to learn about what I do and what types of projects I have worked on.<br>
       </p>
       <div class="container">
-        <button class="btn btn-lg downButton center-block"><a href="#aboutMe"><span class="glyphicon glyphicon-triangle-bottom"></span></a></button>
+        <button class="btn btn-lg myButton center-block"><a href="#aboutMe"><span class="glyphicon glyphicon-triangle-bottom"></span></a></button>
       </div>
   	</div>
 
@@ -79,8 +79,8 @@
     <!-- Beginning of About Me messages -->
     <!-- Notes: Middle picture of me (headshot or something) -->
 
-      <div id="aboutMe" class="jumbotron aboutMeJumbotron">
-        <h1>About Me</h1>
+      <div class="jumbotron myJumbotron">
+        <h1 id="aboutMe">About Me</h1>
 
         <div class="container-fluid">
           <div class="row row-centered">
@@ -109,7 +109,7 @@
         </div>
 
         <div class="container">
-          <button class="btn btn-lg downButton center-block"><a href="#projects"><span class="glyphicon glyphicon-triangle-bottom"></span></a></button>
+          <button class="btn btn-lg myButton center-block"><a href="#projects"><span class="glyphicon glyphicon-triangle-bottom"></span></a></button>
         </div>
     </div>
 
@@ -117,8 +117,8 @@
 
     <!-- Beginning of Projects -->
 
-    <div id="projects" class="jumbotron projectsJumbotron">
-      <h1>Projects</h1>
+    <div class="jumbotron myJumbotron">
+      <h1 id="projects">Projects</h1>
 
       <div class="container-fluid">
         <div class="row row-centered">
@@ -141,7 +141,7 @@
       </div>
 
       <div class="container">
-        <button class="btn btn-lg downButton center-block"><a href="#contactMe"><span class="glyphicon glyphicon-triangle-bottom"></span></a></button>
+        <button class="btn btn-lg myButton center-block"><a href="#contactMe"><span class="glyphicon glyphicon-triangle-bottom"></span></a></button>
       </div>
     </div>
 
@@ -149,11 +149,11 @@
 
     <!-- Contact Me -->
 
-    <div id="contactMe" class="jumbotron contactMeJumbotron">
-      <a href="mailto:thomas.l.step@gmail.com"><h1 style="color: black;">Contact Me</h1></a>
+    <div class="jumbotron myJumbotron">
+      <a href="mailto:thomas.l.step@gmail.com"><h1 id="contactMe" style="color: black;">Contact Me</h1></a>
 
       <div class="container">
-        <button class="btn btn-lg homeButton center-block"><a href="#home"><span class="glyphicon glyphicon-home"></a></button>
+        <button class="btn btn-lg myButton center-block"><a href="#home"><span class="glyphicon glyphicon-home"></a></button>
       </div>
     </div>
 
