@@ -53,6 +53,13 @@
 /* This section is for the jumbotrons */
 /******************************************************************************/
 
+.testingBack {
+
+	background-image: url('https://thomasstep.github.io/images/DSC_0136.jpg');
+	background-size: cover;
+
+}
+
 .myJumbotron {
 
 	color: black;
