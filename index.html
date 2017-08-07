@@ -9,12 +9,11 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Thomas Step</title>
-
 		<!-- Bootstrap (locally) -->
-		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<!-- <link href="css/bootstrap.min.css" rel="stylesheet"> -->
 
 		<!-- Latest compiled and minified CSS -->
-		<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
 		<!-- Optional theme -->
 		<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"> -->
@@ -28,38 +27,14 @@
 			<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
 			<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 		<![endif]-->
+    <!-- Handlebars -->
+    <script src="js/handlebars-v4.0.10.js"></script>
 	</head>
 	<body data-spy="scroll" style="margin: 0; padding: 0;">
 
-	 <!-- Nav bar -->
-	 <!-- Notes: Add different topics -->
-
-	<nav class="navbar navbar-inverse navbar-fixed-top">
-		<div class="container-fluid" id="navbar-id">
-				<!-- Brand and toggle get grouped for better mobile display -->
-				<div class="navbar-header">
-					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#thomas-navbar-collapse" aria-expanded="false">
-						 <span class="sr-only">Toggle navigation</span>
-						 <span class="icon-bar"></span>
-						 <span class="icon-bar"></span>
-						 <span class="icon-bar"></span>
-					</button>
-					<a class="navbar-brand" href="#home">Thomas<span style="font-weight: bold;">Step</span></a>
-				</div>
-
-			<!-- Collect the nav links, forms, and other content for toggling -->
-			<div class="collapse navbar-collapse" id="thomas-navbar-collapse">
-				<ul class="nav navbar-nav navbar-right">
-					<li><a href="#home">Home</a></li>
-					<li><a href="#aboutMe">About Me</a></li>
-					<li><a href="#projects">Projects</a></li>
-					<li><a href="#contactMe">Contact Me</a></li>
-				</ul>
-			</div><!-- /.navbar-collapse -->
-		</div><!-- /.container-fluid -->
-	 </nav>
-
-		<!-- End of nav bar -->
+	<!-- Nav bar -->
+	<!-- This is all done via jQuery and an HTML "template page" -->
+  <div id="navBar"></div>
 
 		<!-- Welcome Jumbotron welcome -->
 		<!-- Notes: Add background picture(Academic Building, me, etc.) -->
@@ -200,5 +175,8 @@
 		<script src="js/smoothscroll.js"></script>
 		<!-- FontAwesome -->
 		<script src="https://use.fontawesome.com/506980a023.js"></script>
+    <!-- Handlebars Scripts -->
+    <script src="js/addNavBar.js"></script>
+
 		</body>
 </html>
