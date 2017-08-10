@@ -1,4 +1,5 @@
 $(document).ready(function(){
+  $('#navBar').replaceWith('navBar.html');
   // This function adds smooth scrolling to href links
   $("a").on('click', function(event) {
 
@@ -21,4 +22,5 @@ $(document).ready(function(){
       });
     } // End if
   });
+  $('#carousel1').carousel();
 }); // Thanks to http://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_eff_animate_smoothscroll

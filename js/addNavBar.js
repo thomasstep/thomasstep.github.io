@@ -1,1 +1,1 @@
-var navBarHTML = $('#navBar').load('navBar.html');
+var navBarHTML = $('#navBar').replaceWith('navBar.html');
