@@ -8,6 +8,7 @@
 	Buttons (anything with Bootstrap btn)
 	Columns (anything with Bootstrap col)
 	jumbotrons (anything with Bootstrap jumbotron)
+  carousels
 
 */
 
@@ -97,4 +98,10 @@ footer {
 	font-size: 15px;
 	text-align: center;
 
+}
+
+/* This section is for the carousels */
+/******************************************************************************/
+.carousel .item img {
+  max-height: 800px;
 }
