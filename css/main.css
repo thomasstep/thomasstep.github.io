@@ -100,8 +100,27 @@ footer {
 
 }
 
+.photoJumbotron {
+	color: black;
+	background-color: #e1e8f0;
+}
+
+.photoJumbotron h1 {
+
+	padding-top: 15vh;
+	text-align: center;
+	padding-bottom: 5vh;
+
+}
+
 /* This section is for the carousels */
 /******************************************************************************/
-.carousel .item img {
-  max-height: 800px;
+.carousel-control-prev {
+	height: 800px;
+	background-color: black;
+}
+
+.carousel-control-next {
+	height: 800px;
+	background-color: black;
 }
