@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: blog
 title:  "Updating My Personal Website"
 date:   2018-06-23 3:21:51 -0600
 categories: jekyll update
