@@ -4,15 +4,4 @@ title: About
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
-
-You can find the source code for Minima at GitHub:
-[jekyll][jekyll-organization] /
-[minima](https://github.com/jekyll/minima)
-
-You can find the source code for Jekyll at GitHub:
-[jekyll][jekyll-organization] /
-[jekyll](https://github.com/jekyll/jekyll)
-
-
-[jekyll-organization]: https://github.com/jekyll
+Howdy. I am a computer engineering major and German minor studying at Texas A&M University. I like to travel, learn languages, and program. I spent a year living in Germany when I was a junior in high school where I became fluent in Germany and traveled all over Europe. One of my goals is to travel to every continent. I am also a software developer. I am currently working as an intern at Viasat in College Station. I am planning on updating this site so that I can translate what I am learning into my own words. I hope that others can learn from my perspective.
