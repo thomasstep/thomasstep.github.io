@@ -30,6 +30,7 @@ theme: jekyll-theme-prologue
 remote_theme: chrisbobbe/jekyll-theme-prologue
 plugins:
   - jekyll-feed
+  - jekyll-seo-tag
 
 collections: [sections]
 
