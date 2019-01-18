@@ -1,8 +1,10 @@
 ---
-layout: blog
+layout: post
 title:  "Trip to Antarctica"
-date:   2019-01-04 12:50:00 -0600
-categories: travel
+author: thomas
+categories: [ programming ]
+featured: true
+hidden: false
 ---
 I recently got back from a trip to Argentina and Antarctica that took me one step closer to my goal of traveling to all seven continents. I traveled with [One Ocean Expeditions](https://www.oneoceanexpeditions.com/) in order to get down there. The actual traveling took a while but everything is worth it once I got there. The time between leaving Texas and setting foot on Antarctica took me seven days. I fully endorse this trip and the experience that I had; however, I fully believe that this is something that can only be enjoyed if you want to do it. I saw multiple kids and spouses that did not seem to be having fun while their significant other was. The seas can be rough and the travel is tiring. That is my only disclaimer, so if that does not dissuade you, then you should look into traveling to Antarctica.
 I wanted to kill two birds with one stone (traveling to South America and Antarctica), so I spent a day in Buenos Aires on my trip down as well as on my way back. I took advantage of this time to explore the city and claim another continent. I recommend doing this no matter your continental goals because it took me three and a half hours just to get through Argentine immigrations on the way down. Most Antarctic excursions leave out of Ushuaia and flights there leave from a different airport in Buenos Aires. The trip from the international airport, EZE, to the domestic airport, AEP, takes about an hour by taxi. If you plan to make the entire trip without a break in Buenos Aires, I suggest giving yourself at least a five and a half hours to go from landing in EZE to boarding in AEP. I know that immigrations normally does not take three and a half hours, but if I would not have planned for that amount of time, then I would have missed a flight.
