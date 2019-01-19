@@ -1,6 +1,6 @@
 # Site
 name: "ThomasStep"
-description: "Writing about what I learn"
+description: "Writing about what I learn through life."
 meta_description: "travel, programming, software engineering"
 logo: ''
 favicon: 'assets/images/thumbnail.jpg'
@@ -14,7 +14,7 @@ authors:
   thomas:
     name: Thomas
     display_name: Thomas
-    gravatar: 67037e8b9d606f5a998a70da9c0f669e
+    gravatar: 277c18368c680a2212da21957116c2d3
     email: thomasstep@outlook.com
     web: https://www.thomasstep.com
     twitter: https://twitter.com/tmoneyfish

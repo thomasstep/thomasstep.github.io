@@ -28,23 +28,23 @@
     - Post
     - Page
     - Archive
-    
+
 ### Using Mediumish
 
 - Open `_config.yml`. If your site is in root, for `baseurl`, make sure this is set to `baseurl: ''`
 Also, change your Google Analytics code, disqus username, authors, Mailchimp list etc.
-- Mediumish requires 2 plugins: 
+- Mediumish requires 2 plugins:
     - `$ gem install jekyll-paginate`
     - `$ gem install jekyll-archives`.
 - Edit the menu and footer copyrights in `default.html`
-- Start by adding your .md files in `_posts`. Mediumish already has a few as an example. 
+- Start by adding your .md files in `_posts`. Mediumish already has a few as an example.
 - YAML front matter
     - featured post - `featured:true`
     - exclude featured post from "All stories" loop to avoid duplicated posts - `hidden:true`
     - post image - `image: assets/images/mypic.jpg`
     - page comments - `comments:true`
     - meta description (optional) - `description: "this is my meta description"`
-    
+
 **YAML Post Example**:
 
 ```
@@ -61,7 +61,7 @@ featured: true
 `comments: false` - disable comments in posts
 
 `image: "https://www.myexternal.com/image.jpg"`  - set external featured image
-    
+
 **YAML Page Example**:
 
 ```
@@ -76,7 +76,7 @@ comments: true
 
 Copyright (C) 2018 WowThemes.net.
 
-**Mediumish for Jekyll** is designed and developed by [Sal](https://www.wowthemes.net) and it is *free* under MIT license. 
+**Mediumish for Jekyll** is designed and developed by [Sal](https://www.wowthemes.net) and it is *free* under MIT license.
 
 <a href="https://www.buymeacoffee.com/sal" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: auto !important;width: auto !important;" ></a>
 
