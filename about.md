@@ -1,85 +1,94 @@
 ---
 layout: page
-title: Mediumish Template for Jekyll
+title: About Me
 comments: true
 ---
 
-This website is built with Jekyll and Mediumish template for Jekyll. It is meant for demonstration purposes, no real content can be found. Mediumish template for Jekyll is compatible with Github pages, in fact even this demo is created with Github Pages and hosted with Github. This page in example shows a page layout.
-
-![jekyll template mediumish]({{site.baseurl}}/assets/images/mediumish-jekyll-template.png){: .shadow}
-
-### Features
-
-- Built for Jekyll
-- Compatible with Github pages
-- Featured Posts
-- Index Pagination
-- Post Share
-- Post Categories
-- Prev/Next Link
-- Category Archives (this is not yet compatible with github pages though)
-- Jumbotron Categories
-- Integrations:
-    - Disqus Comments
-    - Google Analaytics
-    - Mailchimp Integration
-- Design Features:
-    - Bootstrap v4.x
-    - Font Awesome
-    - Masonry
-- Layouts:
-    - Default
-    - Post
-    - Page
-    - Archive
-
-### How to Use
-
-If you aren't familiar with Jekyll yet, you should know that it is a static site generator. It will transform your plain text into static websites and blogs. No more databases, slow loading websites, risk of being hacked...just your content. And not only that, with Jekyll you get free hosting with GitHub Pages! This page itself is free hosted on Github with the help of Jekyll and Mediumish template that you're currently previewing. If you are a beginner we recommend you start with [Jekyll's Docs](https://jekyllrb.com/docs/installation/){:target="_blank"}. Now if you know how to use Jekyll, let's move on to using Mediumish template in Jekyll:
-
-#### Using Mediumish
-
-Download or Fork *Mediumish for Jekyll*.
-- In your local project, open <code>_config.yml</code>. If your site is in root, for <code>baseurl</code>, make sure this is set to <code>baseurl: /</code>. Also, change your Google Analytics code, disqus username, authors, Mailchimp list etc.
-- Mediumish requires 2 plugins:
-    - <code>$ gem install jekyll-paginate</code>
-    - <code>$ gem install jekyll-archives</code>.
-- Edit the menu and footer copyrights in <code>default.html</code>
-- Start by adding your .md files in <code>_posts</code>. Mediumish already has a few as an example.
-- YAML front matter
-    - featured post - <code>featured:true</code>
-    - exclude featured post from "All stories" loop to avoid duplicated posts - <code>hidden:true</code>
-    - post image - <code>image: assets/images/mypic.jpg</code>
-    - external post image - <code>image: "https://externalwebsite.com/image4.jpg" </code>
-    - page comments - <code>comments:true</code>
-    - meta description (optional) - <code>description: "this is my meta description"</code>
-
-YAML Post Example:
-<pre>
----
-layout: post
-title:  "We all wait for summer"
-author: john
-categories: [ Jekyll, tutorial ]
-image: assets/images/5.jpg
-featured: true
----
-</pre>
-
-YAML Page Example
-<pre>
----
-layout: page
-title: Mediumish Template for Jekyll
-comments: true
----
-</pre>
-
-#### Contribute
-
-- [Clone the repo](https://github.com/wowthemesnet/mediumish-theme-jekyll).
-- Create a branch off of master and give it a meaningful name (e.g. my-new-mediumish-feature).
-- Open a pull request on GitHub and describe the feature or fix.
-
-
-<a href="https://www.buymeacoffee.com/sal" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: auto !important;width: auto !important;" ></a>
+Howdy. I am a computer engineering major and German minor studying at Texas A&M University. I like to travel, learn languages, and program. I spent a year living in Germany when I was a junior in high school where I became fluent in Germany and traveled all over Europe. One of my goals is to travel to every continent. I am also a software developer. I am planning on updating this site so that I can translate what I am learning into my own words. [Here is a tweet that I find interesting about this.](https://twitter.com/swyx/status/1009174159690264579)
+Below is a map showing the countries that I have traveled to that I made at [this website](https://www.amcharts.com/visited_countries/#AT,CZ,FR,DE,HU,IT,NL,PL,SK,BS,TC,US,AR). I would also like to include my social media accounts. You can find my [Instagram here](https://www.instagram.com/tmoneyfish/) and my [Twitter here](https://twitter.com/tmoneyfish). I am not too active on either, but I have some posts about my travels.
+<script src="https://www.amcharts.com/lib/3/ammap.js" type="text/javascript"></script>
+<script src="https://www.amcharts.com/lib/3/maps/js/worldHigh.js" type="text/javascript"></script>
+<script src="https://www.amcharts.com/lib/3/themes/dark.js" type="text/javascript"></script>
+<div id="mapdiv" style="width: 1000px; height: 450px;"></div>
+<div style="width: 1000px; font-size: 70%; padding: 5px 0; text-align: center; background-color: #535364; margin-top: 1px; color: #B4B4B7;"><a href="https://www.amcharts.com/visited_countries/" style="color: #B4B4B7;">Create your own visited countries map</a> or check out the <a href="https://www.amcharts.com/" style="color: #B4B4B7;">JavaScript Charts</a>.</div>
+<script type="text/javascript">
+var map = AmCharts.makeChart("mapdiv",{
+    type: "map",
+    theme: "dark",
+    projection: "mercator",
+    panEventsEnabled : true,
+    backgroundColor : "#535364",
+    backgroundAlpha : 1,
+    zoomControl: {
+    zoomControlEnabled : true
+    },
+    dataProvider : {
+    map : "worldHigh",
+    getAreasFromMap : true,
+    areas :
+    [
+        {
+            "id": "AT",
+            "showAsSelected": true
+        },
+        {
+            "id": "CZ",
+            "showAsSelected": true
+        },
+        {
+            "id": "FR",
+            "showAsSelected": true
+        },
+        {
+            "id": "DE",
+            "showAsSelected": true
+        },
+        {
+            "id": "HU",
+            "showAsSelected": true
+        },
+        {
+            "id": "IT",
+            "showAsSelected": true
+        },
+        {
+            "id": "NL",
+            "showAsSelected": true
+        },
+        {
+            "id": "PL",
+            "showAsSelected": true
+        },
+        {
+            "id": "SK",
+            "showAsSelected": true
+        },
+        {
+            "id": "BS",
+            "showAsSelected": true
+        },
+        {
+            "id": "TC",
+            "showAsSelected": true
+        },
+        {
+            "id": "US",
+            "showAsSelected": true
+        },
+        {
+            "id": "AR",
+            "showAsSelected": true
+        }
+    ]
+    },
+    areasSettings : {
+    autoZoom : true,
+    color : "#B4B4B7",
+    colorSolid : "#84ADE9",
+    selectedColor : "#84ADE9",
+    outlineColor : "#666666",
+    rollOverColor : "#9EC2F7",
+    rollOverOutlineColor : "#000000"
+    }
+});
+</script>
