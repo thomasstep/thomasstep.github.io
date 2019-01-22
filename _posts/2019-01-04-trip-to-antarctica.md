@@ -3,9 +3,9 @@ layout: post
 title:  "Trip to Antarctica"
 author: thomas
 categories: [ travel ]
-image: assests/images/meAntarctica0.jpg
+image: assets/images/meAntarctica0.jpg
 featured: true
-hidden: false
+hidden: true
 comments: true
 ---
 I recently got back from a trip to Argentina and Antarctica that took me one step closer to my goal of traveling to all seven continents. I traveled with [One Ocean Expeditions](https://www.oneoceanexpeditions.com/) in order to get down there. The actual traveling took a while but everything is worth it once I got there. The time between leaving Texas and setting foot on Antarctica took me seven days. I fully endorse this trip and the experience that I had; however, I fully believe that this is something that can only be enjoyed if you want to do it. I saw multiple kids and spouses that did not seem to be having fun while their significant other was. The seas can be rough and the travel is tiring. That is my only disclaimer, so if that does not dissuade you, then you should look into traveling to Antarctica.
