@@ -3,6 +3,7 @@ layout: post
 title:  "chkstong yibbibi"
 author: thomas
 categories: [ programming ]
+image: assests/images/denali.jpg
 featured: false
 hidden: false
 ---

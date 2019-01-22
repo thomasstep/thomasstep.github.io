@@ -3,6 +3,7 @@ layout: post
 title:  "Getting Indexed"
 author: thomas
 categories: [ programming ]
+image: assests/images/dramaticMountain1.jpg
 featured: false
 hidden: false
 ---

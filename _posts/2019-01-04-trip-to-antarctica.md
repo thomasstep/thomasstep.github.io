@@ -3,6 +3,7 @@ layout: post
 title:  "Trip to Antarctica"
 author: thomas
 categories: [ travel ]
+image: assests/images/meAntarctica0.jpg
 featured: true
 hidden: false
 comments: true

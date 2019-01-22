@@ -3,6 +3,7 @@ layout: post
 title:  "End of Internship"
 author: thomas
 categories: [ programming ]
+image: assests/images/deceptionIsland.jpg
 featured: false
 hidden: false
 ---

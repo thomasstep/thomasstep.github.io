@@ -3,6 +3,7 @@ layout: post
 title:  "Start of Last Semester"
 author: thomas
 categories: [ programming ]
+image: assests/images/meAntarctica1.jpg
 featured: false
 hidden: false
 ---

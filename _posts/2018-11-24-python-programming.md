@@ -3,6 +3,7 @@ layout: post
 title:  "Python Programming"
 author: thomas
 categories: [ programming ]
+image: assests/images/iceberg0.jpg
 featured: false
 hidden: false
 ---

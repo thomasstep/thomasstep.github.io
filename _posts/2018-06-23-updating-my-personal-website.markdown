@@ -3,8 +3,9 @@ layout: post
 title:  "Updating My Personal Website"
 author: thomas
 categories: [ programming ]
+image: assests/images/aggieRing.jpg
 featured: false
-hidden: false
+hidden: true
 ---
 Before this update to my website I had written a few static HTML pages that weren't too impressive especially considering the other options out there.
 I have recently started an internship with Viasat in College Station where I am working with React + Redux and Nodejs.

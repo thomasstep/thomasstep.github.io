@@ -3,6 +3,7 @@ layout: post
 title:  "Software Security"
 author: thomas
 categories: [ programming ]
+image: assests/images/fluke1.jpg
 featured: false
 hidden: false
 ---

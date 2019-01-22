@@ -3,6 +3,7 @@ layout: post
 title:  "Improving Search Results"
 author: thomas
 categories: [ programming ]
+image: assests/images/fluke0.jpg
 featured: false
 hidden: false
 ---
