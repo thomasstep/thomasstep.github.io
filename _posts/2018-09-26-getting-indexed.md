@@ -2,7 +2,7 @@
 layout: post
 title:  "Getting Indexed"
 author: thomas
-categories: [ programming ]
+categories: [ programming, web development ]
 image: assets/images/dramaticMountain1.jpg
 featured: false
 hidden: false

@@ -2,7 +2,7 @@
 layout: post
 title:  "Start of Last Semester"
 author: thomas
-categories: [ programming ]
+categories: [ programming, ruby ]
 image: assets/images/meAntarctica1.jpg
 featured: false
 hidden: false

@@ -2,7 +2,7 @@
 layout: post
 title:  "End of Semester"
 author: thomas
-categories: [ programming ]
+categories: [ life, travel ]
 image: assets/images/iceberg1.jpg
 featured: false
 hidden: false

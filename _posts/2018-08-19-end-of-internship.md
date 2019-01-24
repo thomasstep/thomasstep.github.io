@@ -2,7 +2,7 @@
 layout: post
 title:  "End of Internship"
 author: thomas
-categories: [ programming ]
+categories: [ programming, web development, react, redux, javascript ]
 image: assets/images/deceptionIsland.jpg
 featured: false
 hidden: false

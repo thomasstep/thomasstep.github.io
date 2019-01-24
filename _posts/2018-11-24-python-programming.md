@@ -2,7 +2,7 @@
 layout: post
 title:  "Python Programming"
 author: thomas
-categories: [ programming ]
+categories: [ programming, python, security ]
 image: assets/images/iceberg0.jpg
 featured: false
 hidden: false

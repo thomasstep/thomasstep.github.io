@@ -2,7 +2,7 @@
 layout: post
 title:  "chkstong yibbibi"
 author: thomas
-categories: [ programming ]
+categories: [ ]
 image: assets/images/denali.jpg
 featured: false
 hidden: false
