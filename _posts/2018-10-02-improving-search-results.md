@@ -2,7 +2,7 @@
 layout: post
 title:  "Improving Search Results"
 author: thomas
-categories: [ programming, webDevelopment ]
+categories: [ programming, webdevelopment ]
 image: assets/images/fluke0.jpg
 featured: false
 hidden: false

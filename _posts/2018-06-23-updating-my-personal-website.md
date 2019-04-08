@@ -2,7 +2,7 @@
 layout: post
 title:  "Updating My Personal Website"
 author: thomas
-categories: [ programming, webDevelopment ]
+categories: [ programming, webdevelopment ]
 image: assets/images/aggieRing.jpg
 featured: false
 hidden: true

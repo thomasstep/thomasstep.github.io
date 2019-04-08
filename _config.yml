@@ -22,8 +22,9 @@ authors:
 
 # Plugins
 plugins:
-  - jekyll-paginate
   - jekyll-archives
+  - jekyll-sitemap
+  - jekyll-paginate
 
 # Archives
 jekyll-archives:
