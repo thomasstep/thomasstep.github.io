@@ -2,7 +2,7 @@
 layout: post
 title:  "Learning SEO"
 author: thomas
-categories: [ programming, webdevelopment ]
+categories: [ dev, web ]
 image: assets/images/dramaticMountain0.jpg
 featured: false
 hidden: false

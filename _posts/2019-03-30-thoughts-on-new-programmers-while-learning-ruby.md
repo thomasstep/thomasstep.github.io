@@ -2,7 +2,7 @@
 layout: post
 title:  "Thoughts on New Programmers While Learning Ruby"
 author: thomas
-categories: [ programming, ruby ]
+categories: [ dev, ruby ]
 image: assets/images/penguin1.jpg
 featured: false
 hidden: false
