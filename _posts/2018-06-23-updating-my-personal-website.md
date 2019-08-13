@@ -3,7 +3,7 @@ layout: post
 title:  "Updating My Personal Website"
 author: thomas
 categories: [ dev, web ]
-image: assets/images/aggieRing.jpg
+image: assets/images/aggieRing2.jpg
 featured: false
 hidden: true
 comments: true
