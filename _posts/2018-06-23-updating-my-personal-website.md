@@ -3,9 +3,9 @@ layout: post
 title:  "Updating My Personal Website"
 author: thomas
 categories: [ dev, web ]
-image: assets/images/aggieRing2.jpg
+image: assets/images/aggieRing.jpg
 featured: false
-hidden: true
+hidden: false
 comments: true
 ---
 Before this update to my website I had written a few static HTML pages that weren't too impressive especially considering the other options out there.
