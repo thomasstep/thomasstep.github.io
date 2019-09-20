@@ -3,7 +3,7 @@ layout: post
 title:  "Apollo Server Data Sources"
 author: thomas
 categories: [ dev, javascript ]
-image: https://thomasstep.s3.amazonaws.com/seal1.jpg
+image: https://thomasstep.s3.amazonaws.com/seal2.jpg
 featured: false
 hidden: false
 comments: true
