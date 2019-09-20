@@ -1,8 +1,8 @@
-/* 
-Template Name: Mediumish 
-Copyright: Sal, WowThemes.net, https://www.wowthemes.net 
-Version: 1.0.22 
-License: https://www.wowthemes.net/freebies-license/ 
+/*
+Template Name: Mediumish
+Copyright: Sal, WowThemes.net, https://www.wowthemes.net
+Version: 1.0.22
+License: https://www.wowthemes.net/freebies-license/
 */
  .mainheading {
      padding:1rem 0rem;
@@ -580,7 +580,7 @@ License: https://www.wowthemes.net/freebies-license/
  iframe {
     max-width:100%;
 }
-.transpdark {    
+.transpdark {
     background: rgba(0,0,0,0.75);
     color: #fff;
 }
@@ -591,7 +591,7 @@ License: https://www.wowthemes.net/freebies-license/
          padding:0;
          height:350px;
          border-radius:0;
-         background-image: url(../images/jumbotron.jpg);
+         background-image: url(https://thomasstep.s3.amazonaws.com/jumbotron.jpg);
          background-size:cover;
     }
      .jumbotron.fortags .col-md-4 {
@@ -602,11 +602,11 @@ License: https://www.wowthemes.net/freebies-license/
          margin:0;
     }
 }
-.jumbotron.fortags { 
+.jumbotron.fortags {
          margin-top: 3rem;
          padding:0;
          border-radius:0;
-         background-image: url(../images/jumbotron.jpg);
+         background-image: url(https://thomasstep.s3.amazonaws.com/jumbotron.jpg);
          background-size:cover;
 }
  .jumbotron.fortags a {
