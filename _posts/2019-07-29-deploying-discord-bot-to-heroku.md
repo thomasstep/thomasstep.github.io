@@ -3,7 +3,7 @@ layout: post
 title:  "Deploying a Discord Bot to Heroku"
 author: thomas
 categories: [ dev, infrastructure ]
-image: assets/images/penguin5.jpg
+image: https://thomasstep.s3.amazonaws.com/penguin5.jpg
 featured: false
 hidden: false
 comments: true

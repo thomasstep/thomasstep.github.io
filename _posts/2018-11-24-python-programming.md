@@ -3,7 +3,7 @@ layout: post
 title:  "Python Programming"
 author: thomas
 categories: [ dev, python, security ]
-image: assets/images/iceberg0.jpg
+image: https://thomasstep.s3.amazonaws.com/iceberg0.jpg
 featured: false
 hidden: false
 comments: true

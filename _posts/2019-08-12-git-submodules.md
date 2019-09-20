@@ -3,7 +3,7 @@ layout: post
 title:  "Git Submodules"
 author: thomas
 categories: [ dev ]
-image: assets/images/seal0.jpg
+image: https://thomasstep.s3.amazonaws.com/seal0.jpg
 featured: false
 hidden: false
 comments: true

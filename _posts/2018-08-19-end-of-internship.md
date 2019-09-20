@@ -3,7 +3,7 @@ layout: post
 title:  "End of Internship"
 author: thomas
 categories: [ dev, web, react, redux, javascript ]
-image: assets/images/deceptionIsland.jpg
+image: https://thomasstep.s3.amazonaws.com/deceptionIsland.jpg
 featured: false
 hidden: false
 comments: true

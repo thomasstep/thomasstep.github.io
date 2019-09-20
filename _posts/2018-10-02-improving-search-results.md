@@ -3,7 +3,7 @@ layout: post
 title:  "Improving Search Results"
 author: thomas
 categories: [ dev, web ]
-image: assets/images/fluke0.jpg
+image: https://thomasstep.s3.amazonaws.com/fluke0.jpg
 featured: false
 hidden: false
 comments: true

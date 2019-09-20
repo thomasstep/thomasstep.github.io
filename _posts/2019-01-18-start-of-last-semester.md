@@ -3,7 +3,7 @@ layout: post
 title:  "Start of Last Semester"
 author: thomas
 categories: [ dev, ruby ]
-image: assets/images/meAntarctica1.jpg
+image: https://thomasstep.s3.amazonaws.com/meAntarctica1.jpg
 featured: false
 hidden: false
 comments: true

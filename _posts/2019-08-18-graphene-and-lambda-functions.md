@@ -3,7 +3,7 @@ layout: post
 title:  "Graphene and Lambda Functions"
 author: thomas
 categories: [ dev, python, cloud ]
-image: assets/images/seal1.jpg
+image: https://thomasstep.s3.amazonaws.com/seal1.jpg
 featured: false
 hidden: false
 comments: true

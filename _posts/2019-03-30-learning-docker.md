@@ -3,7 +3,7 @@ layout: post
 title:  "Learning Docker"
 author: thomas
 categories: [ dev, infrastructure, docker ]
-image: assets/images/penguin2.jpg
+image: https://thomasstep.s3.amazonaws.com/penguin2.jpg
 featured: false
 hidden: false
 comments: true

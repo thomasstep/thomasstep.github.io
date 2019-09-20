@@ -3,7 +3,7 @@ layout: post
 title:  "Summer Travels"
 author: thomas
 categories: [ travel ]
-image: assets/images/penguin4.jpg
+image: https://thomasstep.s3.amazonaws.com/penguin4.jpg
 featured: true
 hidden: false
 comments: true
