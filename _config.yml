@@ -1,7 +1,7 @@
 # Site
 name: "ThomasStep"
 description: "I write about traveling, programming, and what I learn doing them."
-meta_description: "travel, programming, software engineering"
+meta_description: "travel, devops, software engineering"
 logo: ''
 favicon: 'https://thomasstep.s3.amazonaws.com/thumbnail.jpg'
 baseurl:
