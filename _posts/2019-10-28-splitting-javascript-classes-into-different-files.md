@@ -8,7 +8,7 @@ featured: false
 hidden: false
 comments: true
 ---
-I come from a C++ background, so I turn to header files to help me organize files.
+I come from a C++ background, so I turn to header files to help me organize files and reduce file size.
 I'm new to object oriented programming in Javascript, and I have been searching for best practices on the equivalent of header files for classes or splitting classes up into multiple files.
 I could not find a definitive answer (and didn't know the best keywords to search on) but I did come up with something on my own.
 Since classes in Javascript are just special functions and functions are just `Function` objects, I toyed around with declaring the class itself and being able to add in functions later in the same way you can create an object and add key-value pairs in later.
