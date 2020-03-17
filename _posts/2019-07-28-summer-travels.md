@@ -4,7 +4,7 @@ title:  "Summer Travels"
 author: thomas
 categories: [ travel ]
 image: https://thomasstep.s3.amazonaws.com/penguin4.jpg
-featured: true
+featured: false
 hidden: false
 comments: true
 ---

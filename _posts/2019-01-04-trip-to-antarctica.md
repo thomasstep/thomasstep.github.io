@@ -4,7 +4,7 @@ title:  "Trip to Antarctica"
 author: thomas
 categories: [ travel ]
 image: https://thomasstep.s3.amazonaws.com/meAntarctica0.jpg
-featured: true
+featured: false
 hidden: true
 comments: true
 ---

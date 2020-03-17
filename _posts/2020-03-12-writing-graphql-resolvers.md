@@ -4,7 +4,7 @@ title:  "Writing GraphQL Resolvers"
 author: thomas
 categories: [ dev, javascript ]
 image: https://thomasstep.s3.amazonaws.com/penguin3.jpg
-featured: false
+featured: true
 hidden: false
 comments: true
 ---
