@@ -9,13 +9,13 @@ hidden: false
 comments: true
 ---
 I have been trying to learn more about CloudFormation to make it easier to set up the infrastructure I manage.
-Two fun pieces of functionality that I have using more and more are mappings and conditions.
-Both of these are more helpful when you put them in conjunction with parameters that you give the template at creation.
-Mostly, I have been trying to cut down on the amount of parameters and instead use more mappings.
-Conditions also help when you are trying to decide if you need to deploy something different depending on environment, or some other parameter that is passed in.
+Two fun pieces of functionality that I have been using more and more are mappings and conditions.
+Both of these are more helpful when you put them in conjunction with the parameters that you give the template at creation.
+Mostly, I have been trying to cut down on the amount of parameters the template requires and instead use more mappings.
+Conditions help when you are trying to decide if you need to deploy something different depending a parameter that is passed in like environment.
 I have gotten almost all of the templates that I use a lot down to using only one parameter, environment.
-Learning about `Outputs` and `Fn::ImportValue` helped me out a lot while I was trying to simplify templates (I will write a specific post about this later).
-For now I will focus on mappings and conditions, and here is an example of how I would set up a template for these.
+Learning about `Outputs` and `Fn::ImportValue` helped me out a lot while I was trying to simplify templates as well (I will write a specific post about this later).
+For now I will focus on mappings and conditions, and here is an example of how I would set up a template for using those.
 ```yml
 AWSTemplateFormatVersion: 2010-09-09
 Parameters:
