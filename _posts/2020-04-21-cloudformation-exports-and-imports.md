@@ -15,7 +15,7 @@ Setting an Export is like defining a variable, and using an Import is like calli
 If you are Exporting and Importing a piece of infrastructure's name that may change in the future, then that means you will not have to change anything in your template as long as the Exports keep the same names.
 Unfortunately, before I learned how to use Exports and Imports, I passed in references through Parameters, which did not scale well into different environments.
 
-Here is a quick a dirty snippet as an example of how to use Exports (in vpc-template) and Imports (in another-template).
+Here is a quick and dirty snippet as an example of how to use Exports (in vpc-template) and Imports (in another-template).
 ```yml
 vpc-template.yml
 Resources:
