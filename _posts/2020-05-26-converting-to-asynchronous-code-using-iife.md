@@ -8,7 +8,7 @@ featured: false
 hidden: true
 comments: true
 ---
-I have not seen too much written about IIFEs, but I think that they are a super useful tool for converting chunks of synchronous code to excute asyncronously.
+I have not seen too much written about IIFEs in Javascript, but I think that they are a super useful tool for converting chunks of synchronous code to excute asyncronously.
 
 In a nutshell, an [IIFE is just a function that you execute at the same time you define it](https://developer.mozilla.org/en-US/docs/Glossary/IIFE).
 The following is an example of a Hello World function running as a normal function and as an IIFE.
@@ -57,13 +57,14 @@ async function echo(string) {
 Promise.all([
   echo('first'),
   echo('second')
-]).then((num) => {
-  console.log(num);
+]).then((nums) => {
+  console.log(nums);
 });
 ```
 
 You can run this, but don't expect anything profound to log.
 This is what I got
+
 ```bash
 first
 second
@@ -120,9 +121,11 @@ async function main() {
 main();
 ```
 
-Those functions represent statements.
+Here I'm using functions, but let's pretend that each function represents statements that reach out to DBs and other APIs and take a while to resolve.
+For fun I'll say that `func1` and `func2` reach out to a REST API, `func3` reaches out to a GraphQL API, `func4` reaches out to a DB.
+We'll go ahead and say that these functions each represent 20 lines of code or so that connect to the various endpoints and get the correct data because using IIFEs looks alot better that way.
 
-Now transitioning to IIFEs we have something that looks like this.
+Now transitioning the previous code snippet to IIFEs we have something that looks like this.
 
 ```javascript
 function sleep(ms) {
@@ -178,3 +181,30 @@ async function main() {
 main();
 ```
 
+Again, try to think of each function that I am calling in the IIFEs as being multiple statements long and not simply a function.
+I am trying to highlight what IIFEs are not what goes in them.
+Also, please note that the IIFE that I just wrote is unlike the original Hello World one at the top in that this most recent one was `async`.
+With that disclaimer, I hope you ran both of the last two snippets.
+If you decided to not run those snippets and instead are just reading along, let me share with you what I got.
+
+```bash
+# Awaiting run
+10002.1091 ms
+Result: 10
+
+# IIFE run
+4001.5615 ms
+Result: 10
+```
+
+The time it takes to get through all of that logic and communication goes from ~10 seconds down to ~4 seconds (or the longest set Timeout).
+Remember, I am trying to think of it as reaching out to two different APIs and a DB which took me a total of 10 seconds before the IIFE conversion.
+This gets more and more powerful once you start writing code in chunks that process data independently of other chunks.
+If you can unwind those independent pieces and put the dependent ones into IIFEs, you can significantly speed up your processing time.
+I can see this being incredibly useful to applications that crunch a ton of data or reach out to multiple different services at once before doing anything with the returned data.
+I have personally used it with success on code that reaches out to multiple APIs at once and then acts on that data once all of the resources have returned.
+I have also used it with success while looping through some large arrays with `map`, `reduce`, `forEach`, etc.
+Have you ever used this type of approach?
+Are there any potential downfalls of doing something like this?
+Did you know about IIFEs and have you used them before?
+I feel like I see a lack of people writing about using them, but I think they are fun and definitely beneficial.
