@@ -1,8 +1,8 @@
 ---
 layout: post
 title:  "Writing GraphQL Resolvers"
-author: thomas
-categories: [ dev, javascript ]
+author: Thomas
+tags: [ dev, javascript ]
 image: https://thomasstep.s3.amazonaws.com/penguin3.jpg
 featured: true
 hidden: false

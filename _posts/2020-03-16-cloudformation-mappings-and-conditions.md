@@ -1,8 +1,8 @@
 ---
 layout: post
 title:  "CloudFormation Mappings and Conditions"
-author: thomas
-categories: [ aws ]
+author: Thomas
+tags: [ aws ]
 image: https://thomasstep.s3.amazonaws.com/penguin4.jpg
 featured: false
 hidden: false

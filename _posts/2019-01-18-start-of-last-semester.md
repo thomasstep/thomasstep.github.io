@@ -1,8 +1,8 @@
 ---
 layout: post
 title:  "Start of Last Semester"
-author: thomas
-categories: [ dev, ruby ]
+author: Thomas
+tags: [ dev, ruby ]
 image: https://thomasstep.s3.amazonaws.com/meAntarctica1.jpg
 featured: false
 hidden: false

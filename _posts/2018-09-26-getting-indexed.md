@@ -1,8 +1,8 @@
 ---
 layout: post
 title:  "Getting Indexed"
-author: thomas
-categories: [ dev, web ]
+author: Thomas
+tags: [ dev, web ]
 image: https://thomasstep.s3.amazonaws.com/dramaticMountain1.jpg
 featured: false
 hidden: false

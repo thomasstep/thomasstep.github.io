@@ -1,8 +1,8 @@
 ---
 layout: post
 title:  "Fixing AWS Lambda ModuleLoadingError"
-author: thomas
-categories: [ dev, aws ]
+author: Thomas
+tags: [ dev, aws ]
 image: https://thomasstep.s3.amazonaws.com/skontorp0.jpg
 featured: false
 hidden: false

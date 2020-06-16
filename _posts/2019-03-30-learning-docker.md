@@ -1,8 +1,8 @@
 ---
 layout: post
 title:  "Learning Docker"
-author: thomas
-categories: [ dev, infrastructure, docker ]
+author: Thomas
+tags: [ dev, infrastructure, docker ]
 image: https://thomasstep.s3.amazonaws.com/penguin2.jpg
 featured: false
 hidden: false

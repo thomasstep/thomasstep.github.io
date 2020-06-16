@@ -1,8 +1,8 @@
 ---
 layout: post
 title:  "Converting to Asynchronous Code Using IIFE"
-author: thomas
-categories: [ javascript ]
+author: Thomas
+tags: [ javascript ]
 image: https://thomasstep.s3.amazonaws.com/dramaticMountain1.jpg
 featured: false
 hidden: false
