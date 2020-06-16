@@ -10,7 +10,7 @@ The following part extracts all the categories from your posts and sort categori
 {% endcomment %}
 {% assign rawcategories = "" %}
 {% for post in site.posts %}
-  {% assign tcategories = post.categories | join:'|' | append:'|' %}
+  {% assign tcategories = post.tags | join:'|' | append:'|' %}
   {% assign rawcategories = rawcategories | append:tcategories %}
 {% endfor %}
 {% assign rawcategories = rawcategories | split:'|' | sort %}
@@ -43,7 +43,7 @@ The purpose of this snippet is to list all your posts posted with a certain cate
   </h2>
   <ul>
    {% for post in site.posts %}
-     {% if post.categories contains category %}
+     {% if post.tags contains category %}
      <li>
        <h3>
          <a href="{{ post.url }}">

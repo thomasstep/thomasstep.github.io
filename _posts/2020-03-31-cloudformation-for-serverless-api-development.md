@@ -2,7 +2,7 @@
 layout: post
 title:  "CloudFormation for Serverless API Development"
 author: thomas
-categories: [ aws ]
+tags: [ aws ]
 image: https://thomasstep.s3.amazonaws.com/deceptionIsland.jpg
 featured: false
 hidden: false

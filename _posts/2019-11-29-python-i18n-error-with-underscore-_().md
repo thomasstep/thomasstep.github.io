@@ -2,7 +2,7 @@
 layout: post
 title:  "Python i18n Error With Underscore _()"
 author: thomas
-categories: [ dev, python ]
+tags: [ dev, python ]
 image: https://thomasstep.s3.amazonaws.com/skua0.jpg
 featured: false
 hidden: false

@@ -2,7 +2,7 @@
 layout: post
 title:  "Using Secrets Manager in CodeBuild with a CloudFormation Template"
 author: thomas
-categories: [ cloud, aws, infrastructure ]
+tags: [ cloud, aws, infrastructure ]
 image: https://thomasstep.s3.amazonaws.com/penguin2.jpg
 featured: false
 hidden: false

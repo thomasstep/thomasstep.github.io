@@ -2,7 +2,7 @@
 layout: post
 title:  "CloudFormation Exports and Imports"
 author: thomas
-categories: [ aws ]
+tags: [ aws ]
 image: https://thomasstep.s3.amazonaws.com/denali.jpg
 featured: false
 hidden: false

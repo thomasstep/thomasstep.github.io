@@ -2,7 +2,7 @@
 layout: post
 title:  "Using Apollo Datasources Outside of Apollo"
 author: thomas
-categories: [ javascript ]
+tags: [ javascript ]
 image: https://thomasstep.s3.amazonaws.com/deceptionIsland.jpg
 featured: false
 hidden: false

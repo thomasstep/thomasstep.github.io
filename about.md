@@ -1,7 +1,7 @@
 ---
-layout: page
-title: About Me
-comments: true
+layout: default
+# title: About Me
+# comments: true
 ---
 
 Howdy. I am a computer engineering major and German minor studying at Texas A&M University. I like to travel, learn languages, and program. I spent a year living in Germany when I was a junior in high school where I became fluent in Germany and traveled all over Europe. One of my goals is to travel to every continent. I am also a software developer. I am planning on updating this site so that I can translate what I am learning into my own words. [Here is a tweet that I find interesting about this.](https://twitter.com/swyx/status/1009174159690264579)

@@ -2,7 +2,7 @@
 layout: post
 title:  "chkstong yibbibi"
 author: thomas
-categories: [ dev ]
+tags: [ dev ]
 image: https://thomasstep.s3.amazonaws.com/denali.jpg
 featured: false
 hidden: false

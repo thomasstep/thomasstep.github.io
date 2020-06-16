@@ -2,7 +2,7 @@
 layout: post
 title:  "Learning SEO"
 author: thomas
-categories: [ dev, web ]
+tags: [ dev, web ]
 image: https://thomasstep.s3.amazonaws.com/dramaticMountain0.jpg
 featured: false
 hidden: false
