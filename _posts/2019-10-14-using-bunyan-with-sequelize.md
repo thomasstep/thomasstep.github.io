@@ -1,8 +1,8 @@
 ---
 layout: post
 title:  "Using Bunyan with Sequelize"
-author: thomas
-categories: [ dev, javascript ]
+author: Thomas
+tags: [ dev, javascript ]
 image: https://thomasstep.s3.amazonaws.com/seal3.jpg
 featured: false
 hidden: false

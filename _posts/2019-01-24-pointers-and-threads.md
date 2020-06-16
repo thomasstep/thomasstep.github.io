@@ -1,8 +1,8 @@
 ---
 layout: post
 title:  "Pointers and POSIX Threads"
-author: thomas
-categories: [ dev, c++ ]
+author: Thomas
+tags: [ dev, c++ ]
 image: https://thomasstep.s3.amazonaws.com/orcaWithPenguin.jpg
 featured: false
 hidden: false

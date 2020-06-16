@@ -1,8 +1,8 @@
 ---
 layout: post
 title:  "Thoughts on New Programmers While Learning Ruby"
-author: thomas
-categories: [ dev, ruby ]
+author: Thomas
+tags: [ dev, ruby ]
 image: https://thomasstep.s3.amazonaws.com/penguin1.jpg
 featured: false
 hidden: false

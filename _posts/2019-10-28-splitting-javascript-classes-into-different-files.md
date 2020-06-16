@@ -1,8 +1,8 @@
 ---
 layout: post
 title:  "Splitting Javascript Classes Into Different Files"
-author: thomas
-categories: [ dev, javascript ]
+author: Thomas
+tags: [ dev, javascript ]
 image: https://thomasstep.s3.amazonaws.com/skontorp1.jpg
 featured: true
 hidden: false

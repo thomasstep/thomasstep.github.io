@@ -1,8 +1,8 @@
 ---
 layout: post
 title:  "Creating Your Own Canary For An API"
-author: thomas
-categories: [ aws ]
+author: Thomas
+tags: [ aws ]
 image: https://thomasstep.s3.amazonaws.com/dramaticMountain0.jpg
 featured: false
 hidden: false

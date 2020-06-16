@@ -1,8 +1,8 @@
 ---
 layout: post
 title:  "Role of Testing in Software"
-author: thomas
-categories: [ dev, security ]
+author: Thomas
+tags: [ dev, security ]
 image: https://thomasstep.s3.amazonaws.com/penguin6.jpg
 featured: false
 hidden: false

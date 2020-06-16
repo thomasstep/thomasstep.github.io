@@ -1,8 +1,8 @@
 ---
 layout: post
 title:  "Using Javascript's Logical Operators and Understanding Truthy and Falsy"
-author: thomas
-categories: [ javascript ]
+author: Thomas
+tags: [ javascript ]
 image: https://thomasstep.s3.amazonaws.com/fluke0.jpg
 featured: false
 hidden: false

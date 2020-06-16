@@ -1,8 +1,8 @@
 ---
 layout: post
 title:  "Improving Search Results"
-author: thomas
-categories: [ dev, web ]
+author: Thomas
+tags: [ dev, web ]
 image: https://thomasstep.s3.amazonaws.com/fluke0.jpg
 featured: false
 hidden: false

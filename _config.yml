@@ -1,43 +1,8 @@
-# Site
-name: "ThomasStep"
-description: "I write about traveling, programming, and what I learn doing them."
-meta_description: "travel, devops, software engineering"
-logo: ''
-favicon: 'https://thomasstep.s3.amazonaws.com/thumbnail.jpg'
-baseurl:
-google_analytics: 'UA-121297743-1'
-disqus: 'thomasstep'
-mailchimp-list: 'https://thomasstep.us20.list-manage.com/subscribe/post?u=67fa638f9601377de7c051b25&amp;id=f462ea0e6e'
-
-# Authors
-authors:
-  thomas:
-    name: Thomas
-    display_name: Thomas
-    gravatar: 277c18368c680a2212da21957116c2d3
-    email: thomasstep@outlook.com
-    web: https://www.thomasstep.com
-    twitter: https://twitter.com/tmoneyfish
-    description: "Software engineer and traveler."
-
-# Plugins
-plugins:
-  - jekyll-archives
-  - jekyll-sitemap
-  - jekyll-paginate
-
-# Archives
-jekyll-archives:
-  enabled:
-    - categories
-  layout: archive
-  permalinks:
-    category: '/category/:name/'
-
-# Pagination
-paginate: 6
-paginate_path: /page:num/
-
-# Other
-markdown: kramdown
-highlighter: rouge
+title: Thomas Step
+# logo: /assets/img/logo.png
+description: This is where I share my thoughts and pictures.
+google_analytics: UA-121297743-1
+theme: jekyll-theme-minimal
+github:
+  is_user_page: true
+  owner_url: https://github.com/thomasstep

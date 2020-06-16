@@ -1,8 +1,8 @@
 ---
 layout: post
 title:  "Git Submodules"
-author: thomas
-categories: [ dev ]
+author: Thomas
+tags: [ dev ]
 image: https://thomasstep.s3.amazonaws.com/seal0.jpg
 featured: false
 hidden: false

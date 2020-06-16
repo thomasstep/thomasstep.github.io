@@ -1,8 +1,8 @@
 ---
 layout: post
 title:  "End of Semester"
-author: thomas
-categories: [ travel ]
+author: Thomas
+tags: [ travel ]
 image: https://thomasstep.s3.amazonaws.com/iceberg1.jpg
 featured: false
 hidden: false
