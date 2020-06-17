@@ -3,6 +3,8 @@ layout: post
 title:  "Using Apollo Datasources Outside of Apollo"
 author: Thomas
 tags: [ javascript ]
+redirect_from:
+  - /javascript/2020/06/03/using-apollo-datasources-outside-of-apollo.html
 ---
 I have been using Apollo Server for a while now, and one of the tools that they offer is the [`RESTDataSource`](https://www.npmjs.com/package/apollo-datasource-rest) class, which I have used extensively.
 There were a couple use cases I have run into where I needed to write one off scripts that interacted with the same data sources as my graphql server.
