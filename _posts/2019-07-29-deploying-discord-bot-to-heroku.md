@@ -3,6 +3,8 @@ layout: post
 title:  "Deploying a Discord Bot to Heroku"
 author: Thomas
 tags: [ dev, infrastructure ]
+redirect_from:
+  - /dev/infrastructure/2019/07/29/deploying-discord-bot-to-heroku.html
 ---
 I have been working with a friend to start a discord bot for a server. I recently worked to deploy that bot to Heroku but I couldn’t find a single source that helped from start to finish. I’m going to assume that you mostly know what you are doing (in regards to programming) while writing this. You will need a [Heroku](https://signup.heroku.com/) account, [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli), Node, and a [Discord account and bot token](https://discordapp.com/developers/applications/). I suggest using the [Discord JS package](https://discord.js.org/#/) to setup your bot and communicate with the Discord API. You can just copy and paste the example on their homepage to get up and running before you add some more parts in. Also, make sure that your bot is a git repo; it just makes everything with Heroku easier. In the example on Discord JS’s homepage you can see the `client.login(‘token’)` portion. That part is what you need the Discord bot’s token for. I suggest using an environment variable in Heroku which can be configured under your Heroku dashboard -> Settings -> Config Vars. I used a key of `TOKEN` and pasted my token as the value. Then in your code you can use something like `client.login(process.env.TOKEN)`. Environment variables are super useful for hiding secrets and making code configurable depending on environment (like staging, production, etc.) and even between users.
 

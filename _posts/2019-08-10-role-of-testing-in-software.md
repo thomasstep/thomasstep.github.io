@@ -3,6 +3,8 @@ layout: post
 title:  "Role of Testing in Software"
 author: Thomas
 tags: [ dev, security ]
+redirect_from:
+  - /dev/security/2019/08/10/role-of-testing-in-software.html
 ---
 When it comes to software security there is one main and easy way to prevent bugs before they happen, testing. The biggest thing I took away from both my software security course at A&M and my software engineering course (CSCE 431) was to write tests before you code. As I’ve been reading more about security and looking into best practices that is the one shining commonality between most, if not all, sources. I am currently working through the [OWASP Testing Guide](https://www.owasp.org/images/1/19/OTGv4.pdf) to learn about best practices, common test cases, and just how to test in general. In my opinion, writing tests is pretty much writing code. I used to immediately start writing code before I knew what my class project or homework entailed, but I am now an advocate for test driven development.
 

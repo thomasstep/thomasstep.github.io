@@ -3,6 +3,8 @@ layout: post
 title:  "Summer Travels"
 author: Thomas
 tags: [ travel ]
+redirect_from:
+  - /travel/2019/07/28/summer-travels.html
 ---
 I recently got back from a trip that helped me towards my goal of visiting all 7 continents and all 5 major oceans. It took almost 5 weeks to visit the 5 countries and 7 cities. I circumnavigated the globe and had an amazing experience.
 
