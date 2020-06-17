@@ -13,9 +13,19 @@ I have been wanting to switch to a simpler theme and finally took the time to sw
 At the same time, there was something else that was bothering me with my site that I decided to look into and fix; the blog post links.
 Jekyll works really well out of the box, and I honestly do not have many complaints against it.
 That being said, some of the paths that Jekyll creates for files that come out of the `_posts/` folder are heavy.
-For example, one of my old links used to look like this: `https://thomasstep.dev/dev/javascript/2019/10/28/splitting-javascript-classes-into-different-files.html`.
+For example, one of my old links used to look like this:
+
+```
+https://thomasstep.dev/dev/javascript/2019/10/28/splitting-javascript-classes-into-different-files.html
+```
+
 Like I said, heavy.
-Since the theme of the day was lightening everything up, I found a way to reconfigure Jekyll to spit out a link that looks like this: `https://thomasstep.dev/blog/splitting-javascript-classes-into-different-files`.
+Since the theme of the day was lightening everything up, I found a way to reconfigure Jekyll to spit out a link that looks like this:
+
+```
+https://thomasstep.dev/blog/splitting-javascript-classes-into-different-files
+```
+
 The configuration change was simple as can be.
 All I did was go into the `_config.yml` file in the root of my Jekyll project and add this chunk
 
