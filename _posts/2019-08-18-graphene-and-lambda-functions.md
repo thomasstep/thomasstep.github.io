@@ -3,6 +3,8 @@ layout: post
 title:  "Graphene and Lambda Functions"
 author: Thomas
 tags: [ dev, python, cloud ]
+redirect_from:
+  - /dev/python/cloud/2019/08/18/graphene-and-lambda-functions.html
 ---
 I am about to start using GraphQL and Lambda functions for a project. I could not find any blog post or documentation that was easily readable about setting this up end-to-end. Overall, it was not difficult at all considering that I have practically zero AWS experience and have never used GraphQL or Graphene before. Graphene is a GraphQL library for Python that I am using.
 

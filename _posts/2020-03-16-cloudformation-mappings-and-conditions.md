@@ -3,6 +3,8 @@ layout: post
 title:  "CloudFormation Mappings and Conditions"
 author: Thomas
 tags: [ aws ]
+redirect_from:
+  - /aws/2020/03/16/cloudformation-mappings-and-conditions.html
 ---
 I have been trying to learn more about CloudFormation to make it easier to set up the infrastructure I manage.
 Two fun pieces of functionality that I have been using more and more are mappings and conditions.

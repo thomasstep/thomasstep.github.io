@@ -3,6 +3,8 @@ layout: post
 title:  "Creating Your Own Canary For An API"
 author: Thomas
 tags: [ aws ]
+redirect_from:
+  - /aws/2020/05/20/cloudformation-for-creating-canary.html
 ---
 A while ago I was looking into using [AWS Synthetics to create a canary](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Create.html) to measure/track uptime of an API and make sure that I was one of the first people to notice if it was down.
 It is fairly easy to setup a canary and it worked as expected.

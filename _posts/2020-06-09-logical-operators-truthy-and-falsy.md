@@ -3,6 +3,8 @@ layout: post
 title:  "Using Javascript's Logical Operators and Understanding Truthy and Falsy"
 author: Thomas
 tags: [ javascript ]
+redirect_from:
+  - /javascript/2020/06/09/logical-operators-truthy-and-falsy.html
 ---
 Javascript supports two logical operators, the [logical AND `&&`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_AND) and the [logical OR `||`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_OR).
 Both of these logical operators evaluate boolean values and return boolean values.

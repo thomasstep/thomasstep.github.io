@@ -3,6 +3,8 @@ layout: post
 title:  "Writing GraphQL Resolvers"
 author: Thomas
 tags: [ dev, javascript ]
+redirect_from:
+  - /dev/javascript/2020/03/12/writing-graphql-resolvers.html
 ---
 I have been working with and writing GraphQL APIs for a couple months now, and I feel like I have gotten a good grasp on the basics.
 I've been trying to get deeper into GraphQL , and one of the subjects that has lead me into this is more complex queries and resolvers.
