@@ -3,6 +3,7 @@ layout: post
 title:  "Using Bunyan with Sequelize"
 author: Thomas
 tags: [ dev, javascript ]
+description: Using the logging option in Sequelize
 redirect_from:
   - /dev/javascript/2019/10/14/using-bunyan-with-sequelize.html
 ---

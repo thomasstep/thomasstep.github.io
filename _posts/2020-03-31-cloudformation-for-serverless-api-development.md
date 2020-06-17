@@ -3,6 +3,7 @@ layout: post
 title:  "CloudFormation for Serverless API Development"
 author: Thomas
 tags: [ aws ]
+description: Example of a CloudFormation template that can be used to start developing a serverless API in AWS
 redirect_from:
   - /aws/2020/03/31/cloudformation-for-serverless-api-development.html
 ---

@@ -3,6 +3,7 @@ layout: post
 title:  "Using Apollo Datasources Outside of Apollo"
 author: Thomas
 tags: [ javascript ]
+description: How to instantiate and initialize an Apollo DataSource class outside of an Apollo Server
 redirect_from:
   - /javascript/2020/06/03/using-apollo-datasources-outside-of-apollo.html
 ---

@@ -1,5 +1,6 @@
 ---
 layout: default
+title: thomasstep.dev
 ---
 
 {% for post in site.posts %}

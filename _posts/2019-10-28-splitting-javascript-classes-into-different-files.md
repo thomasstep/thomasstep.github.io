@@ -3,6 +3,7 @@ layout: post
 title:  "Splitting Javascript Classes Into Different Files"
 author: Thomas
 tags: [ dev, javascript ]
+description: Splitting up Javascript classes by using different files and imports
 redirect_from:
   - /dev/javascript/2019/10/28/splitting-javascript-classes-into-different-files.html
 ---

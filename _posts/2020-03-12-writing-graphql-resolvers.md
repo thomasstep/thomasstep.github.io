@@ -3,6 +3,7 @@ layout: post
 title:  "Writing GraphQL Resolvers"
 author: Thomas
 tags: [ dev, javascript ]
+description: "Learn how to write more complicated resolvers with custom types"
 redirect_from:
   - /dev/javascript/2020/03/12/writing-graphql-resolvers.html
 ---
