@@ -3,10 +3,6 @@ layout: post
 title:  "CloudFormation Exports and Imports"
 author: Thomas
 tags: [ aws ]
-image: https://thomasstep.s3.amazonaws.com/denali.jpg
-featured: false
-hidden: false
-comments: true
 ---
 When writing Cloudformation templates, there is a way to reference a common piece of infrastructure without having to pass it in through a parameter or a hard-coded value.
 That method is Exports and Imports.

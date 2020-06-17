@@ -3,10 +3,6 @@ layout: post
 title:  "Fixing AWS Lambda ModuleLoadingError"
 author: Thomas
 tags: [ dev, aws ]
-image: https://thomasstep.s3.amazonaws.com/skontorp0.jpg
-featured: false
-hidden: false
-comments: true
 ---
 TL;DR: If you are encountering a `ModuleLoadingError` when trying to run a Lambda function, change the permissions of the files in your project before deploying using `chmod -R a+rwx .` for a (possible) quick fix.
 I was encountering a problem when deploying a zip file to my Lambda function from a Jenkins pipeline.

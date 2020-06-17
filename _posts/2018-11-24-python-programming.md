@@ -3,10 +3,6 @@ layout: post
 title:  "Python Programming"
 author: Thomas
 tags: [ dev, python, security ]
-image: https://thomasstep.s3.amazonaws.com/iceberg0.jpg
-featured: false
-hidden: false
-comments: true
 ---
 I recently completed a project in Python. I have used Python before, but I had only used Python for fun and basic scripting purposes. The project that I completed was actually only one part of three for a build it, break it, fix it project. The prompt was to create a server that accepted a certain programming language that was defined in the accompanying documentation. I created a class and worked on most of the logic for the programs that were given to our programs. The biggest lesson that I learned from this first part of the project was to always, always, always test your functions and to understand the purpose of what you are writing before you write it.
 The functions that I helped my team tweak worked for the most part, but there were certain cases that had not been tested before I got to the logic. What I contributed needed to be done anyway; however, I think that the situation could have all happened faster and more smoothly had we all have used test driven development. Test driven development is also beneficial to security. Thinking of use and abuse cases before you even write a single line of code helps you write better code, understand the problem you are solving, and keep security of your program in mind.

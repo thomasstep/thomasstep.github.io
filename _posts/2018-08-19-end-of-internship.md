@@ -3,10 +3,6 @@ layout: post
 title:  "End of Internship"
 author: Thomas
 tags: [ dev, web, react, redux, javascript ]
-image: https://thomasstep.s3.amazonaws.com/deceptionIsland.jpg
-featured: false
-hidden: false
-comments: true
 ---
 My internship with Viasat has officially ended. I am currently on vacation with my brother, sister-in-law, and new niece in Charleston, South Carolina. I have learned a lot over the summer. Mostly about web development, but also teamwork and general software development workflow.
 I started the summer knowing nothing about React, Material-UI, Redux, Node.js, or Koa. I now consider myself proficient in all of these languages and frameworks. I had done a bit of basic HTML, CSS, and Javascript previously, but just as much as you can find through the history of my personal website's repo. It was minimal experience. I might go into more detail about some of the more specific topics I have researched throughout the summer including thunk-middleware, asynchronous Javascript, WebSockets, and UI/UX design among other things.

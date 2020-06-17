@@ -3,10 +3,6 @@ layout: post
 title:  "Using Secrets Manager in CodeBuild with a CloudFormation Template"
 author: Thomas
 tags: [ cloud, aws, infrastructure ]
-image: https://thomasstep.s3.amazonaws.com/penguin2.jpg
-featured: false
-hidden: false
-comments: true
 ---
 While I was trying to figure out how to add secrets from AWS Secrets Manager to CodeBuild, I could not seem to find a concrete example of a CloudFormation template that implemented this.
 While it is not too complicated, I wanted to throw some actual `yaml` up on the internet in case anyone else was looking for the same thing.

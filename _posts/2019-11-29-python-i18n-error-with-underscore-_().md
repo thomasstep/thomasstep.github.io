@@ -3,10 +3,6 @@ layout: post
 title:  "Python i18n Error With Underscore _()"
 author: Thomas
 tags: [ dev, python ]
-image: https://thomasstep.s3.amazonaws.com/skua0.jpg
-featured: false
-hidden: false
-comments: true
 ---
 In Python there is a module for internationalization in the standard library called `gettext`.
 There is also a common alias for this which is a simple underscore (\_).

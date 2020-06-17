@@ -3,10 +3,6 @@ layout: post
 title:  "Using Bunyan with Sequelize"
 author: Thomas
 tags: [ dev, javascript ]
-image: https://thomasstep.s3.amazonaws.com/seal3.jpg
-featured: false
-hidden: false
-comments: true
 ---
 While trying to use Bunyan logger with Sequelize ORM, I ran across [this issue on GitHub](https://github.com/trentm/node-bunyan/issues/350) that I tried to use to solve my problem.
 It worked and the error that I was getting before was not there anymore; however, it was giving me extra information that I did not necessarily want.

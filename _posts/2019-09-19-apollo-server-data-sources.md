@@ -3,10 +3,6 @@ layout: post
 title:  "Apollo Server Data Sources"
 author: Thomas
 tags: [ dev, javascript ]
-image: https://thomasstep.s3.amazonaws.com/seal2.jpg
-featured: false
-hidden: false
-comments: true
 ---
 [Apollo Server](https://www.apollographql.com/docs/apollo-server/) is a GraphQL server framework written in Javascript. I have had a good experience using it so far, and one feature that I have been using a lot is Data Source. According to [Apollo Server's documentation](https://www.apollographql.com/docs/apollo-server/data/data-sources/)
 

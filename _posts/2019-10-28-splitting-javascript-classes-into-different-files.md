@@ -3,10 +3,6 @@ layout: post
 title:  "Splitting Javascript Classes Into Different Files"
 author: Thomas
 tags: [ dev, javascript ]
-image: https://thomasstep.s3.amazonaws.com/skontorp1.jpg
-featured: true
-hidden: false
-comments: true
 ---
 I come from a C++ background, so I turn to header files to help me organize files and reduce file size.
 I'm new to object oriented programming in Javascript, and I have been searching for best practices on the equivalent of header files for classes or splitting classes up into multiple files.

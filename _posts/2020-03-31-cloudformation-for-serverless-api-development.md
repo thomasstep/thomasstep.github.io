@@ -3,10 +3,6 @@ layout: post
 title:  "CloudFormation for Serverless API Development"
 author: Thomas
 tags: [ aws ]
-image: https://thomasstep.s3.amazonaws.com/deceptionIsland.jpg
-featured: false
-hidden: false
-comments: true
 ---
 When I was first learning about AWS lambda and API Gateway (serverless), I spent quite a bit of time searching around for help and template snippets to help me build a CloudFormation template.
 I have seen a lot about the [`serverless`](https://serverless.com/) framework and I know that there are easier ways to get into building serverless infrastructure on AWS, but sometimes learning what is happening behind the scenes helps me learn and understand the concepts better.

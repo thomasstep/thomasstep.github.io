@@ -3,10 +3,6 @@ layout: post
 title:  "Converting to Asynchronous Code Using IIFE"
 author: Thomas
 tags: [ javascript ]
-image: https://thomasstep.s3.amazonaws.com/dramaticMountain1.jpg
-featured: false
-hidden: false
-comments: true
 ---
 I have not seen too much written about IIFEs in Javascript, but I think that they are a super useful tool for converting chunks of synchronous code to excute asyncronously.
 

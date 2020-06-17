@@ -3,10 +3,6 @@ layout: post
 title:  "CloudFormation Mappings and Conditions"
 author: Thomas
 tags: [ aws ]
-image: https://thomasstep.s3.amazonaws.com/penguin4.jpg
-featured: false
-hidden: false
-comments: true
 ---
 I have been trying to learn more about CloudFormation to make it easier to set up the infrastructure I manage.
 Two fun pieces of functionality that I have been using more and more are mappings and conditions.
