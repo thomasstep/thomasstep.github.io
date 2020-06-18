@@ -17,4 +17,4 @@ collections:
 plugins:
   - jekyll-sitemap
   - jekyll-redirect-from
-  - jekyll/web_monetization
+  # - jekyll/web_monetization
