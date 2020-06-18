@@ -12,7 +12,7 @@ collections:
     output: true
     permalink: /blog/:title
 
-payment_pointer: $ilp.uphold.com/kwjFN8kpmJxk
+# payment_pointer: $ilp.uphold.com/kwjFN8kpmJxk
 
 plugins:
   - jekyll-sitemap
