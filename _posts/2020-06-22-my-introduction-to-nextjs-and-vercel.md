@@ -3,6 +3,7 @@ layout: post
 title:  "My Introduction To Nextjs and Vercel"
 author: Thomas
 tags: [ dev, javascript ]
+description: Brief review and praise for Next.js framework and the Vercel platform
 ---
 Recently I have been working on a side project that I am building with [Next.js](https://nextjs.org/) and deploying with [Vercel](https://vercel.com).
 When I started using these technologies, Vercel was actually called Zeit, but they have since changed their name.
@@ -23,7 +24,7 @@ If you are on the fence about trying this stack out, I highly recommend it.
 
 Next is an opinionated React framework with a bunch of optimizations out of the box.
 The filesystem acts as the router, there is built in pre-rendering and SSR, and there is support for API routing with the routes being serverless functions.
-I knew React going into this, but I could have just as easily picked it up without any prior knowledge.
+I knew React going into this, but I could have just as easily picked up Next without any prior knowledge.
 The tutorials and examples that come with Next are super helpful and make getting started a breeze.
 Once I learned this framework existed, I wanted to experiment and learn more about it.
 I continue to discover more about Next, and I will be sharing what I learn on my blog.
