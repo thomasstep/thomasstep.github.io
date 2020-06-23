@@ -2,7 +2,7 @@
 layout: post
 title:  "Graphene and Lambda Functions"
 author: Thomas
-tags: [ dev, python, cloud ]
+tags: [ dev, python ]
 redirect_from:
   - /dev/python/cloud/2019/08/18/graphene-and-lambda-functions.html
 ---
