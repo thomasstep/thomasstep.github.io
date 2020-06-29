@@ -3,6 +3,7 @@ layout: post
 title:  "Parameter Store and CloudFormation"
 author: Thomas
 tags: [ aws ]
+description: How to use AWS Parameter Store with CloudFormation templates
 ---
 Lately, I have been playing around with AWS SSM Parameter Store, and I have found a fun way of creating and referencing parameters through CloudFormation.
 Parameters help me stay organized throughout different environments by unifying all of my CloudFormation "variables" in one place.
