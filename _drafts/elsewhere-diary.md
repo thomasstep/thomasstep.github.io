@@ -44,12 +44,75 @@ The API calls for adding and deleting markers are finally working from the UI. D
 
 13 May 2020:
 
-It took me a while, but I finally added in some sort of authentication. I also finally got around to removing all of the routes that I still had in there from the "Learning Next.js" tutorial. I would like to try and stay on top of stuff like that, so there isn't too much junk floating around getting in the way. A simple TODO list is my kanban board. Maybe I'll move to Trello or something similar later on, but for now I'll just keep everything simple. The authentication that I added is from the Next.js GitHub repo. They have examples of applications that you can start from. I basically read through what they had as far as authentication goes and shoehorned it into my app. The front end will need work since it is still using HTML buttons and text fields. The back end seems pretty good all things considered. It is not easy to do authentication with GraphQL. I had to search far and wide to find an example. I am pretty sure adding a social login to a GraphQL API is virtually impossible. Maybe for social logins I will have to do it through another API route. I would like to only use social logins, so I am not responsible for having a "Forgot Password?" flow.
+It took me a while, but I finally added in some sort of authentication. I also finally got around to removing all of the routes that I still had in there from the "Learning Next.js" tutorial. I would like to try and stay on top of stuff like that, so there isn't too much junk floating around getting in the way. A simple TODO list is my kanban board. Maybe I'll move to Trello or something similar later on, but for now I'll just keep everything simple. The authentication that I added is from the Next.js GitHub repo. They have examples of applications that you can start from. I basically read through what they had as far as authentication goes and shoehorned it into my app. The front end will need work since it is still using HTML buttons and text fields. The back end seems pretty good all things considered. It is not easy to do authentication with GraphQL. I had to search far and wide to find an example. I am pretty sure adding a social login to a GraphQL API is virtually impossible. Maybe for social logins I will have to do it through another API route. I would like to only use social logins so I am not responsible for having a "Forgot Password?" flow.
 
 14 May 2020:
 
-I started adding authentication to my GraphQL API as well now.
-**************************************************************************************************
+[I started adding authentication to my GraphQL API as well now](https://thomasstep.dev/blog/creating-an-authorization-plugin-for-apollo-server). I want to be able to potentially offer the API as a service later on down the road so that users can access their data. More importantly, I wanted to implement something that this that was more security related and have the peace of mind that only authorized users can access their own data.
+
+2 June 2020:
+
+I finally got back to working on Elsewhere. I added a profile page which brings up your maps and gives links to those maps and their settings pages. The styling is quite atrocious.
+
+4 June 2020:
+
+Added the ability to add a map from the API and UI. Again, the styling is quite atrocious.
+
+7 June 2020:
+
+Trying to do some styling and theming, but I am really not a designer. I have been in a front end/UI developer role before and I had no problem writing the code to match up with an image or styling that was given to me through one of those UI designer tools. Coming up with that image to reference is the hard part. I actually brought this up with someone and said that I was interested in learning the thought processes behind it all. She told me that this kind of work is a completely different discipline and way of thinking. I totally agree. I would like to start unlocking that side of my brain, but my focus is wholely on programming out the functionality of Elsewhere for the moment.
+
+14 June 2020:
+
+Using MongoDB's `_id` field as an identifier seems to be an easy way of referring to an object in a DB, but I am not completely sure how secure it is to open that kind of information up to end users. I have implemented my functionality using `_id` and a uuid that I generate whenever an object is created. For my paranoid mind, I am just going to go with the uuid since I know it is completely random and not much information can be taken out of that. I did see some old StackOverflow questions about exposing the MongoDB Document ID (`_id`) and it seems like it might be generated using a hardware ID and some other potentially revealing information. Better safe than sorry and this is a good point to jump into using uuids to keep everything consistent across the board.
+
+15 June 2020:
+
+I can now delete maps in the API. I can definitely get the back end functionality built out way quicker than the front end.
+
+25 June 2020:
+
+I can now update maps from the API. Right now the only real updates that can happen are the name, but I am going to add in updates to the collaborators soon too.
+
+1 July 2020:
+
+Updating the users allowed to collaborate on your map is now available. I can also revoke permissions too.
+
+5 July 2020:
+
+I added all of the map updating functionality to the UI through a map settings page. Being a back end developer in my full time position has definitely helped me speed this whole process along. Starting with the back end functionality, making sure that the API is solid, and then moving up to the UI has definitely been the easiest workflow for me so far.
+
+9 July 2020:
+
+I made a decision early on to go with class based React components because that is how I used React before. I thought it was weird seeing functional components in the Next.js tutorials. No I regret using class based components, and I just refactored everything over to be functional. The refactor was actually a ton easier than I thought it would be, which was reassuring.
+
+10 July 2020:
+
+I recently saw a tweet from Guillermo Rauch about a library called `next-auth`. It looks like this will solve my problems of getting social logins working easily. I am currently in the middle of configuring my DB and getting Google OAuth ready.
+
+13 July 2020:
+
+Google OAuth is now ready for login. I went ahead and got rid of the homebrewed logins that I was doing before. I added redirects from pages if the user is not signed in. I am not too worried about this causing any issues though since I have the authorization in front of the GraphQL API. If someone somehow finds someone else's map by ID, then they will still not be able to the markers even if they get around the redirect. If someone goes to the profile page, then they will only ever see their information since that information is populated on a session basis.
+
+21 July 2020:
+
+Added a search bar and button to the maps so that users can search for a specific place. The call uses the Google Places API and even pulls the users currently looked at location on the map for more context in the search. The back end functionality took me longer than I expected it too. I am using a library from Google, but it does not seem to be the most helpful. I ended up still formatting query strings like I would have if I just went through their API without a library...seems strange to me. There was also some chaos that went on in the front end with all of this because the markers were not set up to handle this from the get go. I resolved all of those problems though and I am excited to have gotten this feature in. I honestly thought it would take me over a year to even get this far.
+
+22 July 2020:
+
+I was getting some wild errors when people were trying to authenticate with Google. Turns out there was a rogue index on my DB for a key that I was not using. Since the values were always `null`, it threw errors whenever a second document was added. I went in and removed the index and everything is working as intended now.
+
+30 July 2020:
+
+I gave Elsewhere a facelift with new colors and better spacing. Maybe someday I will hire someone to do a full design of Elsewhere, but for now I will do what I can. I have read through some of the [design systems](https://designsystemsrepo.com/design-systems-recent/) like [Material by Google](https://material.io/) and [Protocol by Mozilla](https://protocol.mozilla.org/). Material seems to be the most popular to me and since I am using the Material UI library it makes sense to stick to their design principles. Still, I can't seem to fully grasp and create a good style and theme.
+
+5 August 2020:
+
+I changed the behavior of how creating a marker works. The flow seems a little more forgiving now. Instead of saving a marker on every click on the map, I am asking first if the user wants to save the marker. If the user clicks off of the info drawer that pops up, then the marker will be taken off of the map. This also follows the same create/save flow for a place that the user has searched. Keeping it simple and as least complex as I can has made the code cleaner too.
+
+13 August 2020:
+
+Users can now edit the name of a marker. Similarly to the edit functionality on the map, I will be expanding this over time, but for now being able to edit the marker name will fit my MVP. This is actually the MVP for me. This is what I set out to do. I wanted to be able to collaboratively create a list of places that my friends and I wanted to go to on a trip. I am surprised that I got as much done as I did in this timeframe. I thought that it would take me at least a year to get to this point. There are still areas of the app that I would like to improve on, but overall, this is what I set out to do. Now I want to offer this service to others to see if they also find value in it. Some future improvements that I would like to make are a time-based approach to organizing markers (think of an agenda), being able to share maps with a special link, categorizing markers, and giving recommendations on where to go based on other users' maps (this will take numerous users and created maps).
 
 16 August 2020:
 
@@ -60,8 +123,8 @@ I am moving away from using only social logins. I posted a link to Elsewhere on 
 Migrating from next-auth to passport for Google OAuth was more difficult than the local strategy. Since I am using Next.js, there was the first difficulty of having to initialize passport in two different files/routes (`/api/google/signin` and `/api/google/callback`). After I realized that I needed to just duplicate the code, came the problem of actually calling the code. For some reason I just could not understand how to kick off the passport strategy from the front end which redirects to Google's sign in page. Now I realize all you need to do is call api route. There was a little trip up with how to call it though. I started out by calling `/api/google/signin` using fetch, but I was getting CORS errors. At first, I thought those CORS errors were from my own stuff, but it turns out they were actually from Google. After some digging and reading I discovered that you need to kick off the passport OAuth strategies (not only Google OAuth) from an `href` in a button instead of another HTTP client like `fetch` or `axios`. Once I changed that over everything started firing on all cylinders. I pretty much took a copy of the DB calls I made in the local strategy and made them work with the Google OAuth flow. The last sort of weird thing that I figured out was the lack of redirect support from the API routes in Next.js. [It even says in their documentation that there is a response helper called `redirect`](https://nextjs.org/docs/api-routes/response-helpers). I could not get it to work and kept getting errors about the function not existing. The solution that I found instead was from the [Node HTTP ServerResponse documentation](https://nodejs.org/api/http.html#http_response_writehead_statuscode_statusmessage_headers) which has a method called `writeHead`. This code redirects the user from an API route in Next.js
 ```javascript
 res.writeHead(302, {
-        Location: `${process.env.SITE}/profile`,
-      });
-      res.end();
+  Location: `your.redirect/here`,
+});
+res.end();
 ```
 After I deployed these changes, I went to test them out and I was getting weird errors that I did not expect. After looking through the logs a little more I realized that my DB connection was never established. I had originally written this asynchronously and I guess the GraphQL stuff had a large enough overhead for the connection to establish before I ever needed it. With the smaller endpoints though I needed to refactor the DB connection to be synchronous and I put it in a function that could be called by the function before any subsequent calls were made.
