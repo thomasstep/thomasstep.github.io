@@ -7,7 +7,7 @@ description: How to use IIFEs in Javascript to convert synchronous code to run a
 redirect_from:
   - /javascript/2020/05/26/converting-to-asynchronous-code-using-iife.html
 ---
-I have not seen too much written about IIFEs in Javascript, but I think that they are a super useful tool for converting chunks of synchronous code to excute asyncronously.
+I have not seen too much written about IIFEs in Javascript, but I think that they are a super useful tool for converting chunks of synchronous code to execute asynchronously.
 
 In a nutshell, an [IIFE is just a function that you execute at the same time you define it](https://developer.mozilla.org/en-US/docs/Glossary/IIFE).
 The following is an example of a Hello World function running as a normal function and as an IIFE.

@@ -41,6 +41,6 @@ class Animal {}
 Animal.prototype.noise = noise;
 ```
 
-The main motivation behind looking into this was classes that could potentially get large and wanting to split those files up into smaller more digestable files.
+The main motivation behind looking into this was classes that could potentially get large and wanting to split those files up into smaller more digestible files.
 With this approach the class functions can be put into as many different files as need be and collected in the file where the class is declared.
 Is there a better or more standard way of doing this?
