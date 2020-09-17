@@ -2,7 +2,7 @@
 layout: post
 title:  "Converting to Asynchronous Code Using IIFE"
 author: Thomas
-tags: [ javascript ]
+tags: [ dev, javascript ]
 description: How to use IIFEs in Javascript to convert synchronous code to run asynchronously
 redirect_from:
   - /javascript/2020/05/26/converting-to-asynchronous-code-using-iife.html

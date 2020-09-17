@@ -2,7 +2,7 @@
 layout: post
 title:  "Updating My Personal Website"
 author: Thomas
-tags: [ dev, web ]
+tags: [ meta ]
 redirect_from:
   - /dev/web/2018/06/23/updating-my-personal-website.html
 ---

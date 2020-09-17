@@ -5,7 +5,5 @@ source 'https://rubygems.org'
 gemspec
 gem 'jekyll-sitemap'
 gem 'jekyll-redirect-from'
-# gem 'jekyll-web_monetization'
-# group :jekyll_plugins do
-#   gem 'jekyll-web_monetization'
-# end
+
+gem "kramdown-parser-gfm", "~> 1.1"

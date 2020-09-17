@@ -2,7 +2,7 @@
 layout: post
 title:  "Free Hobby Level Infrastructure for Side Projects"
 author: Thomas
-tags: [ infrastructure ]
+tags: [ ops ]
 description: Cloud providers with free tier or low cost options
 ---
 I have experimented with a few free hobby level platforms over the years and I wanted to round them up. I think that these are useful simply to test out a platform or idea without going overboard on paying for infrastructure.

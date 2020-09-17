@@ -2,7 +2,7 @@
 layout: post
 title:  "Configuring Jekyll To Create Page Links Without Dates"
 author: Thomas
-tags: [ web ]
+tags: [ dev ]
 description: Showing how to configure Jekyll to format paths in a cleaner way
 ---
 I just got done with a refresh to my personal website and blog in an attempt to lighten up the UI.

@@ -2,7 +2,7 @@
 layout: post
 title:  "Deploying a Discord Bot to Heroku"
 author: Thomas
-tags: [ dev, infrastructure ]
+tags: [ ops ]
 redirect_from:
   - /dev/infrastructure/2019/07/29/deploying-discord-bot-to-heroku.html
 ---

@@ -2,7 +2,7 @@
 layout: post
 title:  "CloudFormation Exports and Imports"
 author: Thomas
-tags: [ aws ]
+tags: [ ops, aws ]
 description: Brief introductory example to using Exports and Imports in Cloudformation templates
 redirect_from:
   - /aws/2020/04/21/cloudformation-exports-and-imports.html

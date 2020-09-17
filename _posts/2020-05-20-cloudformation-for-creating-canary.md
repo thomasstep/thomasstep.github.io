@@ -2,7 +2,7 @@
 layout: post
 title:  "Creating Your Own Canary For An API"
 author: Thomas
-tags: [ aws ]
+tags: [ ops, aws ]
 description: Creating a bootlegged version of AWS Synthetics Canary
 redirect_from:
   - /aws/2020/05/20/cloudformation-for-creating-canary.html

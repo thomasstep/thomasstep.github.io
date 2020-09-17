@@ -2,7 +2,7 @@
 layout: post
 title:  "Fixing AWS Lambda ModuleLoadingError"
 author: Thomas
-tags: [ dev, aws ]
+tags: [ ops, serverless, aws ]
 redirect_from:
   - /dev/aws/2019/10/16/fixing-aws-lambda-module-loading-error.html
 ---

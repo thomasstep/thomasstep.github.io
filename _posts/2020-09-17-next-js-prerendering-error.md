@@ -3,6 +3,7 @@ layout: post
 title:  "NextJs Prerendering Error"
 author: Thomas
 tags: [ dev, javascript ]
+description: Solution to prerendering error in Vercel with Nextjs
 ---
 I recently stumbled into a problem while deploying a site on Vercel with Next.js, and I could not find any straightforward solutions to exactly what I was experiencing. The error looked something like this.
 

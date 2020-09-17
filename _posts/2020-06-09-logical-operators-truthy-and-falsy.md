@@ -2,7 +2,7 @@
 layout: post
 title:  "Using Javascript's Logical Operators and Understanding Truthy and Falsy"
 author: Thomas
-tags: [ javascript ]
+tags: [ dev, javascript ]
 description: Describing what truthy and falsy are and applying that knowledge to how Javascript's logical operators behave
 redirect_from:
   - /javascript/2020/06/09/logical-operators-truthy-and-falsy.html

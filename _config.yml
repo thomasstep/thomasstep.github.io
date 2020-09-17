@@ -1,6 +1,5 @@
 title: Thomas Step
-# logo: /assets/img/logo.png
-description: This is where I share my thoughts.
+description: This is where I share my thoughts and experiences that I encounter developing software.
 google_analytics: UA-121297743-1
 theme: jekyll-theme-minimal
 github:
@@ -12,9 +11,6 @@ collections:
     output: true
     permalink: /blog/:title
 
-# payment_pointer: $ilp.uphold.com/kwjFN8kpmJxk
-
 plugins:
   - jekyll-sitemap
   - jekyll-redirect-from
-  # - jekyll/web_monetization

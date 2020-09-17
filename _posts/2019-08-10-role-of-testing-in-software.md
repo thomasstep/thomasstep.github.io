@@ -2,7 +2,7 @@
 layout: post
 title:  "Role of Testing in Software"
 author: Thomas
-tags: [ dev, security ]
+tags: [ dev ]
 redirect_from:
   - /dev/security/2019/08/10/role-of-testing-in-software.html
 ---

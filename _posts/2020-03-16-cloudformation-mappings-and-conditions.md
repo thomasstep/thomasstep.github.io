@@ -2,7 +2,7 @@
 layout: post
 title:  "CloudFormation Mappings and Conditions"
 author: Thomas
-tags: [ aws ]
+tags: [ ops, aws ]
 description: Using CloudFormation mappings and conditions to simplify your templates
 redirect_from:
   - /aws/2020/03/16/cloudformation-mappings-and-conditions.html

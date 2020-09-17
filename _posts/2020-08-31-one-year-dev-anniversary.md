@@ -2,7 +2,7 @@
 layout: post
 title:  "One Year Dev Anniversary"
 author: Thomas
-tags: [ dev ]
+tags: [ meta ]
 description: My first year as a software developer
 ---
 A couple of weeks ago I hit my first anniversary of working full-time as a software developer, and I wanted to share a little bit about what I have learned this past year. Most of what I am going to talk about was foreign to me a year ago. I wanted to recap this year mostly for myself but also to share with others so that maybe they can know what to expect during their first year.

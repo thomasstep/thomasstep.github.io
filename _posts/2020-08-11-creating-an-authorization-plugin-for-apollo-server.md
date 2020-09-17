@@ -2,7 +2,7 @@
 layout: post
 title:  "Creating an Authorization Plugin for Apollo Server"
 author: Thomas
-tags: [ dev, javascript, security ]
+tags: [ dev, javascript ]
 description: How to create an a plugin for Apollo Server
 ---
 While working on my side project I came across a use case for needing authorization in place for all of my various GraphQL queries and mutations. For the sake of this post, I will use an example of a library where certain users are allowed to create, read, and update books (I might not get that far into it, but we will see what happens). As a library of high esteem, we do not want to let just anyone be able to operate on the books. This will pretty much just be an extension of the first example given on [Apollo Server's website](https://www.apollographql.com/docs/apollo-server/getting-started/). [I do have working code that you are welcome to reference while you read through the article](https://github.com/thomasstep/apolloEndpointAuth).
