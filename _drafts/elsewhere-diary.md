@@ -169,3 +169,15 @@ My latest additions to Elsewhere were adding a flow to handle forgotten password
 15 September 2020:
 
 My dad was nice enough to spend some time going through Elsewhere and trying to play around with it. While he did he helped me find some bugs. It looked like I had some faulty logic and state handling around naming a marker before it was saved. The marker name was saved correctly but the state within the browser did not hold onto the new name for the marker, so the name did not look right until after a refresh. This was a fairly easy fix once I figured out the problem. Also while testing I noticed that a searched-for-place was not given a name when the marker was created. Elsewhere now automatically populates the name of the marker with the same text that was used to search for the marker. I can easily see this changing in the future. The search functionality currently is not useful at all. You have to know what you are looking for for the search functionality to be of any use, which halfway defeats the purpose. I would bet that most people use the search functionality to discover and not necessarily to find what they already know. Elsewhere also now allows a user to create notes for a marker before saving the marker. Since a lot of motivation behind creating Elsewhere had to do with keeping track of notes and maps at the same time, it only made sense to allow this. Moving forward, I would like to find a way to ask the user if the marker they searched for is actually what they were looking for, and I would like to add more detail to a marker by default.
+
+29 September 2020:
+
+Added the functionality of searching on a map when the user presses enter. I thought this was going to be a lot more difficult than it was. All that was needed was the `onKeyDown` prop in a `TextField` component like this
+```javascript
+<TextField
+  onKeyDown={(e) => (
+    e.keyCode === 13 ? enterKeyPressedReaction(e) : null
+  )}
+/>
+```
+
