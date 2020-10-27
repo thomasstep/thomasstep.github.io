@@ -27,6 +27,7 @@ Not only is there extra time, but there is also now an easier barrier to entry s
 That's why we continually see more and more responsibility going to the cloud provider (bare metal -> VM -> IaaS -> PaaS -> FaaS); it's easier for them to manage because they specialize in it and not everyone wants to deal with it.
 Tons of solutions can be made generic enough that still fit the bill for most engineering teams.
 With that lower barrier to entry and smaller learning curve, now the responsibility of managing infrastructure can be given to the same team that develops the software.
+And when I say "managing infrastructure" I mean configuring that infrastructure since the management of the actual hardware is the cloud providers' job.
 
 Another benefit of moving everything to the cloud is that documentation is no longer an in-house catastrophe.
 Have you used AWS's documentation?
@@ -40,14 +41,13 @@ The amount that I did learn was tremendous and momentous.
 What I can do in a few days with AWS used to take an entire organization the same amount of time with less stability in the end product.
 It's no wonder engineering organizations want to move to the cloud with a DevOps methodology.
 
-Cloud providers give amazing power to their users and adopters' applications and architectures that are being used and thought up are constantly changing to better use the quick, easy, pay-per-use cloud-centric model.
+Cloud providers give amazing power to their users and adopters' applications, and architectures that are being used and thought up are constantly changing to better use the quick, easy, pay-per-use cloud-centric model.
 Without cloud service providers being able to make their businesses profitable, make the services user-friendly, and continually improve upon processes, giving developers the chance to wield this much power would not be possible.
 By shifting the responsibility of managing a data center away from numerous companies with various levels of proficiency, cloud providers can focus on what they do best while their clients can focus on building with the result of the finely tuned data centers.
-With the ease of spinning up and tearing down cloud infrastructure, companies can move faster when it comes to building out proofs of concept and MVP, and having the economy of scale also allows cloud computing to become cheaper.
+With the ease of spinning up and tearing down cloud infrastructure, companies can move faster when it comes to building out proofs of concept and MVPs, and having the economy of scale also allows cloud computing to become cheaper.
 I think a huge part of the move to cloud computing is the user-friendliness.
-There are parties on the internet saying that providers like AWS are too large and too difficult to learn, but if you throw yourself into the fire (like I was), then learning what all AWS is not impossible as some might make you think.
-As I said, the documentation is there.
-Countless YouTube videos and other courses exist to teach people how to operate with cloud providers.
+There are parties on the internet saying that providers like AWS are too large and too difficult to learn, but if you throw yourself into the fire (like I was), then learning what AWS is is not impossible as some might make you think.
+As I said, the documentation is there, and there are countless YouTube videos and courses exist to teach people how to operate with cloud providers.
 If it was not easy, then people would not use it.
 The barrier to entry from a cost standpoint is also lower, which means that anyone can create services for less money and with less knowledge than before.
 Lastly, cloud providers can improve upon their processes to make the cloud experience that much better.
