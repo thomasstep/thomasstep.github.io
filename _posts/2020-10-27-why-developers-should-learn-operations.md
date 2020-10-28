@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Why Devs Should Learn Operations"
+title:  "Why Developers Should Learn Operations"
 author: Thomas
 tags: [ ops ]
 description: Discussing why developers should learn cloud operations
@@ -17,6 +17,8 @@ The way I see it, if a developer can learn the operations side of applications, 
 I am a software engineer and I like writing code, but I also understand that my code may or may not work as intended once it is deployed somewhere other than my local machine (that is if I'm not using containers) and how it gets deployed has a lot to do with that.
 Understanding where and how that code operates once it is deployed makes for a better application.
 Isn't that what we all want?
+
+### How it's possible that anyone can learn operations
 
 The old (but unfortunately still utilized) way of organizing teams to create a software application is by splitting the project into two main areas of technology, software development, and operations.
 Software development is what I enjoy and ultimately want to spend most of my time doing.
@@ -65,6 +67,8 @@ If it was not easy, then people would not use it.
 The barrier to entry from a cost standpoint is also lower, which means that anyone can create services for less money and with less knowledge of the underlying technologies (not that you shouldn't explore those underlying technologies) than before.
 Lastly, cloud providers can improve upon their processes to make the cloud experience that much better.
 Higher uptimes, more useful services, cleaner documentation; these are some of the benefits that we reap whenever responsibility shifts onto those who do the job best.
+
+### The power behind learning operations as a developer
 
 If a tree falls in a forest and no one is around to hear it, does it make a sound?
 In the same vein, if a developer writes an application and never deploys it, did the application ever exist?
