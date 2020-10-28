@@ -23,8 +23,8 @@ Using the same 8760 runs per month, a CloudWatch Rule would cost $0.00876 per mo
 Also take all of the pricing with a grain of salt; I am still learning all of the pricing for AWS and I have heard that it is never a completely straightforward calculation, but I am trying to reference AWS pricing pages.
 If the pricings that I have found are all correct, Synthetics would cost about 365 times more than this bootlegged canary using CloudWatch Events and a lambda function.
 
-I have put together a template that builds all of the infrastructure I just mentioned, [which can be found here](https://github.com/thomasstep/starterTemplates/blob/master/canary.yml).
-The code that goes into the lambda is ultimately up to you, but I also wrote a small script that was meant to go with this template, [which can be found here](https://github.com/thomasstep/starterTemplates/blob/master/canary.js).
+I have put together a template that builds all of the infrastructure I just mentioned, [which can be found here](https://github.com/thomasstep/aws-cloudformation-reference/blob/master/canary.yml).
+The code that goes into the lambda is ultimately up to you, but I also wrote a small script that was meant to go with this template, [which can be found here](https://github.com/thomasstep/aws-cloudformation-reference/blob/master/canary.js).
 The general idea is that the lambda should make a request to the API you want to monitor and then either log an error or success.
 I suggest using CloudWatch Insights or just the logs to monitor what is happening over time, and you can also set up CloudWatch Alarms for this.
 I have these logs going to a dashboard that graphs the uptime over time.
