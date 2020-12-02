@@ -1,0 +1,16 @@
+---
+layout: post
+title:  "My Understanding of Serverless"
+author: Thomas
+tags: [ aws, containers, ops, serverless ]
+description: Simple explanation of serverless
+---
+When I first started getting into AWS, I remembered seeing and hearing posts and videos about serverless. How it could speed up applications and an entire organization, how it reduced costs, how it was a revolution. I had visions of grandeur and wonder at how Amazon managed to do all of this without a server. Fast forward a few months and I started realizing what serverless truly means. I have worked closely with Lambda functions for over a year and with Fargate for about half of a year at this point. I am by no means calling myself an expert, but at the very least I can explain what is meant by "serverless".
+
+Any serverless offering means that the user does not have to manage any infrastructure. The hardware is provisioned and ready to go, so after any configuration is plugged in, your code can start working. It's a quick way to get something off the ground. The complicated operations work is already handled by the cloud provider so an engineer can focus more on code and less on maintaining a server. There is still a server though. A generic server that fits most use cases and can plug-and-play with a user's code. The biggest, most promising part of Lambda that acts as a selling point for most organizations is the billing model.
+
+AWS Lambda has a cult-like following. I have met people who love it and do everything they possibly can with it, and I have met people who steer clear of anything called a serverless function. No one can argue that the billing model is one of the cheapest out there for computing. With Lambda, a user pays only for when the function is being used or the duration of invocation. It is weirdly inexpensive compared to other computing services like EC2 where you have to pay for the instance even if it is not being used. I like to think of a Lambda function as a generic server that gets its logic uploaded by us. It removes all of the boilerplate that we would have to go through setting up an EC2 instance to receive traffic and call our logic. Since that's such a common use case, AWS made it into a service and made it so fast that they could provision a new server without the client noticing it.
+
+Fargate is another serverless technology that I have recently picked up and played with. Like Lambda, it's a boilerplate server. Instead of the user uploading specific logic in the form of a function, we upload a Docker image for the Fargate instance to run. Fargate is a little less abstract than Lambda, but we can still reap the serverless benefits. There are no EC2 instances to patch and update, and Docker is ready to run our image as soon as we hand it off.
+
+When it comes to serverless technology, I once thought there was some sort of magic going on, but in reality, all the infrastructure and servers still exist. The heavy operations work like provisioning and management is abstracted away from us by the cloud provider, so we are left with a quick and easy way to deploy code and serve clients. In short, serverless isn't magic, it's just abstraction.
