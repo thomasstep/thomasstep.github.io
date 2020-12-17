@@ -12,4 +12,9 @@ title: Projects And Services | thomasstep.dev
   <a href="https://moneygrowsontrees.co/">Money Grows On Trees</a>
   <br>
   Money Grows On Trees is a blog that I created and maintain. This project is also built with Next.js. I write posts in Markdown and convert those files to HTML. I use Tailwind for styling which was a new library for me. I have plans to add in some functionality revolving around retirement and investment calculations.
+  <br>
+  <br>
+  <a href="https://github.com/thomasstep/aws-cloudformation-reference">AWS CloudFormation Reference</a>
+  <br>
+  This repo is meant to contain reference CloudFormation templates both for me and for others looking for a starting point. I found a lack of working templates whenever I started my AWS journey, and I am hoping to group together some of my knowledge with this. My goal is to create various CloudFormation templates that can work as a jumping off point for some commonly-used infrastructure patterns. I have personally created and managed services in an enterprise setting using these technologies. I am also making YouTube videos to go along with some of the templates.
 </p>
