@@ -1,6 +1,7 @@
 ---
 layout: default
-title: Projects And Services | thomasstep.dev
+title: Projects And Services
+hide_mailchimp_signup: true
 ---
 
 <p>

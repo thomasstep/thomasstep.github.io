@@ -18,6 +18,13 @@
     <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
     <![endif]-->
+
+    <!-- Mailchimp CSS -->
+    <link href="//cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css" rel="stylesheet" type="text/css">
+    <style type="text/css">
+      #mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; width:100%;}
+    </style>
+    <!-- End Mailchimp CSS -->
   </head>
   <body>
     <div class="wrapper">
@@ -45,14 +52,32 @@
 
       {{ content }}
 
+      {% unless page.hide_mailchimp_signup %}
+      <!-- Begin Mailchimp Signup Form -->
+      <div id="mc_embed_signup">
+        <form action="https://thomasstep.us20.list-manage.com/subscribe/post?u=67fa638f9601377de7c051b25&amp;id=f462ea0e6e" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+          <div id="mc_embed_signup_scroll">
+            <label for="mce-EMAIL">
+              Subscribe
+            </label>
+            <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
+            <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+            <div style="position: absolute; left: -5000px;" aria-hidden="true">
+              <input type="text" name="b_67fa638f9601377de7c051b25_f462ea0e6e" tabindex="-1" value="">
+            </div>
+            <div class="clear">
+              <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
+            </div>
+          </div>
+        </form>
+      </div>
+      <!-- End Mailchimp Signup Form -->
+      {% endunless %}
+
       </section>
-      <!-- <footer>
-        {% if site.github.is_project_page %}
-        <p>This project is maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></p>
-        {% endif %}
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
-      </footer> -->
     </div>
+
+
     <script src="{{ "/assets/js/scale.fix.js" | relative_url }}"></script>
     {% if site.google_analytics %}
     <script>

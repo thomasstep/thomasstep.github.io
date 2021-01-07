@@ -1,6 +1,7 @@
 ---
 layout: default
 title: thomasstep.dev
+show_mailchimp_signup: true
 ---
 
 {% for post in site.posts %}

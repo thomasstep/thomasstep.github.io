@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Blog Categories
+hide_mailchimp_signup: true
 ---
 
 {% comment %}

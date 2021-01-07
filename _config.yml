@@ -1,5 +1,7 @@
 title: Thomas Step
 description: This is where I share my thoughts and experiences that I encounter developing software.
+url: https://thomasstep.dev
+author: Thomas Step
 google_analytics: UA-121297743-1
 theme: jekyll-theme-minimal
 github:
@@ -14,3 +16,4 @@ collections:
 plugins:
   - jekyll-sitemap
   - jekyll-redirect-from
+  - jekyll-feed
