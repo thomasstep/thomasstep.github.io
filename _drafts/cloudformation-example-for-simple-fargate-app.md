@@ -1,0 +1,12 @@
+---
+layout: post
+title:  "CloudFormation Example for Simple Fargate App"
+author: Thomas
+tags: [ ops, aws, containers, serverless ]
+description: Example of a CloudFormation template that can be used to start developing on AWS Fargate
+---
+
+A few months ago I had heard about AWS Fargate as a serverless computing platform for containers. I had good experiences with AWS's other serverless offerings and I wanted to get into containers more so Fargate seemed like a good next learning opportunity. I remember trying to spin a few resources up just to start messing around with the platform. At the end of the day I ended up with an ECS cluster and some misconfigured services. I didn't realize that there were multiple different resources needed just to get a simple API container up and running. I recently worked through creating an ECS cluster, load balancer, and Fargate service and task definition with CloudFormation. [I also made a video out of building the template and debugging along the way](https://www.youtube.com/watch?v=puYOIAQFZkI). In the end, I created [one template for the ECS cluster, load balancer, and resources](https://github.com/thomasstep/aws-cloudformation-reference/blob/5442a63ea123cab496dc108f7af130b2b8dd2228/fargate/ecs-cluster.yml) that could be shared across multiple Fargate services, [one template for the Fargate service, task definition, and load balancer listener](https://github.com/thomasstep/aws-cloudformation-reference/blob/5442a63ea123cab496dc108f7af130b2b8dd2228/fargate/hello-world/hello-world-fargate.yml), and a tiny Dockerized [hello world app](https://github.com/thomasstep/aws-cloudformation-reference/tree/5442a63ea123cab496dc108f7af130b2b8dd2228/fargate/hello-world).
+
+I created the shared resources template with reusability across an application in mind. In addition to a shared ECS cluster and load balancer, a baseline IAM role, a baseline security group, and an ECR reposity are included in that template. All of the relevant information is exported from that template too with the intention of the Fargate service's template importing that information. It's worth noting that both the 
+
