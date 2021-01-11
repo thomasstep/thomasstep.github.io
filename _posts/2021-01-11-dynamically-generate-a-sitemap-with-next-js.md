@@ -1,9 +1,9 @@
 ---
 layout: post
-title:  "Title"
+title:  "Dynamically Generate a Sitemap With Next.js"
 author: Thomas
 tags: [ dev, javascript ]
-description: TBD
+description: Example of code to generate a sitemap with Next.js
 ---
 
 I recently wrote some code to dynamically generate a sitemap for one of my blogs that I built using Next.js. For a long time, I was hoping to stumble across someone else who had done something similar that I could copy, but I finally gave in wrote something for myself. I wanted to share what I did in case anyone else wants some inspiration to do something similar.
