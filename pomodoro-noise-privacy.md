@@ -22,4 +22,4 @@ As there is no data collected, there is no need to request data deletion.
 
 ## Amendments To This Privacy Policy
 
-I reserve the right to amend this Privacy Policy. The current version of the Privacy Policy will be available at [https://thomasstep.dev/pomodoro-noise-privacy]
+I reserve the right to amend this Privacy Policy. The current version of the Privacy Policy will be available at [https://thomasstep.dev/pomodoro-noise-privacy](https://thomasstep.dev/pomodoro-noise-privacy)
