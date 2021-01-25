@@ -6,7 +6,7 @@ tags: [ dev, ios, swift ]
 description: Use a number pad and validate input in swift
 ---
 
-I have been developing an iOS application recently and I needed to receive numeric input from the user. I added a `TextField` and changed the `keyboardType` to `numberPad`, but I also stumbled across someone who took it an extra step and added some validation. I wanted to share what that looked like and also show my twist on it. The simple `TextField` with numeric input looks like this.
+[I have been developing an iOS application recently](https://thomasstep.dev/blog/i-built-and-published-an-iphone-app) and I needed to receive numeric input from the user. I added a `TextField` and changed the `keyboardType` to `numberPad`, but I also stumbled across someone who took it an extra step and added some validation. I wanted to share what that looked like and also show my twist on it. The simple `TextField` with numeric input looks like this.
 ```swift
 TextField("Demo text field", text: $myInput)
   .multilineTextAlignment(.center)
