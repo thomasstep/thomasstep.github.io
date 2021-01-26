@@ -29,19 +29,19 @@ Parameters:
 Mappings:
   Environment:
     dev:
-      DBHost: "https://dev.db/"
+      DBHost: "dev.db"
       .
       .
       .
 
     preprod:
-      DBHost: "https://preprod.db/"
+      DBHost: "preprod.db"
       .
       .
       .
 
     prod:
-      DBHost: "https://prod.db/"
+      DBHost: "prod.db"
       .
       .
       .
