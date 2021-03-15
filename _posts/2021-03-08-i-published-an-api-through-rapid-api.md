@@ -1,9 +1,9 @@
 ---
 layout: post
-title:  "I Built and Published an API Through RapidAPI"
+title:  "I Published an API Through RapidAPI"
 author: Thomas
 tags: [ aws, dev, javascript, meta, ops ]
-description: TBD
+description: Selling an API on RapidAPI
 ---
 A while back I read something about a platform called RapidAPI. It's a marketplace for APIs. I had never heard about it before, but as a backend developer, I was curious to know more. I starting digging deeper and found out that it offers a single point of access to various APIs that developers can publish. It functions as a router of sorts, where all requests go through RapidAPI using their keys and RapidAPI passes the request through to the configured endpoint. I also realized that there was no sign up fee or anything for developers to publish their APIs. Of course, I had to try it out and publish something.
 
