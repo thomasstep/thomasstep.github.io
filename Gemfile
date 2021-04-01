@@ -8,3 +8,4 @@ gem 'jekyll-redirect-from'
 gem 'jekyll-feed'
 
 gem "kramdown-parser-gfm", "~> 1.1"
+gem "kramdown", ">= 2.3.1"
