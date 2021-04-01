@@ -11,6 +11,12 @@ I start my work on the `main` branch and running `git fetch` and `git pull origi
 
 After completing and polishing my work I checkout `main` and pull it from remote to update it, then I run a rebase command `git rebase -i main`. In the rebase, I squash all of my commits into a single commit and fix any conflicts as they arise. Using this strategy, I limit the commit clutter in my pull request and `main`'s history.
 
+After polishing everything up, I make a final push (might have to be a force push) and create a pull request. If there are suggested changes for the code that come as suggestions during the pull request, then I make individual commits for each change and push. Don't rebase after creating a pull request. Rebasing commits after a pull request has been made or others are using a branch can make merge conflicts difficult to resolve because rebasing is rewriting commit history. Not to mention, it doesn't look great when I have to force push updates.
+
+Here is what that looks like in a flow chart:
+
+![Git workflow with rebasing](/assets/img/git-workflow.png)
+
 Rebasing could potentially be a blog post in and of itself, but I'll try to condense it down quickly. When we rebase a branch, we are taking the commits we have added since the last common commit and pasting them on top of the branch we are rebasing off of. If the branch we are rebasing off of is the same one we originally branched off of, there is effectively no change. The problems come in when we rebase onto a branch with different commits than ours because there are potential conflicts. First I will walk through a rebase on a branch with no conflicts, then I'll walk through a rebase with conflicts. The setup I will be using to demo this is a brand new `git` repo with one file and one commit on the `main` branch to start with.
 ```bash
 $ git branch
@@ -190,8 +196,3 @@ Added the word 'new'
 
 A simple save and quit keeps me moving along. The next screen is one that we have seen before for combining the two commit messages that will become one commit. I perform the same actions, save, and quit. The rebase is now complete, so I will make my final push and create a pull request for my feature branch.
 
-If there are suggested changes for the code that come as suggestions during the pull request, then I make individual commits for each change and push. Rebasing commits after a pull request has been made or others are using my branch can make merge conflicts difficult to resolve. Not to mention, it doesn't look great when I have to force push updates.
-
-Here is what that looks like in a flow chart:
-
-![Git workflow with rebasing](/assets/img/git-workflow.png)
