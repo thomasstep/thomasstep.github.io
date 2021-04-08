@@ -5,7 +5,7 @@ author: Thomas
 tags: [ dev, javascript ]
 description: Perform an action on a keyboard event in React
 ---
-A while ago I wanted to add functionality to a React page to do something when a user pressed enter on a Material UI `TextField`, and the solution I found involves capturing events. Of course, the events can be applied to other elements as well, but for my sake, I'll use a `TextField` in the code snippets. I already had a `Button` set up to take action, but I wanted the same behavior when the enter key was pressed, which is fairly common web app behavior.
+A while ago I wanted to add functionality to a React page to do something when a user pressed the enter key on a Material UI `TextField`, and the solution I found involves capturing events. Of course, the events can be applied to other elements as well, but for my sake, I'll use a `TextField` in the code snippets. I already had a `Button` set up to take action, but I wanted the same behavior when the enter key was pressed, which is fairly common web app behavior.
 ```jsx
 <Button
   variant="contained"
