@@ -80,7 +80,7 @@ To get straight to the chase, the query I used to find all of the API calls made
 SELECT DISTINCT eventtypes,
     eventsource,
     eventname
-FROM [TABLE_NAME]
+FROM [TABLE_NAME];
 ```
 
 This query produces the services and API calls used for the IAM user in question. Since my goal was to give the IAM user the least amount of permissions it needed to operate as it had been, I was able to restrict those permissions based on the result of this query.
