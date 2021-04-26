@@ -40,6 +40,7 @@ Credentials:
 This is a similar snippet to what can be found in AWS references. First, I will remind you that there are conditions in this template that determine whether brand new database instances will be launched or if those instances will be based on a snapshot. If the instances are based on a snapshot, they will use the master username and password that was specified at the time of the RDS cluster's creation. For that reason, I am retaining the secrets created with new clusters with `Condition: isNewDb` and `DeletionPolicy: Retain` in case their stacks are deleted. If the stacks are deleted, this allows a new stack to be created that will launch instances using the old database's snapshot and credentials.
 
 In actuality, the password generation is simply a randomly generated string that is later referenced by RDS to use as the password. The `SecretStringTemplate` portion is the baseline value for the secret, and the generated string is given as the value for the key with the name `password` as denoted by `GenerateStringKey`. However, this alone does not make that generated string a password. What does make it a password, is the following snippet from a property of the `AWS::RDS::DBCluster` resource definition.
+{% raw %}
 ```yaml
 MasterUserPassword:
   !If
@@ -52,6 +53,7 @@ MasterUserPassword:
         - ':SecretString:password}}'
     - !Ref AWS::NoValue
 ```
+{% endraw %}
 
 Now we are referencing the generated string to be used as the password. The condition for `isNewDb` exists because creating an `AWS::RDS::DBCluster` resource with a snapshot requires that the master credentials properties are not present. The snapshot property in my template looks like the following snippet.
 ```yaml
