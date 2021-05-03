@@ -6,7 +6,7 @@ tags: [ dev, meta ]
 description: Vim keystrokes that I use daily
 ---
 
-NOTE: If you want my list of commands and keystrokes, scroll down to the bottom. If you want to know more about my motivation behind switching to vim and compiling this list, read on.
+**NOTE**: If you want my list of commands and keystrokes, scroll down to the bottom. If you want to know more about my motivation behind switching to vim and compiling this list, read on.
 
 I like VS Code. I have nothing against it and I still use it from time to time. My VS Code setup used to have a color scheme, keybindings, linters, different syntax highlighting, and the like. Most people probably end up with something similar after using it for a while. Then one day my computer decided it didn't want to start anymore. All of that was lost. I'm sure that there is a plugin that would have exported my settings and synced them across devices, but I didn't want to set that up. When I got my new computer I felt like I was starting from ground zero and that I didn't even know what software I needed to download first. I had wanted to give vim a try for a while. Since it has such a cult-like following, I figured there must be some redeeming qualities about it that I wanted to benefit from.
 
@@ -94,9 +94,9 @@ I have had fun learning vim and I feel like I have completed a rite of passage o
 
 ### favorite combos:
 - `ci”` executes change on everything in the current “ (cursor must currently be inside of quotes)
-        you can do this with (, [, {, etc.
+  - you can do this with (, [, {, etc.
 - `ca”` executes change on everything in and including the current “ (cursor must currently be inside of quotes)
-        you can do this with (, [, {, etc.
+  - you can do this with (, [, {, etc.
 - `V#G` highlights all lines from the current line to line # where # is a number
 - `vg_` highlights from current position to the last character in a line
 - `YP` duplicates a line below itself
