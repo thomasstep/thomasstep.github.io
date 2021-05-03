@@ -94,9 +94,9 @@ I have had fun learning vim and I feel like I have completed a rite of passage o
 
 ### favorite combos:
 - `ci”` executes change on everything in the current “ (cursor must currently be inside of quotes)
-  - you can do this with (, [, {, etc.
+  - you can do this with `(`, `[`, `{`, etc.
 - `ca”` executes change on everything in and including the current “ (cursor must currently be inside of quotes)
-  - you can do this with (, [, {, etc.
+  - you can do this with `(`, `[`, `{`, etc.
 - `V#G` highlights all lines from the current line to line # where # is a number
 - `vg_` highlights from current position to the last character in a line
 - `YP` duplicates a line below itself
