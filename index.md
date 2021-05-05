@@ -1,6 +1,6 @@
 ---
 layout: default
-title: thomasstep.dev
+title: thomasstep.com
 show_mailchimp_signup: true
 ---
 
