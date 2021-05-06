@@ -9,3 +9,4 @@ gem 'jekyll-feed'
 
 gem "kramdown-parser-gfm", "~> 1.1"
 gem "kramdown", ">= 2.3.1"
+gem "rexml", ">= 3.2.5"
