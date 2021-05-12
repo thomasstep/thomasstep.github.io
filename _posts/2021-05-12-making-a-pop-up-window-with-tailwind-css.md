@@ -11,21 +11,21 @@ Recently, I started working on a little project for myself that I'm calling [Gre
 My goal with this project is to use as little Javascript as possible in the website to make it quick and light. Another goal was to learn more CSS because, for some reason, I have avoided learning how webpage layout works for the most part by guess-and-checking positioning for my whole life. This was my chance to familiarize myself better with a most important piece of web development. To get straight to the point, the following are the Tailwind classes that I used to create my pop-up window. This code is also available with more context on the [GitHub repo where it lives](https://github.com/thomasstep/green-things/blob/main/components/plantCard.jsx).
 
 ```jsx
-    <div
-      className={`overflow-auto \
-                  z-30 \
-                  h-5/6 \
-                  w-10/12 \
-                  mx-auto \
-                  top-20 \
-                  p-6 \
-                  border \
-                  rounded-xl \
-                  bg-white \
-                  text-left \
-                  fixed \
-                  ${visible ? 'visible' : 'invisible'}`}
-    >
+<div
+  className={`overflow-auto \
+              z-30 \
+              h-5/6 \
+              w-10/12 \
+              mx-auto \
+              top-20 \
+              p-6 \
+              border \
+              rounded-xl \
+              bg-white \
+              text-left \
+              fixed \
+              ${visible ? 'visible' : 'invisible'}`}
+>
 ```
 
 I admit I did still use React state to help determine that last class, so I have some work if I want to completely get rid of my addiction to Javascript. I suggest either leaving the line with `visible` out, passing a `visible` prop, or keeping a `visible` state to make this work correctly. Either way, there are a few classes that I wanted to point out: `fixed`, `z-30`, `h-5/6`, `w-10/12`, `top-20`, `mx-auto`, and `overflow-auto`. Almost all of these classes were used to position and size the pop-up window itself correctly and responsively on the screen with `overflow-auto` relating more to the content itself.
