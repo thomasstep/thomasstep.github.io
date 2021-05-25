@@ -4,9 +4,18 @@ title: Projects And Services
 hide_mailchimp_signup: true
 ---
 
-# [Elsewhere](https://elsewhere.thomasstep.com/)
+# [AWS CloudFormation Reference](https://github.com/thomasstep/aws-cloudformation-reference)
 
-Elsewhere is a collaborative trip planning web app. Each trip is represented by a map that can be shared. Markers can be added which signify places that you want to visit while you are on your trip. This spawned from trying to organize a trip using a saved list in Google Maps, but Google does not allow collaboration on their saved lists. The project built with Next.js and deployed using Vercel for GitLab. The data is stored in MongoDB and the GraphQL API is built with Apollo server.
+This repo is meant to contain reference CloudFormation templates both for me and for others looking for a starting point for various AWS infrastructure and architecture. I found a lack of working templates whenever I started my AWS journey, and I am hoping to group together some of my knowledge with this. My goal is to create various CloudFormation templates that can work as a jumping off point for some commonly-used infrastructure patterns. I have personally created and managed services in an enterprise setting using these technologies and I wanted these to be a golden path of sorts. I am also making YouTube videos to go along with some of the templates.
+
+
+# [Lichen](https://github.com/thomasstep/lichen)
+Lichen is a dimmed vim color scheme that I put together for myself. I found lots of other color schemes while I was setting vim up, but none of them were exactly what I wanted. My goal was to feel like I was in a Scandinavian forest.
+
+
+# [Pomodoro Noise](https://github.com/thomasstep/pomodoro-noise)
+
+Pomodoro Noise is an iOS app that helps users focus by combining the Pomodoro technique and color noise. The app is simple by design so users can quickly and easily go from launching the app to focusing in just a few seconds. I wanted to build this because I have never developed an application before, and I wanted to publish something that can help others. The app is available on the Apple App Store.
 
 
 # [Money Grows On Trees](https://money.thomasstep.com/)
@@ -14,11 +23,6 @@ Elsewhere is a collaborative trip planning web app. Each trip is represented by 
 Money Grows On Trees is a blog that I created and maintain. This project is also built with Next.js. I write posts in Markdown and convert those files to HTML. I use Tailwind for styling which was a new library for me. I have plans to add in some functionality revolving around retirement and investment calculations.
 
 
-# [AWS CloudFormation Reference](https://github.com/thomasstep/aws-cloudformation-reference)
+# [Elsewhere](https://elsewhere.thomasstep.com/)
 
-This repo is meant to contain reference CloudFormation templates both for me and for others looking for a starting point for various AWS infrastructure and architecture. I found a lack of working templates whenever I started my AWS journey, and I am hoping to group together some of my knowledge with this. My goal is to create various CloudFormation templates that can work as a jumping off point for some commonly-used infrastructure patterns. I have personally created and managed services in an enterprise setting using these technologies and I wanted these to be a golden path of sorts. I am also making YouTube videos to go along with some of the templates.
-
-
-# [Pomodoro Noise](https://github.com/thomasstep/pomodoro-noise)
-
-Pomodoro Noise is an iOS app that helps users focus by combining the Pomodoro technique and color noise. The app is simple by design so users can quickly and easily go from launching the app to focusing in just a few seconds. I wanted to build this because I have never developed an application before, and I wanted to publish something that can help others. The app is available on the Apple App Store.
+Elsewhere is a collaborative trip planning web app. Each trip is represented by a map that can be shared. Markers can be added which signify places that you want to visit while you are on your trip. This spawned from trying to organize a trip using a saved list in Google Maps, but Google does not allow collaboration on their saved lists. The project built with Next.js and deployed using Vercel for GitLab. The data is stored in MongoDB and the GraphQL API is built with Apollo server.
