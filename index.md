@@ -10,6 +10,6 @@ I build in public and have contributed to open source. Some of my posts pertain 
 
 [Go to my projects page](/projects) to learn about what I have worked on in the past.
 
-My email is thomas@thomasstep.com.
+My email is thomas@thomasstep.com or tstep916@gmail.com (if the first one doesn't work).
 
 My social presence consists of [LinkedIn](https://www.linkedin.com/in/thomasstep/) and [GitHub](https://github.com/thomasstep). Feel free to follow or connect with me.
