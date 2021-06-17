@@ -4,6 +4,12 @@ title: Projects And Services
 hide_mailchimp_signup: true
 ---
 
+# [Crow Authentication](https://crowauth.com/)
+
+Crow Authentication is provides easy authentication as a service through a set of intuitive APIs. Create an application in Crow Auth and have a deployed application with authentication in minutes.
+
+Crow Auth is my first real attempt at creating a SaaS offering. My hope is to be able to provide value to others and potentially create a business at the same time. I had to take the full stack into consideration while building this application. It is all based on serverless technology and designed to scale tremendously. There are a few services working together behind the scenes to make the experience of providing authentication simple, and I have further plans to enhance the project as a whole.
+
 # [AWS CloudFormation Reference](https://github.com/thomasstep/aws-cloudformation-reference)
 
 This repo is meant to contain reference CloudFormation templates both for me and for others looking for a starting point for various AWS infrastructure and architecture. I found a lack of working templates whenever I started my AWS journey, and I am hoping to group together some of my knowledge with this. My goal is to create various CloudFormation templates that can work as a jumping off point for some commonly-used infrastructure patterns. I have personally created and managed services in an enterprise setting using these technologies and I wanted these to be a golden path of sorts. I am also making YouTube videos to go along with some of the templates.

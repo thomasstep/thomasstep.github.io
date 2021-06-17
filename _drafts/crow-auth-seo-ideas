@@ -1,0 +1,8 @@
+- how to authenticate users with next.js
+- what is a jwt
+- what is oauth
+- what is openid connect
+- how to store a password
+- auth0 vs. crow authentication
+- crow authentication vs next-auth (is it easier)
+- crow users can be exported later when you grow out of crow (not trying to lock you in)
