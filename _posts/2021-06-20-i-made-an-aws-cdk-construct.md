@@ -1,0 +1,17 @@
+---
+layout: post
+title:  "I Made an AWS CDK Construct"
+author: Thomas
+tags: [ aws, dev, javascript, meta, ops, serverless ]
+description: Motivation and summary of build an AWS CDK Construct
+---
+
+A couple of weekends ago was finally the weekend that I wanted to sit down and devote time to learning the AWS CDK. Anyone that's followed my more recent blog posts knows that I do a lot with CloudFormation. I have no problem using CloudFormation, but I'm a coder at heart. Writing gobs of repetitive YAML is not near as attractive to me as thinking about dynamically generating the same YAML in a few lines of code, which is what I had been promised with the CDK. Lo and behold getting up and running with the CDK was easier than I thought it would be. My motivation for learning the CDK and the direct application of my knowledge was going to be a [side project called Crow Authentication](https://crowauth.com/) where I needed to spin up a simple API.
+
+Previously I have created [large CloudFormation templates and CodeBuild buildspecs](https://github.com/thomasstep/authentication-service) to handle building, deploying, and hosting my APIs. I noticed a similar pattern amongst those templates and project file structures though. I create a Lambda function per API route (as I believe minimizing code complexity in deployment packages best suits Lambda development) and I store the source for each Lambda in a file path corresponding to my API route. For example, the Lambda that serves `https://api.example.com/v1/library/authors` would like in the file `/v1/library/authors`. After I noticed this pattern, I wanted to try and abstract it out using the CDK.
+
+Since I have all the power of a programming language at my fingertips, determining the API routes would follow the file structure of the project. My goal was to take a similar path as Next.js and let the project's files determine the output of the API. The difference that I made was having one extra folder at the end of the file path that declared the HTTP method that a particular Lambda would handle. Using the previous example I wanted to be able to do something like `/v1/library/authors/get/` and `/v1/library/authors/post/` to explicitly tell the CDK which methods would be handled. Since I would be my first user, I knew that it wouldn't be all for naught and I started digging in.
+
+[Crow API was born.](https://github.com/thomasstep/crow-api) I actually named the project I originally wanted to use this CDK construct on after the construct itself, [Crow Authentication](https://crowauth.com/). After creating the CDK construct I was quickly able to spin up my endpoints and API for the authentication service and focus on coding instead of infrastructure. All of the API Gateway and Lambda integrations were abstracted out for me and I am really happy with the result of this tiny project.
+
+The Crow API CDK construct is available to install using [`npm install --save crow-api`](https://www.npmjs.com/package/crow-api). I have documented all of the relevant information needed to create and deploy an API based on your file system, and I hope that others can build and deploy APIs just as quickly as I am now. Feel free to use it and let me know of any feedback or suggestions in the comments or the GitHub issues. I am more than happy to help instruct anyone on how to use it.
