@@ -1,0 +1,24 @@
+I"L<p>I recently published my first <code class="language-plaintext highlighter-rouge">npm</code> package and it was easier than I thought it would be. I had a quick and dirty idea of a package that I wanted to exist but couldn’t find so I wrote some code to handle what I needed. I was my first customer before my package was even published. To test out my package locally I ran <code class="language-plaintext highlighter-rouge">npm link my-package</code> in another <code class="language-plaintext highlighter-rouge">Node</code> project that would be consuming my package. From there I was able to test my code and make sure everything functioned as intended.</p>
+
+<p>The next step was to publish. After two commands my package was live in the <code class="language-plaintext highlighter-rouge">npm</code> repository: <code class="language-plaintext highlighter-rouge">npm login</code> and <code class="language-plaintext highlighter-rouge">npm publish</code>. That’s it.</p>
+
+<p>There are some final words I wanted to say regarding my package’s <code class="language-plaintext highlighter-rouge">package.json</code>. There are four keys that I needed to pay attention to before I published my package and they were <code class="language-plaintext highlighter-rouge">main</code>, <code class="language-plaintext highlighter-rouge">keywords</code>, <code class="language-plaintext highlighter-rouge">files</code>, and <code class="language-plaintext highlighter-rouge">version</code>.</p>
+
+<h3 id="main"><code class="language-plaintext highlighter-rouge">main</code></h3>
+
+<p><code class="language-plaintext highlighter-rouge">main</code> represents the file path to the main <code class="language-plaintext highlighter-rouge">Javascript</code> code that is the package’s entry point. Running <code class="language-plaintext highlighter-rouge">npm init</code> defaults this to <code class="language-plaintext highlighter-rouge">index.js</code>, but my main file was in another folder and named file. The value for this key is a string representing a path from the root of the project to the entry point file.</p>
+
+<h3 id="keywords"><code class="language-plaintext highlighter-rouge">keywords</code></h3>
+
+<p><code class="language-plaintext highlighter-rouge">keywords</code> is solely for discoverability. It’s like SEO for <code class="language-plaintext highlighter-rouge">npm</code>. I found some other packages similar to mine and added some of their keywords so I would be grouped with their packages. The value for this key is an array of strings.</p>
+
+<h3 id="files"><code class="language-plaintext highlighter-rouge">files</code></h3>
+
+<p>I used <code class="language-plaintext highlighter-rouge">files</code> because I hosted other code in my package’s repo that I used to test it out. Using <code class="language-plaintext highlighter-rouge">files</code> tells <code class="language-plaintext highlighter-rouge">npm</code> specifically which files and paths should be included in the package. This helps keep the size in check. Dependency bloat is something that most <code class="language-plaintext highlighter-rouge">Javascript</code> developers know too much about. The value for <code class="language-plaintext highlighter-rouge">files</code> is an array of strings that represent files and paths that should be included.</p>
+
+<h3 id="version"><code class="language-plaintext highlighter-rouge">version</code></h3>
+
+<p><code class="language-plaintext highlighter-rouge">version</code> is incredibly important for publishing packages. To publish new changes for a package, I first needed to increment the version following <a href="https://semver.org/">semantic versioning</a>. The value for this key is a string representing the version as <code class="language-plaintext highlighter-rouge">major.minor.patch</code>.</p>
+
+<p>If you would like to see my package, it is hosted on <a href="https://www.npmjs.com/package/crow-api"><code class="language-plaintext highlighter-rouge">npm</code> as <code class="language-plaintext highlighter-rouge">crow-api</code></a> and the <a href="https://github.com/thomasstep/crow-api">code is on GitHub</a>.</p>
+:ET

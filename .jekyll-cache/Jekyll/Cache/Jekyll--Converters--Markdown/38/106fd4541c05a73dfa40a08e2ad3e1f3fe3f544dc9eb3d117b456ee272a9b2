@@ -1,0 +1,30 @@
+I"�<p>I recently stumbled into a problem while deploying a site on Vercel with Next.js, and I could not find any straightforward solutions to exactly what I was experiencing. The error looked something like this.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>17:35:05.422  	Could not find files <span class="k">for</span> /_polyfills <span class="k">in</span> .next/build-manifest.json
+17:35:05.428  	Unhandled error during request: Error: Minified React error <span class="c">#321; visit https://reactjs.org/docs/error-decoder.html?invariant=321 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.</span>
+17:35:05.428  	    at Z <span class="o">(</span>/vercel/xxxxxxxx/.next/serverless/pages/about.js:5281:404<span class="o">)</span>
+17:35:05.428  	    at Object.module.exports.xlpu.exports.useState <span class="o">(</span>/vercel/xxxxxxxx/.next/serverless/pages/about.js:5287:277<span class="o">)</span>
+17:35:05.428  	    at Link <span class="o">(</span>/vercel/xxxxxxxx/.next/serverless/pages/about.js:2086:50<span class="o">)</span>
+17:35:05.428  	    at d <span class="o">(</span>/vercel/xxxxxxxx/node_modules/react-dom/cjs/react-dom-server.node.production.min.js:36:498<span class="o">)</span>
+17:35:05.428  	    at <span class="nv">$a</span> <span class="o">(</span>/vercel/xxxxxxxx/node_modules/react-dom/cjs/react-dom-server.node.production.min.js:39:16<span class="o">)</span>
+17:35:05.428  	    at a.b.render <span class="o">(</span>/vercel/xxxxxxxx/node_modules/react-dom/cjs/react-dom-server.node.production.min.js:44:476<span class="o">)</span>
+17:35:05.428  	    at a.b.read <span class="o">(</span>/vercel/xxxxxxxx/node_modules/react-dom/cjs/react-dom-server.node.production.min.js:44:18<span class="o">)</span>
+17:35:05.428  	    at renderToString <span class="o">(</span>/vercel/xxxxxxxx/node_modules/react-dom/cjs/react-dom-server.node.production.min.js:54:364<span class="o">)</span>
+17:35:05.428  	    at render <span class="o">(</span>/vercel/xxxxxxxx/node_modules/next/dist/next-server/server/render.js:3:298<span class="o">)</span>
+17:35:05.428  	    at Object.renderPage <span class="o">(</span>/vercel/xxxxxxxx/node_modules/next/dist/next-server/server/render.js:46:1020<span class="o">)</span>
+17:35:05.429  	Error occurred prerendering page <span class="s2">"/about"</span><span class="nb">.</span> Read more: https://err.sh/next.js/prerender-error
+17:35:05.429  	Error: Minified React error <span class="c">#321; visit https://reactjs.org/docs/error-decoder.html?invariant=321 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.</span>
+17:35:05.429  	    at Z <span class="o">(</span>/vercel/xxxxxxxx/.next/serverless/pages/about.js:5281:404<span class="o">)</span>
+17:35:05.429  	    at Object.module.exports.xlpu.exports.useState <span class="o">(</span>/vercel/xxxxxxxx/.next/serverless/pages/about.js:5287:277<span class="o">)</span>
+17:35:05.429  	    at Link <span class="o">(</span>/vercel/xxxxxxxx/.next/serverless/pages/about.js:2086:50<span class="o">)</span>
+17:35:05.429  	    at d <span class="o">(</span>/vercel/xxxxxxxx/node_modules/react-dom/cjs/react-dom-server.node.production.min.js:36:498<span class="o">)</span>
+17:35:05.429  	    at <span class="nv">$a</span> <span class="o">(</span>/vercel/xxxxxxxx/node_modules/react-dom/cjs/react-dom-server.node.production.min.js:39:16<span class="o">)</span>
+17:35:05.429  	    at a.b.render <span class="o">(</span>/vercel/xxxxxxxx/node_modules/react-dom/cjs/react-dom-server.node.production.min.js:44:476<span class="o">)</span>
+17:35:05.429  	    at a.b.read <span class="o">(</span>/vercel/xxxxxxxx/node_modules/react-dom/cjs/react-dom-server.node.production.min.js:44:18<span class="o">)</span>
+17:35:05.429  	    at renderToString <span class="o">(</span>/vercel/xxxxxxxx/node_modules/react-dom/cjs/react-dom-server.node.production.min.js:54:364<span class="o">)</span>
+17:35:05.429  	    at render <span class="o">(</span>/vercel/xxxxxxxx/node_modules/next/dist/next-server/server/render.js:3:298<span class="o">)</span>
+17:35:05.429  	    at Object.renderPage <span class="o">(</span>/vercel/xxxxxxxx/node_modules/next/dist/next-server/server/render.js:46:1020<span class="o">)</span>
+</code></pre></div></div>
+
+<p>There were posts talking about the Minified React error #321 at the top of the logs and other answers talking about adding a <code class="language-plaintext highlighter-rouge">build-manifest.json</code> with an empty object to troubleshoot locally. None of these solved my problem. While debugging this I noticed that I had my <code class="language-plaintext highlighter-rouge">node_modules</code> stored in git, which I normally don’t do. I ran <code class="language-plaintext highlighter-rouge">rm -r node_modules</code> to delete the folder, added it to my <code class="language-plaintext highlighter-rouge">.gitignore</code>, and reinstalled. I was not meaning to solve my problem, but this is actually what did the trick. My <code class="language-plaintext highlighter-rouge">package-lock.json</code> had a diff in git for loads of changes. I am not entirely sure what happened but my guess is that my <code class="language-plaintext highlighter-rouge">package-lock.json</code> was forcing the build process in Vercel to use outdated package versions, which somehow caused my errors. There is a ton that I do not know about <code class="language-plaintext highlighter-rouge">package-lock</code>, but it has actually sparked some curiousity in me before with the integrity checks that it makes. That’s a topic for another day though. Hopefully, this can help you solve your problem quicker since I could personally not find anything better already out there.</p>
+:ET

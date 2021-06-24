@@ -1,0 +1,180 @@
+I"#><p>I wanted to publish my opinionated <code class="language-plaintext highlighter-rouge">git</code> workflow when it comes to writing features and handling <code class="language-plaintext highlighter-rouge">git</code> commit history. I hope that someone can gain a new set of <code class="language-plaintext highlighter-rouge">git</code> commands or even adopt my workflow out of this. This workflow is assuming that the repo is remotely hosted (i.e. GitHub) and that the team working on the code base uses feature branches and pull requests to merge in new code.</p>
+
+<p>I start my work on the <code class="language-plaintext highlighter-rouge">main</code> branch and running <code class="language-plaintext highlighter-rouge">git fetch</code> and <code class="language-plaintext highlighter-rouge">git pull origin main</code>. This updates my main branch and gives me any updates that have been made in the remote repo that I do not already see. Next comes the branching with <code class="language-plaintext highlighter-rouge">git checkout -b feature/my-feature</code>. As I am working on my feature, I make commits. Like, a lot of commits. I used to save my video games anytime I did something good, so why should I not save my work if it gets me closer to acceptance criteria? I make sure the commit messages are organized and understandable to me. The reason for this is because I might need to roll back to a previously good state and I want to make it easy on my future self to find where that is.</p>
+
+<p>After completing and polishing my work I checkout <code class="language-plaintext highlighter-rouge">main</code> and pull it from remote to update it, then I run a rebase command <code class="language-plaintext highlighter-rouge">git rebase -i main</code>. In the rebase, I squash all of my commits into a single commit and fix any conflicts as they arise. Using this strategy, I limit the commit clutter in my pull request and <code class="language-plaintext highlighter-rouge">main</code>’s history.</p>
+
+<p>After polishing everything up, I make a final push (might have to be a force push) and create a pull request. If there are suggested changes for the code that come as suggestions during the pull request, then I make individual commits for each change and push. Don’t rebase after creating a pull request. Rebasing commits after a pull request has been made or others are using a branch can make merge conflicts difficult to resolve because rebasing is rewriting commit history. Not to mention, it doesn’t look great when I have to force push updates.</p>
+
+<p>Here is what that looks like in a flow chart:</p>
+
+<p><img src="/assets/img/git-workflow.png" alt="Git workflow with rebasing" /></p>
+
+<p>Rebasing could potentially be a blog post in and of itself, but I’ll try to condense it down quickly. When we rebase a branch, we are taking the commits we have added since the last common commit and pasting them on top of the branch we are rebasing off of. If the branch we are rebasing off of is the same one we originally branched off of, there is effectively no change. The problems come in when we rebase onto a branch with different commits than ours because there are potential conflicts. First I will walk through a rebase on a branch with no conflicts, then I’ll walk through a rebase with conflicts. The setup I will be using to demo this is a brand new <code class="language-plaintext highlighter-rouge">git</code> repo with one file and one commit on the <code class="language-plaintext highlighter-rouge">main</code> branch to start with.</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git branch
+<span class="k">*</span> main
+<span class="nv">$ </span><span class="nb">ls
+</span>test.txt
+<span class="nv">$ </span><span class="nb">cat </span>test.txt
+this
+is
+a
+<span class="nb">test
+</span>file
+</code></pre></div></div>
+
+<p>First comes the branching and editing of commits</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git checkout <span class="nt">-b</span> feature/add-text
+Switched to a new branch <span class="s1">'feature/add-text'</span>
+<span class="nv">$ </span><span class="nb">echo</span> <span class="s2">"new"</span> <span class="o">&gt;&gt;</span> test.txt
+<span class="nv">$ </span>git add <span class="nb">.</span>
+<span class="nv">$ </span>git commit <span class="nt">-m</span> <span class="s2">"Added the word 'new'"</span>
+<span class="o">[</span>feature/add-text 7a6c68b] Added the word <span class="s1">'new'</span>
+ 1 file changed, 1 insertion<span class="o">(</span>+<span class="o">)</span>
+<span class="nv">$ </span><span class="nb">echo</span> <span class="s2">"text"</span> <span class="o">&gt;&gt;</span> test.txt
+<span class="nv">$ </span>git add <span class="nb">.</span>
+<span class="nv">$ </span>git commit <span class="nt">-m</span> <span class="s2">"Added the word 'text'"</span>
+<span class="o">[</span>feature/add-text 48392c2] added the word <span class="s1">'text'</span>
+ 1 file changed, 1 insertion<span class="o">(</span>+<span class="o">)</span>
+<span class="nv">$ </span><span class="nb">cat </span>test.txt
+this
+is
+a
+<span class="nb">test
+</span>file
+new
+text
+</code></pre></div></div>
+
+<p>Now I have two commits on my feature branch and my feature is complete, so I will rebase.</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git rebase <span class="nt">-i</span> main
+</code></pre></div></div>
+
+<p>After running the rebase command, I am faced with some text in my default <code class="language-plaintext highlighter-rouge">git</code> text editor. (Run <code class="language-plaintext highlighter-rouge">git config --global core.editor</code> to see what the is. If nothing is returned, <code class="language-plaintext highlighter-rouge">git</code> uses <code class="language-plaintext highlighter-rouge">vi</code> as the default editor. We will need to use common <code class="language-plaintext highlighter-rouge">vi</code> commands from here on out to alter, save, and exit rebase’s interactive prompts.)</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pick 7a6c68b Added the word <span class="s1">'new'</span>
+pick 48392c2 Added the word <span class="s1">'text'</span>
+
+<span class="c"># Rebase 3427361..48392c2 onto 3427361 (2 commands)</span>
+<span class="c">#</span>
+<span class="c"># Commands:</span>
+<span class="c"># p, pick &lt;commit&gt; = use commit</span>
+<span class="c"># r, reword &lt;commit&gt; = use commit, but edit the commit message</span>
+<span class="c"># e, edit &lt;commit&gt; = use commit, but stop for amending</span>
+<span class="c"># s, squash &lt;commit&gt; = use commit, but meld into previous commit</span>
+<span class="c"># f, fixup &lt;commit&gt; = like "squash", but discard this commit's log message</span>
+<span class="c"># x, exec &lt;command&gt; = run command (the rest of the line) using shell</span>
+<span class="c"># b, break = stop here (continue rebase later with 'git rebase --continue')</span>
+<span class="c"># d, drop &lt;commit&gt; = remove commit</span>
+<span class="c"># l, label &lt;label&gt; = label current HEAD with a name</span>
+<span class="c"># t, reset &lt;label&gt; = reset HEAD to a label</span>
+<span class="c"># m, merge [-C &lt;commit&gt; | -c &lt;commit&gt;] &lt;label&gt; [# &lt;oneline&gt;]</span>
+<span class="c"># .       create a merge commit using the original merge commit's</span>
+<span class="c"># .       message (or the oneline, if no original merge commit was</span>
+<span class="c"># .       specified). Use -c &lt;commit&gt; to reword the commit message.</span>
+<span class="c">#</span>
+<span class="c"># These lines can be re-ordered; they are executed from top to bottom.</span>
+<span class="c">#</span>
+<span class="c"># If you remove a line here THAT COMMIT WILL BE LOST.</span>
+<span class="c">#</span>
+<span class="c"># However, if you remove everything, the rebase will be aborted.</span>
+<span class="c">#</span>
+</code></pre></div></div>
+
+<p>To keep this article to a decent length, what I want to do is squash all commits after my first commit by changing <code class="language-plaintext highlighter-rouge">pick</code> to <code class="language-plaintext highlighter-rouge">s</code> or <code class="language-plaintext highlighter-rouge">squash</code>. This is what I almost always do although there are numerous options and routes to take as you can see. There are tutorials out there that go over rebase and these options in length. When I’m done, the file will look like the following.</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pick 7a6c68b Added the word <span class="s1">'new'</span>
+s 48392c2 Added the word <span class="s1">'text'</span>
+</code></pre></div></div>
+
+<p>After saving and quitting <code class="language-plaintext highlighter-rouge">vi</code> (<code class="language-plaintext highlighter-rouge">:wq</code>), I am faced with yet another file.</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># This is a combination of 2 commits.</span>
+<span class="c"># This is the 1st commit message:</span>
+
+Added the word <span class="s1">'new'</span>
+
+<span class="c"># This is the commit message #2:</span>
+
+Added the word <span class="s1">'text'</span>
+
+<span class="c"># Please enter the commit message for your changes. Lines starting</span>
+<span class="c"># with '#' will be ignored, and an empty message aborts the commit.</span>
+<span class="c">#</span>
+<span class="c"># Date:      Mon Jan 25 17:29:34 2021 -0600</span>
+<span class="c">#</span>
+<span class="c"># interactive rebase in progress; onto 3427361</span>
+<span class="c"># Last commands done (2 commands done):</span>
+<span class="c">#    pick 7a6c68b Added the word 'new'</span>
+<span class="c">#    squash 48392c2 Added the word 'text'</span>
+<span class="c"># No commands remaining.</span>
+<span class="c"># You are currently rebasing branch 'feature/add-text' on '3427361'.</span>
+<span class="c">#</span>
+<span class="c"># Changes to be committed:</span>
+<span class="c"># modified:   test.txt</span>
+<span class="c">#</span>
+</code></pre></div></div>
+
+<p>In this file, I have the option of altering the commit message. Since I am squashing down to one commit, all of the squashed commit messages and the original commit message are shown in this file. Here we can change to file to whatever we want and any text present when the file is saved and quit will become to new commit’s message. My file looks like this before saving and quitting.</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Added the words <span class="s1">'new'</span> and <span class="s1">'text'</span>
+</code></pre></div></div>
+
+<p>After saving and quitting, I am brought back to the terminal.</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git rebase <span class="nt">-i</span> main
+<span class="o">[</span>detached HEAD fa7c054] Added the words <span class="s1">'new'</span> and <span class="s1">'text'</span>
+ Date: Mon Jan 25 17:29:34 2021 <span class="nt">-0600</span>
+ 1 file changed, 2 insertions<span class="o">(</span>+<span class="o">)</span>
+Successfully rebased and updated refs/heads/feature/add-text.
+</code></pre></div></div>
+
+<p>Now is when I would make my final push and create a pull request for my feature branch.</p>
+
+<p>A rebase with conflicts will look slightly different and require different <code class="language-plaintext highlighter-rouge">git</code> commands. I’ll set up my feature branch with the same file, but this time, my <code class="language-plaintext highlighter-rouge">main</code> branch will have had a commit added onto it with new changes to the same file. <code class="language-plaintext highlighter-rouge">main</code>’s <code class="language-plaintext highlighter-rouge">test.txt</code> will look like the following.</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>this
+is
+a
+<span class="nb">test
+</span>file
+this is new text from main
+</code></pre></div></div>
+
+<p>When I run the rebase command, the first screen that pops up will be the same as before, so I will perform the same actions. However, when I save and quit the screen, I run into new output in the terminal.</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git rebase <span class="nt">-i</span> main
+Auto-merging test.txt
+CONFLICT <span class="o">(</span>content<span class="o">)</span>: Merge conflict <span class="k">in </span>test.txt
+error: could not apply 9a31390... Added the word <span class="s1">'new'</span>
+Resolve all conflicts manually, mark them as resolved with
+<span class="s2">"git add/rm &lt;conflicted_files&gt;"</span>, <span class="k">then </span>run <span class="s2">"git rebase --continue"</span><span class="nb">.</span>
+You can instead skip this commit: run <span class="s2">"git rebase --skip"</span><span class="nb">.</span>
+To abort and get back to the state before <span class="s2">"git rebase"</span>, run <span class="s2">"git rebase --abort"</span><span class="nb">.</span>
+Could not apply 9a31390... Added the word <span class="s1">'new'</span>
+</code></pre></div></div>
+
+<p>I’ll need to solve the merge conflicts and either run <code class="language-plaintext highlighter-rouge">git add .</code> then <code class="language-plaintext highlighter-rouge">git rebase --continue</code> to finish the rebase or use one of the other options. I typically run with the <code class="language-plaintext highlighter-rouge">--continue</code> flag unless something bad happened in which case I run <code class="language-plaintext highlighter-rouge">git rebase --abort</code> and start all over again. For this demo, I fixed the merge conflicts by allowing both lines through.</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>this
+is
+a
+<span class="nb">test
+</span>file
+this is new text from main
+new
+</code></pre></div></div>
+
+<p>After adding the file to <code class="language-plaintext highlighter-rouge">git</code> and continuing the rebase, I come up with a screen that asks me to enter a commit message for the commit that I just rebased.</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Added the word <span class="s1">'new'</span>
+
+<span class="c"># Please enter the commit message for your changes. Lines starting</span>
+<span class="c"># with '#' will be ignored, and an empty message aborts the commit.</span>
+<span class="c">#</span>
+<span class="c"># interactive rebase in progress; onto 9fed945</span>
+<span class="c"># Last command done (1 command done):</span>
+<span class="c">#    pick 9a31390 Added the word 'new'</span>
+<span class="c"># Next command to do (1 remaining command):</span>
+<span class="c">#    squash 000a13a Added the word 'text'</span>
+<span class="c"># You are currently rebasing branch 'feature/add-text' on '9fed945'.</span>
+<span class="c">#</span>
+<span class="c"># Changes to be committed:</span>
+<span class="c"># modified:   test.txt</span>
+<span class="c">#</span>
+</code></pre></div></div>
+
+<p>A simple save and quit keeps me moving along. The next screen is one that we have seen before for combining the two commit messages that will become one commit. I perform the same actions, save, and quit. The rebase is now complete, so I will make my final push and create a pull request for my feature branch.</p>
+
+:ET

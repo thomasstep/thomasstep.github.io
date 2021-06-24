@@ -1,0 +1,137 @@
+I"�I<p>For the past month or so I’ve been working on a new service that offers <a href="https://crowauth.com/">authentication as an API</a> and I started needing user input on the front end. Just about every web app nowadays lets a user enter some sort of information that is then used to make API calls on their behalf. Pulling that data out of the input forms can sometimes be a little tricky. One of my use cases was allowing a user to enter their credentials before signing them in.</p>
+
+<p>I have posted previously about <a href="/blog/making-a-form-in-material-ui-with-textfield-and-button">creating forms with Material UI components</a>, but I did not want to rely on Material UI for this project. Instead, I shifted to using simple HTML and Tailwind CSS for my styling. The idea behind grabbing information from the user using React is similar to the previous post. I used two <code class="language-plaintext highlighter-rouge">input</code>s and one <code class="language-plaintext highlighter-rouge">button</code> with some React listeners. Whenever either of the <code class="language-plaintext highlighter-rouge">input</code> fields changes (which means the user entered information) I update a state variable to keep track of that data. Then when the user clicks the <code class="language-plaintext highlighter-rouge">button</code>, I already have the entered information stored in state to be used in the <code class="language-plaintext highlighter-rouge">button</code>s <code class="language-plaintext highlighter-rouge">onClick</code> handler. The following is the barebones HTML, but I will add some Tailwind styling in just a second.</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="k">default</span> <span class="kd">function</span> <span class="nx">SigninPage</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="p">[</span><span class="nx">signInEmail</span><span class="p">,</span> <span class="nx">setSignInEmail</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="dl">''</span><span class="p">);</span>
+  <span class="kd">const</span> <span class="p">[</span><span class="nx">signInPassword</span><span class="p">,</span> <span class="nx">setSignInPassword</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="dl">''</span><span class="p">);</span>
+  <span class="kd">const</span> <span class="p">[</span><span class="nx">errorMessage</span><span class="p">,</span> <span class="nx">setErrorMessage</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="dl">''</span><span class="p">);</span>
+
+  <span class="kd">function</span> <span class="nx">handleSignInEmailFieldChange</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">event</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span>
+    <span class="nx">setSignInEmail</span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="kd">function</span> <span class="nx">handleSignInPasswordFieldChange</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">event</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span>
+    <span class="nx">setSignInPassword</span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="k">async</span> <span class="kd">function</span> <span class="nx">handleSignIn</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">event</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span>
+    <span class="nx">setErrorMessage</span><span class="p">(</span><span class="dl">''</span><span class="p">);</span>
+
+    <span class="k">try</span> <span class="p">{</span>
+      <span class="c1">// Sign In logic using signInEmail and signInPassword state</span>
+      <span class="nx">setErrorMessage</span><span class="p">(</span><span class="dl">'</span><span class="s1">There was an error signing in</span><span class="dl">'</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+      <span class="c1">// Remediation logic</span>
+      <span class="nx">setErrorMessage</span><span class="p">(</span><span class="dl">'</span><span class="s1">There was an error signing in</span><span class="dl">'</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="k">return</span><span class="p">(</span>
+    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>Email address<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">input</span>
+        <span class="na">type</span><span class="p">=</span><span class="s">"email"</span>
+        <span class="na">placeholder</span><span class="p">=</span><span class="s">""</span>
+        <span class="na">value</span><span class="p">=</span><span class="si">{</span><span class="nx">signInEmail</span><span class="si">}</span>
+        <span class="na">onChange</span><span class="p">=</span><span class="si">{</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">handleSignInEmailFieldChange</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span><span class="si">}</span>
+      <span class="p">/&gt;</span>
+      <span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>Password<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">input</span>
+        <span class="na">type</span><span class="p">=</span><span class="s">"password"</span>
+        <span class="na">placeholder</span><span class="p">=</span><span class="s">""</span>
+        <span class="na">value</span><span class="p">=</span><span class="si">{</span><span class="nx">signInPassword</span><span class="si">}</span>
+        <span class="na">onChange</span><span class="p">=</span><span class="si">{</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">handleSignInPasswordFieldChange</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span><span class="si">}</span>
+      <span class="p">/&gt;</span>
+      <span class="p">&lt;</span><span class="nt">button</span>
+        <span class="na">onClick</span><span class="p">=</span><span class="si">{</span><span class="nx">handleSignIn</span><span class="si">}</span>
+      <span class="p">&gt;</span>
+        Sign In
+      <span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
+        <span class="si">{</span> <span class="nx">errorMessage</span> <span class="si">}</span>
+      <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>This should handle all of the logic involved with grabbing and using input given by the user, but anyone who tries to use this will probably not like the outcome. I’m going to add some Tailwind styling, but feel free to run with it from here with your own styling.</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="k">default</span> <span class="kd">function</span> <span class="nx">SigninPage</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="p">[</span><span class="nx">signInEmail</span><span class="p">,</span> <span class="nx">setSignInEmail</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="dl">''</span><span class="p">);</span>
+  <span class="kd">const</span> <span class="p">[</span><span class="nx">signInPassword</span><span class="p">,</span> <span class="nx">setSignInPassword</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="dl">''</span><span class="p">);</span>
+  <span class="kd">const</span> <span class="p">[</span><span class="nx">loading</span><span class="p">,</span> <span class="nx">setLoading</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
+  <span class="kd">const</span> <span class="p">[</span><span class="nx">errorMessage</span><span class="p">,</span> <span class="nx">setErrorMessage</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="dl">''</span><span class="p">);</span>
+
+  <span class="kd">function</span> <span class="nx">handleSignInEmailFieldChange</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">event</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span>
+    <span class="nx">setSignInEmail</span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="kd">function</span> <span class="nx">handleSignInPasswordFieldChange</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">event</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span>
+    <span class="nx">setSignInPassword</span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="k">async</span> <span class="kd">function</span> <span class="nx">handleSignIn</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">event</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span>
+    <span class="nx">setErrorMessage</span><span class="p">(</span><span class="dl">''</span><span class="p">);</span>
+    <span class="nx">setLoading</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
+
+    <span class="k">try</span> <span class="p">{</span>
+      <span class="c1">// Sign In logic using signInEmail and signInPassword state</span>
+      <span class="nx">setErrorMessage</span><span class="p">(</span><span class="dl">'</span><span class="s1">There was an error signing in</span><span class="dl">'</span><span class="p">);</span>
+      <span class="nx">setLoading</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+      <span class="c1">// Remediation logic</span>
+      <span class="nx">setErrorMessage</span><span class="p">(</span><span class="dl">'</span><span class="s1">There was an error signing in</span><span class="dl">'</span><span class="p">);</span>
+      <span class="nx">setLoading</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="k">return</span><span class="p">(</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">className</span><span class="p">=</span><span class="s">"flex flex-col items-center justify-center text-center"</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">className</span><span class="p">=</span><span class="s">"lg:w-2/5 md:w-3/5 w-4/5"</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">label</span> <span class="na">className</span><span class="p">=</span><span class="s">"mt-6"</span><span class="p">&gt;</span>Email address<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">input</span>
+          <span class="na">type</span><span class="p">=</span><span class="s">"email"</span>
+          <span class="na">className</span><span class="p">=</span><span class="s">"mt-1 w-full rounded-xl border-gray-300 shadow-sm focus:border-purple-500 focus:ring focus:ring-purple-500 focus:ring-opacity-50"</span>
+          <span class="na">placeholder</span><span class="p">=</span><span class="s">""</span>
+          <span class="na">value</span><span class="p">=</span><span class="si">{</span><span class="nx">signInEmail</span><span class="si">}</span>
+          <span class="na">onChange</span><span class="p">=</span><span class="si">{</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">handleSignInEmailFieldChange</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span><span class="si">}</span>
+        <span class="p">/&gt;</span>
+        <span class="p">&lt;</span><span class="nt">label</span> <span class="na">className</span><span class="p">=</span><span class="s">"mt-6"</span><span class="p">&gt;</span>Password<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">input</span>
+          <span class="na">type</span><span class="p">=</span><span class="s">"password"</span>
+          <span class="na">className</span><span class="p">=</span><span class="s">"mt-1 w-full rounded-xl border-gray-300 shadow-sm focus:border-purple-500 focus:ring focus:ring-purple-500 focus:ring-opacity-50"</span>
+          <span class="na">placeholder</span><span class="p">=</span><span class="s">""</span>
+          <span class="na">value</span><span class="p">=</span><span class="si">{</span><span class="nx">signInPassword</span><span class="si">}</span>
+          <span class="na">onChange</span><span class="p">=</span><span class="si">{</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">handleSignInPasswordFieldChange</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span><span class="si">}</span>
+        <span class="p">/&gt;</span>
+        <span class="p">&lt;</span><span class="nt">button</span>
+          <span class="na">className</span><span class="p">=</span><span class="si">{</span><span class="s2">`
+            bg-white mt-6 border rounded-xl border-gray-300 p-2 hover:bg-purple-500 hover:text-white
+            </span><span class="p">${</span>
+              <span class="nx">loading</span> <span class="p">?</span> <span class="dl">"</span><span class="s2">bg-purple-500 text-white animate-pulse</span><span class="dl">"</span> <span class="p">:</span> <span class="dl">""</span>
+            <span class="p">}</span><span class="s2">
+          `</span><span class="si">}</span>
+          <span class="na">disabled</span><span class="p">=</span><span class="si">{</span><span class="nx">loading</span><span class="si">}</span>
+          <span class="na">onClick</span><span class="p">=</span><span class="si">{</span><span class="nx">handleSignIn</span><span class="si">}</span>
+        <span class="p">&gt;</span>
+          Sign In
+        <span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">p</span> <span class="na">className</span><span class="p">=</span><span class="s">"text-red-900"</span><span class="p">&gt;</span>
+          <span class="si">{</span> <span class="nx">errorMessage</span> <span class="si">}</span>
+        <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>The styling on the outermost <code class="language-plaintext highlighter-rouge">div</code> centers and aligns everything in a column. The second <code class="language-plaintext highlighter-rouge">div</code> puts a width constraint on the fields for different screen sizes. The <code class="language-plaintext highlighter-rouge">label</code>s are given top margin. The <code class="language-plaintext highlighter-rouge">input</code> fields are styled with some color around the edges whenever they are in focus. The final <code class="language-plaintext highlighter-rouge">p</code> containing the <code class="language-plaintext highlighter-rouge">errorMessage</code> will now show the text in red. Lastly, the <code class="language-plaintext highlighter-rouge">button</code> is styled to show color whenever it is hovered or focused with some extra styling after it is clicked. The <code class="language-plaintext highlighter-rouge">loading</code> state is turned on whenever the <code class="language-plaintext highlighter-rouge">button</code> is clicked inside of <code class="language-plaintext highlighter-rouge">handleSignIn</code> and turned off again whenever the sign in logic completes. While the page is waiting on the sign in logic, the button will remain colored and also pulse to show that user that something is happening behind the scenes. For more information about the classes, please refer to <a href="https://tailwindcss.com/docs">Tailwind’s documentation</a>.</p>
+:ET

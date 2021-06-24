@@ -1,0 +1,101 @@
+I"�!<p>Lately, I have been playing around with AWS SSM Parameter Store, and I have found a fun way of creating and referencing parameters through CloudFormation.
+Parameters help me stay organized throughout different environments by unifying all of my CloudFormation “variables” in one place.
+I populate my parameters based on the environment I am in and then use those parameters in other templates that create infrastructure.
+Of course doing this means that order matters; the Parameter Store CloudFormation template needs to be run before templates that reference those parameters.
+I create all my stacks through CodePipeline, so I can define the order that they are created and updated, which means I always know my parameters are present before I use them in subsequent templates.
+The strategies that I use can also be applied outside of CI/CD using CodePipeline as long as you make sure that your parameters template runs before you reference them in other templates.</p>
+
+<p>The first example I want to walk through is populating parameters based on environment.
+The way I like to go about doing this is with CloudFormation Mappings.</p>
+
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">AWSTemplateFormatVersion</span><span class="pi">:</span> <span class="s">2010-09-09</span>
+<span class="na">Description</span><span class="pi">:</span> <span class="s">Adds parameters to systems manager</span>
+<span class="na">Parameters</span><span class="pi">:</span>
+  <span class="na">AWSEnvironment</span><span class="pi">:</span>
+    <span class="na">Type</span><span class="pi">:</span> <span class="s">String</span>
+    <span class="na">AllowedValues</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">dev</span>
+      <span class="pi">-</span> <span class="s">preprod</span>
+      <span class="pi">-</span> <span class="s">prod</span>
+
+<span class="na">Mappings</span><span class="pi">:</span>
+  <span class="na">Environment</span><span class="pi">:</span>
+    <span class="na">dev</span><span class="pi">:</span>
+      <span class="na">DBHost</span><span class="pi">:</span> <span class="s2">"</span><span class="s">dev.db"</span>
+      <span class="s">.</span>
+      <span class="s">.</span>
+      <span class="s">.</span>
+
+    <span class="na">preprod</span><span class="pi">:</span>
+      <span class="na">DBHost</span><span class="pi">:</span> <span class="s2">"</span><span class="s">preprod.db"</span>
+      <span class="s">.</span>
+      <span class="s">.</span>
+      <span class="s">.</span>
+
+    <span class="na">prod</span><span class="pi">:</span>
+      <span class="na">DBHost</span><span class="pi">:</span> <span class="s2">"</span><span class="s">prod.db"</span>
+      <span class="s">.</span>
+      <span class="s">.</span>
+      <span class="s">.</span>
+
+<span class="na">Resources</span><span class="pi">:</span>
+  <span class="na">AWSEnvironmentParameter</span><span class="pi">:</span>
+    <span class="na">Type</span><span class="pi">:</span> <span class="s">AWS::SSM::Parameter</span>
+    <span class="na">Properties</span><span class="pi">:</span>
+      <span class="na">Name</span><span class="pi">:</span> <span class="s">/awsEnvironment</span>
+      <span class="na">Description</span><span class="pi">:</span> <span class="s">Current AWS environment</span>
+      <span class="na">Tier</span><span class="pi">:</span> <span class="s">Standard</span>
+      <span class="na">Type</span><span class="pi">:</span> <span class="s">String</span>
+      <span class="na">Value</span><span class="pi">:</span> <span class="s">AWSEnvironment</span>
+
+  <span class="na">LogFirehoseParameter</span><span class="pi">:</span>
+    <span class="na">Type</span><span class="pi">:</span> <span class="s">AWS::SSM::Parameter</span>
+    <span class="na">Properties</span><span class="pi">:</span>
+      <span class="na">Name</span><span class="pi">:</span> <span class="s">/dbHost</span>
+      <span class="na">Description</span><span class="pi">:</span> <span class="s">Database Host</span>
+      <span class="na">Tier</span><span class="pi">:</span> <span class="s">Standard</span>
+      <span class="na">Type</span><span class="pi">:</span> <span class="s">String</span>
+      <span class="na">Value</span><span class="pi">:</span> <span class="kt">!FindInMap</span> <span class="pi">[</span> <span class="nv">Environment</span><span class="pi">,</span> <span class="kt">!Ref</span> <span class="nv">AWSEnvironment</span><span class="pi">,</span> <span class="nv">DBHost</span> <span class="pi">]</span>
+</code></pre></div></div>
+
+<p>Hopefully it is easy enough to see what is happening here.
+Under <code class="language-plaintext highlighter-rouge">Mappings</code> I am predefining the values for my parameters.
+You can add as many mappings as you would like, which is what I was attempting to show with the extra <code class="language-plaintext highlighter-rouge">.</code>s.</p>
+
+<p>Next up is showing how to use the parameters we just created in other CloudFormation templates.</p>
+
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">AWSTemplateFormatVersion</span><span class="pi">:</span> <span class="s">2010-09-09</span>
+<span class="na">Parameters</span><span class="pi">:</span>
+  <span class="na">Env</span><span class="pi">:</span>
+    <span class="na">Type</span><span class="pi">:</span> <span class="s">AWS::SSM::Parameter::Value&lt;String&gt;</span>
+    <span class="na">Default</span><span class="pi">:</span> <span class="s">/awsEnvironment</span>
+  <span class="na">DBHost</span><span class="pi">:</span>
+    <span class="na">Type</span><span class="pi">:</span> <span class="s">AWS::SSM::Parameter::Value&lt;String&gt;</span>
+    <span class="na">Default</span><span class="pi">:</span> <span class="s">/dbHost</span>
+
+<span class="na">Resources</span><span class="pi">:</span>
+  <span class="na">MyLambdaFunction</span><span class="pi">:</span>
+    <span class="na">Type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">AWS::Lambda::Function'</span>
+    <span class="na">Properties</span><span class="pi">:</span>
+      <span class="s">.</span>
+      <span class="s">.</span>
+      <span class="s">.</span>
+      <span class="s">Environment</span><span class="pi">:</span>
+        <span class="na">Variables</span><span class="pi">:</span>
+          <span class="na">NODE_ENV</span><span class="pi">:</span> <span class="kt">!Ref</span> <span class="s">Env</span>
+          <span class="na">DB_HOST</span><span class="pi">:</span> <span class="kt">!Ref</span> <span class="s">DBHost</span>
+</code></pre></div></div>
+
+<p>The parameters from Parameter Store are passed into the Lambda CloudFormation template like any other parameters; however, the <code class="language-plaintext highlighter-rouge">Type</code> and <code class="language-plaintext highlighter-rouge">Default</code> properties of the CloudFormation parameters matter here.
+The <code class="language-plaintext highlighter-rouge">Type</code> is telling CloudFormation that the parameter input will be a value from SSM Parameter Store instead of a value that the user gives.
+The <code class="language-plaintext highlighter-rouge">Default</code> property is giving CloudFormation the name of the parameter from which we want to pull a value.
+The name here needs to coorespond to the <code class="language-plaintext highlighter-rouge">Name</code> property of the parameter in the Parameter Store template.
+I prefer to use a <code class="language-plaintext highlighter-rouge">Default</code> property here instead of passing (manually or otherwise) the Parameter Store name, so I never have to worry about what parameter the value actually came from since it is defined in my template.
+After you define the CloudFormation parameter, you can use the value like normal.
+In this example, I am passing the DB Host I set in Parameter Store to my Lambda as an environment variable.
+Now, if you ever need traceability into where a certain environment variable value came from, you can reference back to your templates, which can be version controlled.</p>
+
+<p>Like I said before I use this in conjunction with CodePipeline, which I think is a match made in heaven.
+My CodePipeline instance picks up my templates from a GitHub webhook that fires off at a push, builds the parameters stack, and updates the lambda stack.
+I can add parameters and then reference them in a template, and after a simple push, they show up in AWS.</p>
+:ET

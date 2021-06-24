@@ -1,0 +1,39 @@
+I"•<p>I had a need for an IAM User not too long ago and wanted to create a CloudFormation template instead of going through the console. I do not create IAM entities too often, so I figured that this would be a good time to cement my knowledge into a template. I wanted the user to have CLI access for some automation, which meant that I needed to also create an access key. While I was looking through the documentation for access keys I noticed an interesting field: <code class="language-plaintext highlighter-rouge">Serial</code>.</p>
+
+<p><code class="language-plaintext highlighter-rouge">Serial</code> is a field specific to CloudFormation that accepts an integer. If that integer is increased, the access key is rotated. This is a cool feature that I knew I wanted to test out.</p>
+
+<p>After creating an IAM User, I wanted to create an access key for that user based on a <code class="language-plaintext highlighter-rouge">Serial</code>, and after that access key was created, I wanted to store the credentials in a secret. Whenever the credentials needed to be rotated, it should be as simple as incrementing the <code class="language-plaintext highlighter-rouge">Serial</code> and grabbing the new credentials from the secret. Here is what I came up with.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">Parameters</span><span class="pi">:</span>
+  <span class="na">Serial</span><span class="pi">:</span>
+    <span class="na">Type</span><span class="pi">:</span> <span class="s">Number</span>
+    <span class="na">Description</span><span class="pi">:</span> <span class="s">Increment this to rotate credentials</span>
+
+<span class="na">Resources</span><span class="pi">:</span>
+  <span class="na">IamUser</span><span class="pi">:</span>
+    <span class="na">Type</span><span class="pi">:</span> <span class="s">AWS::IAM::User</span>
+    <span class="na">Properties</span><span class="pi">:</span> 
+      <span class="na">ManagedPolicyArns</span><span class="pi">:</span> 
+        <span class="pi">-</span> <span class="s">arn:aws:iam::aws:policy/AdministratorAccess</span>
+  <span class="na">AccessKey</span><span class="pi">:</span>
+    <span class="na">Type</span><span class="pi">:</span> <span class="s">AWS::IAM::AccessKey</span>
+    <span class="na">Properties</span><span class="pi">:</span> 
+      <span class="na">Serial</span><span class="pi">:</span> <span class="kt">!Ref</span> <span class="s">Serial</span>
+      <span class="na">Status</span><span class="pi">:</span> <span class="s">Active</span>
+      <span class="na">UserName</span><span class="pi">:</span> <span class="kt">!Ref</span> <span class="s">IamUser</span>
+  <span class="na">AccessKeySecret</span><span class="pi">:</span>
+    <span class="na">Type</span><span class="pi">:</span> <span class="s">AWS::SecretsManager::Secret</span>
+    <span class="na">Properties</span><span class="pi">:</span> 
+      <span class="na">Description</span><span class="pi">:</span> <span class="kt">!Sub</span> <span class="s2">"</span><span class="s">These</span><span class="nv"> </span><span class="s">are</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">credentials</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">IAM</span><span class="nv"> </span><span class="s">User</span><span class="nv"> </span><span class="s">${IamUser}"</span>
+      <span class="na">SecretString</span><span class="pi">:</span> <span class="kt">!Join</span>
+        <span class="pi">-</span> <span class="s2">"</span><span class="s">"</span>
+        <span class="pi">-</span> <span class="pi">-</span> <span class="s1">'</span><span class="s">{"AccessKeyId":"'</span>
+          <span class="pi">-</span> <span class="kt">!Ref</span> <span class="s">AccessKey</span>
+          <span class="pi">-</span> <span class="s1">'</span><span class="s">","SecretAccessKey":"'</span>
+          <span class="pi">-</span> <span class="kt">!GetAtt</span> <span class="s">AccessKey.SecretAccessKey</span>
+          <span class="pi">-</span> <span class="s1">'</span><span class="s">"}'</span>
+</code></pre></div></div>
+
+<p>This template is also available in my <a href="https://github.com/thomasstep/aws-cloudformation-reference/blob/21543313e993c2183c95846255a1fcfa350f9870/iam/iam-user.yml"><code class="language-plaintext highlighter-rouge">aws-cloudformation-reference</code> repository</a>. I also <a href="https://www.youtube.com/watch?v=hcEWgwP2xzk">made a video of me creating the template</a> in case the process of building and deploying something like this from scratch is of interest.</p>
+
+:ET

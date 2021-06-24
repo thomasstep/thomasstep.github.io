@@ -1,0 +1,19 @@
+I"�<p>A while ago I wanted to add functionality to a React page to do something when a user pressed the enter key on a Material UI <code class="language-plaintext highlighter-rouge">TextField</code>, and the solution I found involves capturing events. Of course, the events can be applied to other elements as well, but for my sake, I’ll use a <code class="language-plaintext highlighter-rouge">TextField</code> in the code snippets. I already had a <code class="language-plaintext highlighter-rouge">Button</code> set up to take action, but I wanted the same behavior when the enter key was pressed, which is fairly common web app behavior.</p>
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">&lt;</span><span class="nc">Button</span>
+  <span class="na">variant</span><span class="p">=</span><span class="s">"contained"</span>
+  <span class="na">onClick</span><span class="p">=</span><span class="si">{</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">doSomething</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span><span class="si">}</span>
+<span class="p">&gt;</span>
+  This button does something
+<span class="p">&lt;/</span><span class="nc">Button</span><span class="p">&gt;</span>
+</code></pre></div></div>
+
+<p>The <code class="language-plaintext highlighter-rouge">doSomething</code> function was the desired shared behavior. Setting up the same thing for <code class="language-plaintext highlighter-rouge">TextField</code> was much easier than I thought it would be.</p>
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">&lt;</span><span class="nc">TextField</span>
+  <span class="na">onKeyDown</span><span class="p">=</span><span class="si">{</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">(</span>
+    <span class="nx">e</span><span class="p">.</span><span class="nx">keyCode</span> <span class="o">===</span> <span class="mi">13</span> <span class="p">?</span> <span class="nx">doSomething</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">:</span> <span class="kc">null</span>
+  <span class="p">)</span><span class="si">}</span>
+<span class="p">/&gt;</span>
+</code></pre></div></div>
+
+<p>Now, I get the same behavior as clicking the <code class="language-plaintext highlighter-rouge">Button</code>. The <code class="language-plaintext highlighter-rouge">onKeyDown</code> event captures keyboard input and a <code class="language-plaintext highlighter-rouge">keyCode</code> of <code class="language-plaintext highlighter-rouge">13</code> means that the user pressed enter. There is more information about keycodes <a href="https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/keyCode">on the MDN Web Docs</a> if anyone would like to know more. One thing worth mentioning is that this only works when the <code class="language-plaintext highlighter-rouge">TextField</code> is being focused on by the user. Granted, that was my desired outcome, but it’s still something to be made aware of.</p>
+:ET

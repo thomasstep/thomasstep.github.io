@@ -1,0 +1,117 @@
+I"�4<p><strong>NOTE</strong>: If you want my list of commands and keystrokes, scroll down to the bottom. If you want to know more about my motivation behind switching to vim and compiling this list, read on.</p>
+
+<p>I like VS Code. I have nothing against it and I still use it from time to time. My VS Code setup used to have a color scheme, keybindings, linters, different syntax highlighting, and the like. Most people probably end up with something similar after using it for a while. Then one day my computer decided it didn’t want to start anymore. All of that was lost. I’m sure that there is a plugin that would have exported my settings and synced them across devices, but I didn’t want to set that up. When I got my new computer I felt like I was starting from ground zero and that I didn’t even know what software I needed to download first. I had wanted to give vim a try for a while. Since it has such a cult-like following, I figured there must be some redeeming qualities about it that I wanted to benefit from.</p>
+
+<p>My move was less about dissatisfaction with VS Code and more about wanting to learn something new. I had the chance to not download VS Code and force myself into using vim, so I did just that. I started by reading a few guides, referencing a few cheatsheets, and searching for commands whenever I needed them. While I had done this in the past, the difference this time around was that I couldn’t simply fall back on VS Code being there since I had never downloaded it. At the end of the day, the best way to learn is to throw yourself in the fire. I committed to only use vim and reference new keys as the need arose. Only using vim for a few days had me feeling pretty efficient with keystrokes and combinations.</p>
+
+<p>Learning vim was similar to when I learned German; I lived in Germany so I had no other choice. Similarly, I lived in vim-land now so I had no other choice than learn the commands. Language learning communities like to bring up the X most used words or something similar to kickstart a journey to fluency and that’s my motivation behind this list. I hope that by sharing my X most commonly used commands in vim, I can help kickstart someone else’s journey into vim-land. In addition to looking over the commands, I suggest using them today. If you truly want to learn something new, putting knowledge to good use is just as important as that knowledge.</p>
+
+<p>One final note I wanted to make about learning vim was windows and tabs. Windows and tabs made vim click for me as a reasonable alternative to a modern text editor. I realized that a majority of my time in VS Code was flipping through open tabs and leaving those tabs open to annoy myself later. Once I learned how I could view multiple files simultaneously in vim, I felt much more motivated to continue using it. In vim, there are two main ways to open multiple files being windows and tabs. Windows are tiled in the current screen and tabs are separated. I tend to open up to four windows in a tab before I start opening tabs. I also try to keep separate tabs open for different projects instead of cram too many windows on the same tab for different things. By keeping the number of windows to a max of four, I have found that I rarely need as many files open as I used to keep open in VS Code.</p>
+
+<p>There are also a few commands I listed about buffers. Windows are an open buffer. After a window is closed with <code class="language-plaintext highlighter-rouge">:q</code> they only disappear from memory if that was the last open window. Vim will keep track of any file that is opened through buffers. This means that we can reopen a recently opened file in a vim session by looking at the open buffers <code class="language-plaintext highlighter-rouge">:ls</code> and reopening the desired buffer in the current window <code class="language-plaintext highlighter-rouge">:#b</code>.</p>
+
+<p>I have had fun learning vim and I feel like I have completed a rite of passage of sorts by using it. If there are any particular components that you are interested in learning more about, feel free to drop me a line. Remember that this is just a starter list to vim commands. There are more intricate commands, but I omitted them for simplicity’s sake. Have fun learning!</p>
+
+<h3 id="movements">movements:</h3>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">h</code>, <code class="language-plaintext highlighter-rouge">j</code>, <code class="language-plaintext highlighter-rouge">k</code>, <code class="language-plaintext highlighter-rouge">l</code> for basic movement (you’ll get the hang of what moves which direction real quick)</li>
+  <li><code class="language-plaintext highlighter-rouge">0</code> moves to beginning of line</li>
+  <li><code class="language-plaintext highlighter-rouge">^</code> moves to first character on line</li>
+  <li><code class="language-plaintext highlighter-rouge">$</code> moves to end of line</li>
+  <li><code class="language-plaintext highlighter-rouge">g_</code> moves to last character on the line</li>
+  <li><code class="language-plaintext highlighter-rouge">gg</code> moves to top of file</li>
+  <li><code class="language-plaintext highlighter-rouge">G</code> moves to bottom of file</li>
+  <li><code class="language-plaintext highlighter-rouge">:#</code> moves to line #</li>
+  <li><code class="language-plaintext highlighter-rouge">#G</code> moves to line #</li>
+  <li><code class="language-plaintext highlighter-rouge">*</code> moves to the next occurrence of a word</li>
+  <li><code class="language-plaintext highlighter-rouge">#</code> moves to the previous occurrence of a word</li>
+  <li><code class="language-plaintext highlighter-rouge">f + character</code> moves to the next occurrence of the character</li>
+  <li><code class="language-plaintext highlighter-rouge">F + character</code> moves to the previous occurrence of the character</li>
+  <li><code class="language-plaintext highlighter-rouge">;</code> move to the next occurrence of the character last searched for using <code class="language-plaintext highlighter-rouge">f + character</code></li>
+  <li><code class="language-plaintext highlighter-rouge">,</code> move to the previous occurrence of the character last searched for using <code class="language-plaintext highlighter-rouge">f + character</code></li>
+  <li><code class="language-plaintext highlighter-rouge">/&lt;word&gt;</code> move to the next occurrence of the string in place of <code class="language-plaintext highlighter-rouge">&lt;word&gt;</code></li>
+  <li><code class="language-plaintext highlighter-rouge">n</code> move to the next occurrence of the string last searched for using <code class="language-plaintext highlighter-rouge">/&lt;word&gt;</code></li>
+  <li><code class="language-plaintext highlighter-rouge">N</code> move to the previous occurrence of the string last searched for using <code class="language-plaintext highlighter-rouge">/&lt;word&gt;</code></li>
+</ul>
+
+<h3 id="commands">commands:</h3>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">d</code> deletes</li>
+  <li><code class="language-plaintext highlighter-rouge">dd</code> deletes line</li>
+  <li><code class="language-plaintext highlighter-rouge">x</code> cuts</li>
+  <li><code class="language-plaintext highlighter-rouge">y</code> copies</li>
+  <li><code class="language-plaintext highlighter-rouge">p</code> pastes after cursor</li>
+  <li><code class="language-plaintext highlighter-rouge">P</code> pastes before cursor</li>
+  <li><code class="language-plaintext highlighter-rouge">i</code> inserts</li>
+  <li><code class="language-plaintext highlighter-rouge">I</code> inserts at beginning of line</li>
+  <li><code class="language-plaintext highlighter-rouge">a</code> appends (insert after cursor)</li>
+  <li><code class="language-plaintext highlighter-rouge">A</code> appends at end of line</li>
+  <li><code class="language-plaintext highlighter-rouge">:%s/&lt;search&gt;/&lt;replace&gt;/gc</code> searches for the string in the place of <code class="language-plaintext highlighter-rouge">&lt;search&gt;</code> and replaces it with the string in the place of <code class="language-plaintext highlighter-rouge">&lt;replace&gt;</code>. This will search the entire file; exclude the <code class="language-plaintext highlighter-rouge">%</code> to only search and replace on the current line. This will ask for confirmation before replacing a word; exclude the final <code class="language-plaintext highlighter-rouge">c</code> to replace without confirmation.</li>
+</ul>
+
+<h3 id="visual">visual:</h3>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">v</code> to start highlighting</li>
+  <li><code class="language-plaintext highlighter-rouge">v + movement</code> to highlight from current position to movement end</li>
+  <li><code class="language-plaintext highlighter-rouge">V</code> to highlight the current line</li>
+  <li><code class="language-plaintext highlighter-rouge">highlight + d</code> deletes</li>
+  <li><code class="language-plaintext highlighter-rouge">highlight + y</code> copies highlighted</li>
+  <li><code class="language-plaintext highlighter-rouge">highlight + p</code> pastes over what is highlighted</li>
+  <li><code class="language-plaintext highlighter-rouge">highlight + command</code> will usually work similarly to the last three mentioned combinations</li>
+</ul>
+
+<h3 id="windows">windows:</h3>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">ctrl + w + basic movement</code> to change between windows where basic movement is <code class="language-plaintext highlighter-rouge">h</code>, <code class="language-plaintext highlighter-rouge">j</code>, <code class="language-plaintext highlighter-rouge">k</code>, or <code class="language-plaintext highlighter-rouge">l</code></li>
+  <li><code class="language-plaintext highlighter-rouge">ctrl + w + n</code> to create a new horizontal window</li>
+  <li><code class="language-plaintext highlighter-rouge">ctrl + w + v</code> to create a new vertical window</li>
+  <li><code class="language-plaintext highlighter-rouge">:split</code> to duplicate the current window horizontally</li>
+  <li><code class="language-plaintext highlighter-rouge">:vsplit</code> to duplicate the current window vertically</li>
+  <li><code class="language-plaintext highlighter-rouge">ctrl + w + r</code> to rotate windows</li>
+  <li><code class="language-plaintext highlighter-rouge">:q</code> to close a window</li>
+</ul>
+
+<h3 id="buffers">buffers:</h3>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">:ls</code> to show all open buffers</li>
+  <li><code class="language-plaintext highlighter-rouge">:b#</code> to open buffer number # in the current window</li>
+  <li><code class="language-plaintext highlighter-rouge">:bd#</code> to close buffer number #</li>
+  <li><code class="language-plaintext highlighter-rouge">:#,#bd</code> to close all buffers between the two numbers given in the two #</li>
+</ul>
+
+<h3 id="tabs">tabs:</h3>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">:tabnew</code> to open a new tab</li>
+  <li><code class="language-plaintext highlighter-rouge">:tabn</code> to go to the next tab (to the right)</li>
+  <li><code class="language-plaintext highlighter-rouge">:tabp</code> to go to the previous tab</li>
+  <li>close all windows in a tab to close the tab</li>
+</ul>
+
+<h3 id="netrw-default-file-explorer">netrw (default file explorer):</h3>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">Ex</code> to open file explorer</li>
+  <li><code class="language-plaintext highlighter-rouge">Vex</code> to open file explorer in another vertical window</li>
+  <li><code class="language-plaintext highlighter-rouge">-</code> to move up a directory</li>
+  <li><code class="language-plaintext highlighter-rouge">%</code> to create a new file</li>
+  <li><code class="language-plaintext highlighter-rouge">ctrl + l</code> to refresh</li>
+  <li><code class="language-plaintext highlighter-rouge">R</code> to rename a file</li>
+  <li><code class="language-plaintext highlighter-rouge">D</code> to delete a file</li>
+</ul>
+
+<h3 id="favorite-combos">favorite combos:</h3>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">ci”</code> executes change on everything in the current “ (cursor must currently be inside of quotes)
+    <ul>
+      <li>you can do this with <code class="language-plaintext highlighter-rouge">(</code>, <code class="language-plaintext highlighter-rouge">[</code>, <code class="language-plaintext highlighter-rouge">{</code>, etc.</li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">ca”</code> executes change on everything in and including the current “ (cursor must currently be inside of quotes)
+    <ul>
+      <li>you can do this with <code class="language-plaintext highlighter-rouge">(</code>, <code class="language-plaintext highlighter-rouge">[</code>, <code class="language-plaintext highlighter-rouge">{</code>, etc.</li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">V#G</code> highlights all lines from the current line to line # where # is a number</li>
+  <li><code class="language-plaintext highlighter-rouge">vg_</code> highlights from current position to the last character in a line</li>
+  <li><code class="language-plaintext highlighter-rouge">YP</code> duplicates a line below itself</li>
+</ul>
+:ET

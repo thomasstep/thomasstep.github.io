@@ -1,0 +1,12 @@
+I"�<p>In Python there is a module for internationalization in the standard library called <code class="language-plaintext highlighter-rouge">gettext</code>.
+There is also a common alias for this which is a simple underscore (_).
+While I was looking into this module a little more I noticed that it is normally used <a href="https://stackoverflow.com/questions/20920956/python-what-does-an-underscore-before-parenthesis-do">this way</a>, but this can cause side effects.
+The original reason I learned about this functionality was while I was debugging a problem in a legacy project.
+The work included linting and adding unit tests to legacy code, and <code class="language-plaintext highlighter-rouge">pylint</code> was giving me problems about unused variables.
+A normal way to go about naming an unused variable in Python is to just name it underscore (_), and this is where the problem came in.</p>
+
+<p>That same legacy code also used the underscore alias convention for <code class="language-plaintext highlighter-rouge">gettext</code>, so if one of the unused variables came before a call to the <code class="language-plaintext highlighter-rouge">gettext</code> alias, the alias was no longer valid and Python tried to call whatever value was contained in the underscore variable that was reassigned.
+Luckily, I caught the problem quickly because a <code class="language-plaintext highlighter-rouge">TypeError: 'str' object is not callable</code> or something similar was thrown.
+However, I could potentially see this leading to harder to track bugs if an unused variable assigned to _ was something callable (a function).
+So a word of caution when using the ‘<code class="language-plaintext highlighter-rouge">_()</code>’ alias for <code class="language-plaintext highlighter-rouge">gettext</code>; you will want to be cautious if you use the <code class="language-plaintext highlighter-rouge">_ = unused_variable</code> convention.</p>
+:ET

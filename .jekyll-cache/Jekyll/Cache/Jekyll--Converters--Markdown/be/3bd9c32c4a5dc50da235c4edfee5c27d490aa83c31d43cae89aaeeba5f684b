@@ -1,0 +1,3739 @@
+I"§
+<h2 id="aws">
+    Aws
+  </h2>
+<ul>
+   
+     
+   
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/determining-dynamodb-primary-and-secondary-keys">
+           Determining DynamoDB Primary and Secondary Keys
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/i-made-an-aws-cdk-construct">
+           I Made an AWS CDK Construct
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+   
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/cloudformation-example-for-codebuild-with-a-webhook">
+           CloudFormation Example For CodeBuild With A Webhook
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/quick-script-to-deploy-to-a-lambda-function">
+           Quick Script to Deploy to a Lambda Function
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/cloudformation-example-for-kinesis-data-firehose-and-lambda">
+           CloudFormation Example for Kinesis Data Firehose and Lambda
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/creating-a-whitelist-for-secrets-manager-secret">
+           Creating a Whitelist for a Secrets Manager Secret
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/cloudformation-example-for-auto-scaling-fargate-service">
+           CloudFormation Example for Auto Scaling Fargate Service
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/cloudformation-example-for-dynamo-db">
+           CloudFormation Example for DynamoDB
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/cloudformation-example-for-an-iam-user-with-rotating-credentials">
+           CloudFormation Example for an IAM User with Rotating Credentials
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/installing-the-mysql-cli-on-an-ec2-instance">
+           Installing the MySQL CLI on an EC2 Instance
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/find-api-calls-made-by-a-user-using-cloudtrail-and-athena">
+           Find API Calls Made By an IAM User Using CloudTrail and Athena
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+   
+     
+   
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/i-published-an-api-through-rapid-api">
+           I Published an API Through RapidAPI
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+   
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/cloudformation-example-for-simple-fargate-app">
+           CloudFormation Example for Simple Fargate App
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+   
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/cloudformation-example-for-a-vpc">
+           CloudFormation Example for a VPC
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+   
+     
+   
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/cloudformation-example-for-serverless-rds">
+           CloudFormation Example for Serverless RDS
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/why-you-should-use-a-cicd-pipeline">
+           Why You Should Use a CICD Pipeline
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/my-understanding-of-serverless">
+           My Understanding of Serverless
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/why-i-focus-so-much-on-cloudformation">
+           Why I Focus So Much On CloudFormation
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/cloudwatch-logs-to-elasticsearch-through-firehose">
+           CloudWatch Logs to Elasticsearch Through Firehose
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/parameter-store-and-cloudformation">
+           Parameter Store and CloudFormation
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/cloudformation-for-creating-canary">
+           Creating Your Own Canary For An API
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/cloudformation-exports-and-imports">
+           CloudFormation Exports and Imports
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/cloudformation-for-serverless-api-development">
+           CloudFormation for Serverless API Development
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/cloudformation-mappings-and-conditions">
+           CloudFormation Mappings and Conditions
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/using-secrets-manager-in-codebuild-with-cloudformation-template">
+           Using Secrets Manager in CodeBuild with a CloudFormation Template
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+   
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/fixing-aws-lambda-module-loading-error">
+           Fixing AWS Lambda ModuleLoadingError
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+  </ul>
+
+<h2 id="c++">
+    C++
+  </h2>
+<ul>
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/pointers-and-threads">
+           Pointers and POSIX Threads
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+  </ul>
+
+<h2 id="containers">
+    Containers
+  </h2>
+<ul>
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/cloudformation-example-for-auto-scaling-fargate-service">
+           CloudFormation Example for Auto Scaling Fargate Service
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/cloudformation-example-for-simple-fargate-app">
+           CloudFormation Example for Simple Fargate App
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/my-understanding-of-serverless">
+           My Understanding of Serverless
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/learning-docker">
+           Learning Docker
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+  </ul>
+
+<h2 id="databases">
+    Databases
+  </h2>
+<ul>
+   
+     
+   
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/determining-dynamodb-primary-and-secondary-keys">
+           Determining DynamoDB Primary and Secondary Keys
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+   
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/example-for-using-the-single-responsibility-principal">
+           Example for Using the Single Responsibility Principle
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/quick-script-to-deploy-to-a-lambda-function">
+           Quick Script to Deploy to a Lambda Function
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/cloudformation-example-for-dynamo-db">
+           CloudFormation Example for DynamoDB
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+   
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/installing-the-mysql-cli-on-an-ec2-instance">
+           Installing the MySQL CLI on an EC2 Instance
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+  </ul>
+
+<h2 id="dev">
+    Dev
+  </h2>
+<ul>
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/whoever-does-stripes-technical-writing-deserves-an-award">
+           Whoever Does Stripe's Technical Writing Deserves an Award
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/how-to-make-a-form-with-html-react-and-tailwind-css">
+           How to Make a Form With HTML, React, and Tailwind CSS
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/determining-dynamodb-primary-and-secondary-keys">
+           Determining DynamoDB Primary and Secondary Keys
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/i-made-an-aws-cdk-construct">
+           I Made an AWS CDK Construct
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/i-published-my-first-npm-package">
+           I Published My First npm Package
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/example-for-using-the-single-responsibility-principal">
+           Example for Using the Single Responsibility Principle
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/cloudformation-example-for-codebuild-with-a-webhook">
+           CloudFormation Example For CodeBuild With A Webhook
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+   
+     
+   
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/making-a-pop-up-window-with-tailwind-css">
+           Making a Pop-Up Window With Tailwind CSS
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/vim-keystrokes">
+           Vim Keystrokes That Helped Me Transition From VS Code
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/regular-expression-vulnerability">
+           Regular Expression Vulnerability
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+   
+     
+   
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/reading-and-writing-json-in-javascript">
+           Reading and Writing JSON in JavaScript
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/react-perform-an-action-when-enter-is-pressed">
+           Make React Perform An Action Whenever The Enter Key Is Pressed
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/my-git-workflow">
+           My Git Workflow
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/i-published-an-api-through-rapid-api">
+           I Published an API Through RapidAPI
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/hiding-a-keyboard-in-swift">
+           Hiding a Keyboard in Swift
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/code-for-a-number-pad-in-swift">
+           Code For a Number Pad in Swift
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/i-built-and-published-an-iphone-app">
+           I Built and Published an iPhone App
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/beginner-python-topics-i-ran-into-when-i-switched-languages">
+           Beginner Python Topics I Ran Into When I Switched Languages
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/elsewhere-diary">
+           Elsewhere Diary
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/git-clone-with-submodules">
+           Git Clone With Submodules
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/dynamically-generate-a-sitemap-with-next-js">
+           Dynamically Generate a Sitemap With Next.js
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/cloudwatch-logs-to-elasticsearch-through-firehose">
+           CloudWatch Logs to Elasticsearch Through Firehose
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/next-js-prerendering-error">
+           NextJs Prerendering Error
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/creating-an-authorization-plugin-for-apollo-server">
+           Creating an Authorization Plugin for Apollo Server
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/making-a-form-in-material-ui-with-textfield-and-button">
+           Making a Form in Material UI with TextField and Button
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+   
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/my-introduction-to-nextjs-and-vercel">
+           My Introduction To Nextjs and Vercel
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/configuring-jekyll-to-create-page-links-without-dates">
+           Configuring Jekyll To Create Page Links Without Dates
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/logical-operators-truthy-and-falsy">
+           Using Javascript's Logical Operators and Understanding Truthy and Falsy
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/using-apollo-datasources-outside-of-apollo">
+           Using Apollo Datasources Outside of Apollo
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/converting-to-asynchronous-code-using-iife">
+           Converting to Asynchronous Code Using IIFE
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/writing-graphql-resolvers">
+           Writing GraphQL Resolvers
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/python-i18n-error-with-underscore-_()">
+           Python i18n Error With Underscore _()
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/splitting-javascript-classes-into-different-files">
+           Splitting Javascript Classes Into Different Files
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/using-bunyan-with-sequelize">
+           Using Bunyan with Sequelize
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/apollo-server-data-sources">
+           Apollo Server Data Sources
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/graphene-and-lambda-functions">
+           Graphene and Lambda Functions
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/git-submodules">
+           Git Submodules
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/role-of-testing-in-software">
+           Role of Testing in Software
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+   
+     
+   
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/thoughts-on-new-programmers-while-learning-ruby">
+           Thoughts on New Programmers While Learning Ruby
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/grpc">
+           gRPC
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/pointers-and-threads">
+           Pointers and POSIX Threads
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+   
+     
+   
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/python-programming">
+           Python Programming
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/software-security">
+           Software Security
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+   
+     
+   
+  </ul>
+
+<h2 id="ios">
+    Ios
+  </h2>
+<ul>
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/hiding-a-keyboard-in-swift">
+           Hiding a Keyboard in Swift
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/code-for-a-number-pad-in-swift">
+           Code For a Number Pad in Swift
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/i-built-and-published-an-iphone-app">
+           I Built and Published an iPhone App
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+  </ul>
+
+<h2 id="javascript">
+    Javascript
+  </h2>
+<ul>
+   
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/how-to-make-a-form-with-html-react-and-tailwind-css">
+           How to Make a Form With HTML, React, and Tailwind CSS
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/i-made-an-aws-cdk-construct">
+           I Made an AWS CDK Construct
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/i-published-my-first-npm-package">
+           I Published My First npm Package
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+   
+     
+   
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/cloudformation-example-for-kinesis-data-firehose-and-lambda">
+           CloudFormation Example for Kinesis Data Firehose and Lambda
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/making-a-pop-up-window-with-tailwind-css">
+           Making a Pop-Up Window With Tailwind CSS
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/reading-and-writing-json-in-javascript">
+           Reading and Writing JSON in JavaScript
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/react-perform-an-action-when-enter-is-pressed">
+           Make React Perform An Action Whenever The Enter Key Is Pressed
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/i-published-an-api-through-rapid-api">
+           I Published an API Through RapidAPI
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/elsewhere-diary">
+           Elsewhere Diary
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/dynamically-generate-a-sitemap-with-next-js">
+           Dynamically Generate a Sitemap With Next.js
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/next-js-prerendering-error">
+           NextJs Prerendering Error
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/creating-an-authorization-plugin-for-apollo-server">
+           Creating an Authorization Plugin for Apollo Server
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/making-a-form-in-material-ui-with-textfield-and-button">
+           Making a Form in Material UI with TextField and Button
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+   
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/my-introduction-to-nextjs-and-vercel">
+           My Introduction To Nextjs and Vercel
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/logical-operators-truthy-and-falsy">
+           Using Javascript's Logical Operators and Understanding Truthy and Falsy
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/using-apollo-datasources-outside-of-apollo">
+           Using Apollo Datasources Outside of Apollo
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/converting-to-asynchronous-code-using-iife">
+           Converting to Asynchronous Code Using IIFE
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/writing-graphql-resolvers">
+           Writing GraphQL Resolvers
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+   
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/splitting-javascript-classes-into-different-files">
+           Splitting Javascript Classes Into Different Files
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/using-bunyan-with-sequelize">
+           Using Bunyan with Sequelize
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/apollo-server-data-sources">
+           Apollo Server Data Sources
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+  </ul>
+
+<h2 id="meta">
+    Meta
+  </h2>
+<ul>
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/whoever-does-stripes-technical-writing-deserves-an-award">
+           Whoever Does Stripe's Technical Writing Deserves an Award
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+   
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/i-made-an-aws-cdk-construct">
+           I Made an AWS CDK Construct
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/i-published-my-first-npm-package">
+           I Published My First npm Package
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/vim-keystrokes">
+           Vim Keystrokes That Helped Me Transition From VS Code
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/i-published-an-api-through-rapid-api">
+           I Published an API Through RapidAPI
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+   
+     
+   
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/i-built-and-published-an-iphone-app">
+           I Built and Published an iPhone App
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+   
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/elsewhere-diary">
+           Elsewhere Diary
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/one-year-dev-anniversary">
+           One Year Dev Anniversary
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/start-of-last-semester">
+           Start of Last Semester
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/end-of-internship">
+           End of Internship
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/updating-my-personal-website">
+           Updating My Personal Website
+         </a>
+       </h3>
+     </li>
+     
+   
+  </ul>
+
+<h2 id="ops">
+    Ops
+  </h2>
+<ul>
+   
+     
+   
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/determining-dynamodb-primary-and-secondary-keys">
+           Determining DynamoDB Primary and Secondary Keys
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/i-made-an-aws-cdk-construct">
+           I Made an AWS CDK Construct
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+   
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/cloudformation-example-for-codebuild-with-a-webhook">
+           CloudFormation Example For CodeBuild With A Webhook
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/quick-script-to-deploy-to-a-lambda-function">
+           Quick Script to Deploy to a Lambda Function
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/cloudformation-example-for-kinesis-data-firehose-and-lambda">
+           CloudFormation Example for Kinesis Data Firehose and Lambda
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/creating-a-whitelist-for-secrets-manager-secret">
+           Creating a Whitelist for a Secrets Manager Secret
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/cloudformation-example-for-auto-scaling-fargate-service">
+           CloudFormation Example for Auto Scaling Fargate Service
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/cloudformation-example-for-dynamo-db">
+           CloudFormation Example for DynamoDB
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/cloudformation-example-for-an-iam-user-with-rotating-credentials">
+           CloudFormation Example for an IAM User with Rotating Credentials
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/installing-the-mysql-cli-on-an-ec2-instance">
+           Installing the MySQL CLI on an EC2 Instance
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/find-api-calls-made-by-a-user-using-cloudtrail-and-athena">
+           Find API Calls Made By an IAM User Using CloudTrail and Athena
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+   
+     
+   
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/i-published-an-api-through-rapid-api">
+           I Published an API Through RapidAPI
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+   
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/cloudformation-example-for-simple-fargate-app">
+           CloudFormation Example for Simple Fargate App
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+   
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/cloudformation-example-for-a-vpc">
+           CloudFormation Example for a VPC
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+   
+     
+   
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/cloudformation-example-for-serverless-rds">
+           CloudFormation Example for Serverless RDS
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/why-you-should-use-a-cicd-pipeline">
+           Why You Should Use a CICD Pipeline
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/my-understanding-of-serverless">
+           My Understanding of Serverless
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/why-developers-should-learn-operations">
+           Why Developers Should Learn Operations
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/why-i-focus-so-much-on-cloudformation">
+           Why I Focus So Much On CloudFormation
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/cloudwatch-logs-to-elasticsearch-through-firehose">
+           CloudWatch Logs to Elasticsearch Through Firehose
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/free-hobby-level-infrastructure-for-side-projects">
+           Free Hobby Level Infrastructure for Side Projects
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/parameter-store-and-cloudformation">
+           Parameter Store and CloudFormation
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/cloudformation-for-creating-canary">
+           Creating Your Own Canary For An API
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/cloudformation-exports-and-imports">
+           CloudFormation Exports and Imports
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/cloudformation-for-serverless-api-development">
+           CloudFormation for Serverless API Development
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/cloudformation-mappings-and-conditions">
+           CloudFormation Mappings and Conditions
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/using-secrets-manager-in-codebuild-with-cloudformation-template">
+           Using Secrets Manager in CodeBuild with a CloudFormation Template
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+   
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/fixing-aws-lambda-module-loading-error">
+           Fixing AWS Lambda ModuleLoadingError
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/deploying-discord-bot-to-heroku">
+           Deploying a Discord Bot to Heroku
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/heroku">
+           Using Heroku
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/learning-docker">
+           Learning Docker
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+  </ul>
+
+<h2 id="python">
+    Python
+  </h2>
+<ul>
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/beginner-python-topics-i-ran-into-when-i-switched-languages">
+           Beginner Python Topics I Ran Into When I Switched Languages
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/python-i18n-error-with-underscore-_()">
+           Python i18n Error With Underscore _()
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/graphene-and-lambda-functions">
+           Graphene and Lambda Functions
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/grpc">
+           gRPC
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/python-programming">
+           Python Programming
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+   
+     
+   
+     
+   
+  </ul>
+
+<h2 id="ruby">
+    Ruby
+  </h2>
+<ul>
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/thoughts-on-new-programmers-while-learning-ruby">
+           Thoughts on New Programmers While Learning Ruby
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+  </ul>
+
+<h2 id="security">
+    Security
+  </h2>
+<ul>
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/creating-a-whitelist-for-secrets-manager-secret">
+           Creating a Whitelist for a Secrets Manager Secret
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/regular-expression-vulnerability">
+           Regular Expression Vulnerability
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+  </ul>
+
+<h2 id="serverless">
+    Serverless
+  </h2>
+<ul>
+   
+     
+   
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/determining-dynamodb-primary-and-secondary-keys">
+           Determining DynamoDB Primary and Secondary Keys
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/i-made-an-aws-cdk-construct">
+           I Made an AWS CDK Construct
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+   
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/cloudformation-example-for-codebuild-with-a-webhook">
+           CloudFormation Example For CodeBuild With A Webhook
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/cloudformation-example-for-kinesis-data-firehose-and-lambda">
+           CloudFormation Example for Kinesis Data Firehose and Lambda
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+   
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/cloudformation-example-for-auto-scaling-fargate-service">
+           CloudFormation Example for Auto Scaling Fargate Service
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/cloudformation-example-for-dynamo-db">
+           CloudFormation Example for DynamoDB
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/cloudformation-example-for-simple-fargate-app">
+           CloudFormation Example for Simple Fargate App
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/cloudformation-example-for-serverless-rds">
+           CloudFormation Example for Serverless RDS
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/my-understanding-of-serverless">
+           My Understanding of Serverless
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/fixing-aws-lambda-module-loading-error">
+           Fixing AWS Lambda ModuleLoadingError
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+  </ul>
+
+<h2 id="swift">
+    Swift
+  </h2>
+<ul>
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/hiding-a-keyboard-in-swift">
+           Hiding a Keyboard in Swift
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/code-for-a-number-pad-in-swift">
+           Code For a Number Pad in Swift
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/i-built-and-published-an-iphone-app">
+           I Built and Published an iPhone App
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+  </ul>
+
+<h2 id="travel">
+    Travel
+  </h2>
+<ul>
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/summer-travels">
+           Summer Travels
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/trip-to-antarctica">
+           Trip to Antarctica
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+     <li>
+       <h3>
+         <a href="/blog/end-of-semester">
+           End of Semester
+         </a>
+       </h3>
+     </li>
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+  </ul>
+
+:ET

@@ -1,0 +1,56 @@
+I"–<p>I have been using Apollo Server for a while now, and one of the tools that they offer is the <a href="https://www.npmjs.com/package/apollo-datasource-rest"><code class="language-plaintext highlighter-rouge">RESTDataSource</code></a> class, which I have used extensively.
+There were a couple use cases I have run into where I needed to write one off scripts that interacted with the same data sources as my graphql server.
+The most straightforward way I could think of doing this was to use the classes I had already created that extended <code class="language-plaintext highlighter-rouge">RESTDataSource</code>.
+It seems simple enough, but there is one caveat that is worth noting before you can use a <code class="language-plaintext highlighter-rouge">RESTDataSource</code> outside of Apollo Server.
+I will start off by using the example featured in the <a href="https://www.npmjs.com/package/apollo-datasource-rest">npm page</a> and the <a href="https://github.com/apollographql/apollo-server/tree/master/packages/apollo-datasource-rest">github readme</a>.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="p">{</span> <span class="nx">RESTDataSource</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">apollo-datasource-rest</span><span class="dl">'</span><span class="p">);</span>
+
+<span class="kd">class</span> <span class="nx">MoviesAPI</span> <span class="kd">extends</span> <span class="nx">RESTDataSource</span> <span class="p">{</span>
+  <span class="kd">constructor</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">super</span><span class="p">();</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">baseURL</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">https://movies-api.example.com/</span><span class="dl">'</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="k">async</span> <span class="nx">getMovie</span><span class="p">(</span><span class="nx">id</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="s2">`movies/</span><span class="p">${</span><span class="nx">id</span><span class="p">}</span><span class="s2">`</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="k">async</span> <span class="nx">getMostViewedMovies</span><span class="p">(</span><span class="nx">limit</span> <span class="o">=</span> <span class="mi">10</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">data</span> <span class="o">=</span> <span class="k">await</span> <span class="k">this</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">movies</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
+      <span class="na">per_page</span><span class="p">:</span> <span class="nx">limit</span><span class="p">,</span>
+      <span class="na">order_by</span><span class="p">:</span> <span class="dl">'</span><span class="s1">most_viewed</span><span class="dl">'</span><span class="p">,</span>
+    <span class="p">});</span>
+    <span class="k">return</span> <span class="nx">data</span><span class="p">.</span><span class="nx">results</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>If you wanted to create an instance of this class to take advantage of what you have already written, you will need to initialize it first.
+That would look like this:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">movies</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MoviesAPI</span><span class="p">();</span>
+<span class="nx">movies</span><span class="p">.</span><span class="nx">initialize</span><span class="p">({});</span>
+<span class="nx">movies</span><span class="p">.</span><span class="nx">getMovie</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>If you try calling a function that uses a REST method (<code class="language-plaintext highlighter-rouge">get</code>, <code class="language-plaintext highlighter-rouge">post</code>, etc.) before calling <code class="language-plaintext highlighter-rouge">initialize()</code> first, then you might see an error that looks like this.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>UnhandledPromiseRejectionWarning: TypeError: Cannot read property 'fetch' of undefined
+</code></pre></div></div>
+
+<p>The reason that the calls fail if the DataSource is not initialized is because there is never any HTTPCache created for the instance of <code class="language-plaintext highlighter-rouge">RESTDataSource</code>.
+This is the source code for <code class="language-plaintext highlighter-rouge">initialize()</code>, and <a href="https://github.com/apollographql/apollo-server/blob/02f1fb6498206ac7d8fdd5b1de7e509d483be5bf/packages/apollo-datasource-rest/src/RESTDataSource.ts#L58">it can also be seen on GitHub here</a>.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">initialize</span><span class="p">(</span><span class="nx">config</span><span class="p">:</span> <span class="nx">DataSourceConfig</span><span class="o">&lt;</span><span class="nx">TContext</span><span class="o">&gt;</span><span class="p">):</span> <span class="k">void</span> <span class="p">{</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">context</span> <span class="o">=</span> <span class="nx">config</span><span class="p">.</span><span class="nx">context</span><span class="p">;</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">httpCache</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">HTTPCache</span><span class="p">(</span><span class="nx">config</span><span class="p">.</span><span class="nx">cache</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">httpFetch</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>The <code class="language-plaintext highlighter-rouge">RESTDataSource</code> <code class="language-plaintext highlighter-rouge">initialize()</code> call creates <code class="language-plaintext highlighter-rouge">this.HTTPCache</code> which in turn has a member function called <code class="language-plaintext highlighter-rouge">fetch</code>.
+Whenever a REST method from the class is called, it calls <code class="language-plaintext highlighter-rouge">this.fetch()</code>, <a href="https://github.com/apollographql/apollo-server/blob/02f1fb6498206ac7d8fdd5b1de7e509d483be5bf/packages/apollo-datasource-rest/src/RESTDataSource.ts#L257">which in turn calls <code class="language-plaintext highlighter-rouge">this.HTTPCache.fetch()</code></a>.
+This is the cause for the error that you see if you try to call a function from a <code class="language-plaintext highlighter-rouge">RESTDataSource</code> without first initializing it.
+I tried to give relevant links to their source code in GitHub, depending on when you read this though it might be better to go through the source yourself.
+Either way, this was the problem I came across, the solution I found for using Apollo DataSource outside of an Apollo Server.</p>
+:ET

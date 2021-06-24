@@ -1,0 +1,56 @@
+I"�<p>I have been trying to learn more about CloudFormation to make it easier to set up the infrastructure I manage.
+Two fun pieces of functionality that I have been using more and more are mappings and conditions.
+Both of these are more helpful when you put them in conjunction with the parameters that you give the template at creation.
+Mostly, I have been trying to cut down on the amount of parameters the template requires and instead use more mappings.
+Conditions help when you are trying to decide if you need to deploy something different depending a parameter that is passed in like environment.
+I have gotten almost all of the templates that I use a lot down to using only one parameter, environment.
+Learning about <code class="language-plaintext highlighter-rouge">Outputs</code> and <code class="language-plaintext highlighter-rouge">Fn::ImportValue</code> helped me out a lot while I was trying to simplify templates as well (I will write a specific post about this later).
+For now I will focus on mappings and conditions, and here is an example of how I would set up a template for using those.</p>
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">AWSTemplateFormatVersion</span><span class="pi">:</span> <span class="s">2010-09-09</span>
+<span class="na">Parameters</span><span class="pi">:</span>
+  <span class="na">Environment</span><span class="pi">:</span>
+    <span class="na">Type</span><span class="pi">:</span> <span class="s">String</span>
+    <span class="na">AllowedValues</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">dev</span>
+      <span class="pi">-</span> <span class="s">preprod</span>
+      <span class="pi">-</span> <span class="s">prod</span>
+
+<span class="na">Mappings</span><span class="pi">:</span>
+  <span class="na">Domain</span><span class="pi">:</span>
+    <span class="na">dev</span><span class="pi">:</span>
+      <span class="na">ec2Name</span><span class="pi">:</span> <span class="s1">'</span><span class="s">unicorn'</span>
+      <span class="na">allocatedMemory</span><span class="pi">:</span> <span class="m">1024</span>
+    <span class="na">preprod</span><span class="pi">:</span>
+      <span class="na">ec2Name</span><span class="pi">:</span> <span class="s1">'</span><span class="s">nessie'</span>
+      <span class="na">allocatedMemory</span><span class="pi">:</span> <span class="m">1024</span>
+    <span class="na">prod</span><span class="pi">:</span>
+      <span class="na">ec2Name</span><span class="pi">:</span> <span class="s1">'</span><span class="s">yeti'</span>
+      <span class="na">allocatedMemory</span><span class="pi">:</span> <span class="m">8192</span>
+
+<span class="na">Conditions</span><span class="pi">:</span>
+  <span class="na">isProduction</span><span class="pi">:</span> <span class="kt">!Equals</span> <span class="pi">[</span><span class="kt">!Ref</span> <span class="nv">Environment</span><span class="pi">,</span> <span class="nv">prod</span><span class="pi">]</span>
+</code></pre></div></div>
+
+<p>In this example, the mappings are worth more than the conditions in my opinion.
+You can have all sorts of different “variables” defined based on the environment that you are in.
+If you are noticing yourself enter the same parameter in for multiple different stacks, mappings may be able to help you trim that parameter out.
+The way you would call a mapping is through the <code class="language-plaintext highlighter-rouge">FindInMap</code> intrinsic function.
+<code class="language-plaintext highlighter-rouge">!FindInMap [Domain, !Ref Environment, ec2Name]</code> (I use <code class="language-plaintext highlighter-rouge">yaml</code>)
+The first element in that array is referencing the map that you are looking in, the second element is first level object you are looking in, and the third element is the key corresponding to the value you are looking for.
+By referencing the environment parameter that was given, we are able to conditionally set and use different “variables”.</p>
+
+<p>Conditions are helpful when trying to decide what resources you want to deploy.
+For example, if you wanted to deploy an ELB in production but not in your preprod or dev environments, you could simply add a condition to your ELB resource to only build in production.</p>
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">Resources</span><span class="pi">:</span>
+  <span class="na">Type</span><span class="pi">:</span> <span class="s">AWS::ElasticLoadBalancing::LoadBalancer</span>
+  <span class="na">Condition</span><span class="pi">:</span> <span class="s">isProduction</span>
+  <span class="na">Properties</span><span class="pi">:</span>
+    <span class="s">.</span>
+    <span class="s">.</span>
+    <span class="s">.</span>
+</code></pre></div></div>
+
+<p>This means that the resource would only ever build if <code class="language-plaintext highlighter-rouge">Environment</code> is given as <code class="language-plaintext highlighter-rouge">prod</code>.
+Diving in to these two simple areas of CloudFormation can open up a ton of cool possibilities to simplify your templates.
+There is, of course, also good AWS documentation about both <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/mappings-section-structure.html">mappings</a> and <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-conditions.html">conditions</a>.</p>
+:ET

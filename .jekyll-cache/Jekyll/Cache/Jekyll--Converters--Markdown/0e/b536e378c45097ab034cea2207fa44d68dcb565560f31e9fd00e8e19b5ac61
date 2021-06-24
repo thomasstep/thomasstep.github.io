@@ -1,0 +1,45 @@
+I"<p><a href="https://www.apollographql.com/docs/apollo-server/">Apollo Server</a> is a GraphQL server framework written in Javascript. I have had a good experience using it so far, and one feature that I have been using a lot is Data Source. According to <a href="https://www.apollographql.com/docs/apollo-server/data/data-sources/">Apollo Server’s documentation</a></p>
+
+<blockquote>
+  <p>Data sources are classes that encapsulate fetching data from a particular service, with built-in support for caching, deduplication, and error handling. You write the code that is specific to interacting with your backend, and Apollo Server takes care of the rest.</p>
+</blockquote>
+
+<p>In my opinion, the <code class="language-plaintext highlighter-rouge">RESTDataSource</code> package that Apollo Server maintains is an excellent tool for wrapping an existing REST API to make it a GraphQL API. Transitioning completely from REST to GraphQL might seem daunting but not with Data Sources. This package specifically lets you extend a base class called <code class="language-plaintext highlighter-rouge">RESTDataSource</code> that features methods to make your transition easy.</p>
+
+<p>The only part that is necessary to make the base class properly operate is by adding your REST API’s base URL in the constructor.</p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="p">{</span> <span class="nx">RESTDataSource</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">apollo-datasource-rest</span><span class="dl">'</span><span class="p">);</span>
+
+<span class="kd">class</span> <span class="nx">YourAPI</span> <span class="kd">extends</span> <span class="nx">RESTDataSource</span> <span class="p">{</span>
+  <span class="kd">constructor</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">super</span><span class="p">();</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">baseURL</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">https://&lt;your-api&gt;.com/</span><span class="dl">'</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="nx">YourAPI</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>After this is done you can create as many class functions as you want to wrap your REST API’s calls. All of the normal HTTP methods have corresponding <code class="language-plaintext highlighter-rouge">this</code> function calls (e.g. <code class="language-plaintext highlighter-rouge">this.post</code>). Of course, you can add in extra information to the calls like headers and payloads. In my opinion, a good way to organize your classes is to have a base class that extends the <code class="language-plaintext highlighter-rouge">RESTDataSource</code> class and object classes that extend off of your API’s base class. Then corresponding calls that manipulate certain types of objects in your REST API can stay together in one class. The API’s base class would have the commonly necessary parts in it like creating the payload, making calls, and error handling. The classes that you create would then need to be initialized, added to your Apollo Server, and the corresponding methods used in your resolvers.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">YourAPI</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">./datasources/yourAPI</span><span class="dl">'</span><span class="p">);</span>
+
+<span class="kd">const</span> <span class="nx">dataSources</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">({</span>
+  <span class="na">yourAPI</span><span class="p">:</span> <span class="k">new</span> <span class="nx">YourAPI</span><span class="p">(),</span>
+<span class="p">});</span>
+
+<span class="kd">const</span> <span class="nx">resolvers</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">Query</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">gqlQueryForSomething</span><span class="p">:</span> <span class="p">(</span><span class="nx">_</span><span class="p">,</span> <span class="nx">_</span><span class="p">,</span> <span class="p">{</span> <span class="nx">dataSources</span> <span class="p">})</span> <span class="o">=&gt;</span> <span class="nx">dataSources</span><span class="p">.</span><span class="nx">yourAPI</span><span class="p">.</span><span class="nx">correspondingFunction</span><span class="p">(),</span>
+  <span class="p">},</span>
+<span class="p">};</span>
+
+<span class="kd">const</span> <span class="nx">server</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ApolloServer</span><span class="p">({</span>
+  <span class="nx">schema</span><span class="p">,</span>
+  <span class="nx">resolvers</span><span class="p">,</span>
+  <span class="nx">dataSources</span><span class="p">,</span>
+  <span class="nx">context</span><span class="p">,</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<p>Now whenever someone makes a query to your GraphQL API with <code class="language-plaintext highlighter-rouge">gqlQueryForSomething</code>, you can just return whatever your REST API normally returns just wrapped by GraphQL. Of course, that code snippet above does not cover all that you need to get an Apollo Server running. You need certain packages and a schema, but that can all be found on their website and documentation. I was more focused on Data Sources and how to use them to wrap a REST API. After this is done, you can start adding in the actual logic that your REST API uses until you are fully away from a REST API (if that’s what is desired).</p>
+:ET

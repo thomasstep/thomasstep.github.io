@@ -1,0 +1,77 @@
+I"'2<p>Using Kinesis Data Firehose (which I will also refer to as a delivery stream) and Lambda is a great way to process streamed data, and since both services are serverless, there are no servers to manage or pay for while they are not being used. I have used this combination a few times to mask or scrub logs as they are being streamed from multiple services. One of the great parts of Kinesis is that other AWS services directly integrate with it like CloudWatch. If there is no direct integration, then data can be directly pushed in using a PUT request.</p>
+
+<p>Kinesis makes it easy to transform data once it has entered a delivery stream through integration with Lambda. The records come in, Lambda can transform them, then the records reach their final destination. That final destination could be something like S3, Elastisearch, or Splunk. There are other built-in integrations as well. While I was building my CloudFormation template for this, I decided on S3 since it is easy to create a bucket and there are tons of other great things to do with data sitting in an S3 bucket.</p>
+
+<p>My base level template is available on GitHub in the <a href="https://github.com/thomasstep/aws-cloudformation-reference/blob/03191a5fb35154e64b4187f15577a29a0ad4e6ca/lambda/kinesis/data-transformation.yml">AWS CloudFormation Reference repository</a> along with quite a few other templates that I have created as quick reference points and building blocks.</p>
+
+<p>Starting with the Lambda function, there were not any tricky parts about building this out from the infrastructure side. For the IAM Role, I simply used a managed policy with the ARN <code class="language-plaintext highlighter-rouge">arn:aws:iam::aws:policy/service-role/AWSLambdaKinesisExecutionRole</code>. This had everything I needed to get up and running within a few minutes. The Lambda permission is still a tad bit confusing to me. The principal <code class="language-plaintext highlighter-rouge">events.amazonaws.com</code> needs permission to perform the <code class="language-plaintext highlighter-rouge">lambda:InvokeFunction</code> action, which did not make sense to me at first since Kinesis is what triggers the Lambda. At least, that’s what I thought happened behind the scenes.</p>
+
+<p>Next came the Firehose itself and its IAM Role. <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisfirehose-deliverystream.html">Kinesis has multiple destination configuration</a> properties to choose from and each delivery stream only gets one. The options are Elasticsearch, S3, Redshift, Splunk, Kinesis Stream (which is different from Kinesis Data Firehose), or a generic HTTP endpoint. It is also worth noting that S3 has two destination configuration properties available: <code class="language-plaintext highlighter-rouge">S3DestinationConfiguration</code> and <code class="language-plaintext highlighter-rouge">ExtendedS3DestinationConfiguration</code>. From what I can tell, the extended destination allows for additional configuration like Lambda processing whereas the normal destination configuration is for simple forwarding to keep it easy. I decided to use <code class="language-plaintext highlighter-rouge">ExtendedS3DestinationConfiguration</code> because I wanted to use the Lambda integration. Integrating the Lambda is done under the <code class="language-plaintext highlighter-rouge">ProcessingConfiguration</code> property of <code class="language-plaintext highlighter-rouge">ExtendedS3DestinationConfiguration</code>, which ends up looking something like the following snippet.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">...</span>
+<span class="na">ExtendedS3DestinationConfiguration</span><span class="pi">:</span>
+  <span class="s">...</span>
+  <span class="s">ProcessingConfiguration</span><span class="pi">:</span>
+    <span class="na">Enabled</span><span class="pi">:</span> <span class="s1">'</span><span class="s">true'</span>
+    <span class="na">Processors</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">Parameters</span><span class="pi">:</span>
+          <span class="pi">-</span> <span class="na">ParameterName</span><span class="pi">:</span> <span class="s">LambdaArn</span>
+            <span class="na">ParameterValue</span><span class="pi">:</span> <span class="kt">!GetAtt</span> <span class="s">LambdaFunction.Arn</span>
+        <span class="na">Type</span><span class="pi">:</span> <span class="s">Lambda</span>
+</code></pre></div></div>
+
+<p>The trickiest part that got me stuck working on this template the longest was the IAM Role for the Data Firehose. After I figured out my problem, I found a page in AWS’s documentation about the <a href="https://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html">different permissions required for various integrations</a>, which would have helped out had I known about it beforehand. What I was stuck on were the Lambda permissions for Firehose. I initially only had something that looked like the following.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="pi">-</span> <span class="na">Effect</span><span class="pi">:</span> <span class="s">Allow</span>
+  <span class="na">Action</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="s1">'</span><span class="s">lambda:InvokeFunction'</span>
+    <span class="pi">-</span> <span class="s1">'</span><span class="s">lambda:GetFunctionConfiguration'</span>
+  <span class="na">Resource</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="kt">!Sub</span> <span class="s2">"</span><span class="s">${LambdaFunction.Arn}"</span>
+</code></pre></div></div>
+
+<p>This resulting in Firehose writing to my S3 bucket under the failed-to-send path. What I got back instead of clean records was something along the lines of the following message.</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"attemptsMade"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"arrivalTimestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1622242573374</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"errorCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lambda.InvokeAccessDenied"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"errorMessage"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Access was denied. Ensure that the access policy allows access to the Lambda function."</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"attemptEndingTimestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1622242649990</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"rawData"</span><span class="p">:</span><span class="w"> </span><span class="s2">"eyJ0aWNrZXJfc3ltYm9sIjoiQU1aTiIsInNlY3RvciI6IlRFQ0hOT0xPR1kiLCJjaGFuZ2UiOi02LjU1LCJwcmljZSI6NzMzLjQxfQ=="</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"lambdaArn"</span><span class="p">:</span><span class="w"> </span><span class="s2">"REDACTED"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>After staring at this for too long and wondering what I had done wrong, I finally stumbled across something mentioning needing a wildcard on the <code class="language-plaintext highlighter-rouge">Resource</code> for the IAM Role’s policy document. What finally did the trick for me was the following adjustment on that previous statement.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="pi">-</span> <span class="na">Effect</span><span class="pi">:</span> <span class="s">Allow</span>
+  <span class="na">Action</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="s1">'</span><span class="s">lambda:InvokeFunction'</span>
+    <span class="pi">-</span> <span class="s1">'</span><span class="s">lambda:GetFunctionConfiguration'</span>
+  <span class="na">Resource</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="kt">!Sub</span> <span class="s2">"</span><span class="s">${LambdaFunction.Arn}*"</span> <span class="c1"># NOTE: there is an * after the Lambda's ARN</span>
+</code></pre></div></div>
+
+<p>Make sure that there is a <code class="language-plaintext highlighter-rouge">*</code> after the Lambda’s ARN. After that, all of my records started flowing through the data pipeline!</p>
+
+<p>Now comes the open-ended portion of this integration, the code that the Lambda function runs. I have written about a previous experience I have had <a href="/blog/cloudwatch-logs-to-elasticsearch-through-firehose">writing code to process logs originating from CloudWatch and with a destination in Elasticsearch</a>. That code was definitely a more complicated version of what I wrote this time around. For this template, I wanted to keep the code simple. I wanted to decode the Base64 records from Firehose, print the contents, and return the records back to Firehose untouched. The goal was to simply make sure that everything was working as intended. Here is the code that I wrote in Node/Javascript:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">exports</span><span class="p">.</span><span class="nx">handler</span> <span class="o">=</span> <span class="p">(</span><span class="nx">event</span><span class="p">,</span> <span class="nx">context</span><span class="p">,</span> <span class="nx">callback</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="cm">/* Process the list of records and transform them */</span>
+  <span class="kd">const</span> <span class="nx">output</span> <span class="o">=</span> <span class="nx">event</span><span class="p">.</span><span class="nx">records</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">record</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">plaintextData</span> <span class="o">=</span> <span class="nx">Buffer</span><span class="p">.</span><span class="k">from</span><span class="p">(</span><span class="nx">record</span><span class="p">.</span><span class="nx">data</span><span class="p">,</span> <span class="dl">'</span><span class="s1">base64</span><span class="dl">'</span><span class="p">).</span><span class="nx">toString</span><span class="p">(</span><span class="dl">'</span><span class="s1">ascii</span><span class="dl">'</span><span class="p">);</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">plaintextData</span><span class="p">);</span>
+    <span class="k">return</span> <span class="p">{</span>
+      <span class="na">recordId</span><span class="p">:</span> <span class="nx">record</span><span class="p">.</span><span class="nx">recordId</span><span class="p">,</span>
+      <span class="na">result</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Ok</span><span class="dl">'</span><span class="p">,</span>
+      <span class="na">data</span><span class="p">:</span> <span class="nx">record</span><span class="p">.</span><span class="nx">data</span><span class="p">,</span>
+    <span class="p">};</span>
+  <span class="p">});</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`Processing completed.  Successful records </span><span class="p">${</span><span class="nx">output</span><span class="p">.</span><span class="nx">length</span><span class="p">}</span><span class="s2">.`</span><span class="p">);</span>
+  <span class="nx">callback</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span> <span class="p">{</span> <span class="na">records</span><span class="p">:</span> <span class="nx">output</span> <span class="p">});</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<p>That code does not do much, but it is a good starting point. From here data can be transformed however it needs to be. Values can be added, values can be redacted, alarms can be triggered based on content. Once we involve Lambda, we’re in the wild west where anything goes, so have fun with it!</p>
+:ET

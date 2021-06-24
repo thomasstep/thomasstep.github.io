@@ -1,0 +1,47 @@
+I"Î<p>I have written a version of this script multiple times over, so I finally made a generic enough version to hopefully fulfill my needs now into the future. There are some prerequisites/assumptions that I make. First is that there is an existing CloudFormation stack with a Lambda function that uses a versioned S3 bucket to grab its source. The template would look something like this</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">Parameters</span><span class="pi">:</span>
+  <span class="na">SourceBucket</span><span class="pi">:</span>
+    <span class="na">Type</span><span class="pi">:</span> <span class="s">String</span>
+    <span class="na">Description</span><span class="pi">:</span> <span class="s">S3 bucket with source</span>
+  <span class="na">SourceKey</span><span class="pi">:</span>
+    <span class="na">Type</span><span class="pi">:</span> <span class="s">String</span>
+    <span class="na">Description</span><span class="pi">:</span> <span class="s">S3 key with Lambda source code</span>
+  <span class="na">SourceVersion</span><span class="pi">:</span>
+    <span class="na">Type</span><span class="pi">:</span> <span class="s">String</span>
+    <span class="na">Description</span><span class="pi">:</span> <span class="s">S3 version for source code</span>
+
+<span class="na">Resources</span><span class="pi">:</span>
+  <span class="na">LambdaFunction</span><span class="pi">:</span>
+    <span class="na">Type</span><span class="pi">:</span> <span class="s">AWS::Lambda::Function</span>
+    <span class="na">Properties</span><span class="pi">:</span>
+      <span class="na">Code</span><span class="pi">:</span>
+        <span class="na">S3Bucket</span><span class="pi">:</span> <span class="kt">!Ref</span> <span class="s">SourceBucket</span>
+        <span class="na">S3Key</span><span class="pi">:</span> <span class="kt">!Ref</span> <span class="s">SourceKey</span>
+        <span class="na">S3ObjectVersion</span><span class="pi">:</span> <span class="kt">!Ref</span> <span class="s">SourceVersion</span>
+<span class="nn">...</span>
+</code></pre></div></div>
+
+<p>The second is that the code has all dependencies installed and it is all contained in the same directory. (Something similar can be done with more complex projects/codebases and this would be a good starting point for building a script for something like that). The third is that <code class="language-plaintext highlighter-rouge">jq</code> is installed and the AWS CLI is installed and ready to be used.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/bin/sh</span>
+<span class="c"># NOTE: Requires jq and correctly configured aws cli</span>
+
+<span class="c"># Change these to the correct values</span>
+<span class="nv">SOURCE_PATH</span><span class="o">=</span> <span class="c"># i.e. ./src</span>
+<span class="nv">SOURCE_BUCKET_NAME</span><span class="o">=</span> <span class="c"># i.e. source-bucket</span>
+<span class="nv">SOURCE_KEY</span><span class="o">=</span> <span class="c"># i.e. my-application/service-name</span>
+<span class="nv">TEMPLATE_PATH</span><span class="o">=</span> <span class="c"># i.e. ./template.yml</span>
+<span class="nv">STACK_NAME</span><span class="o">=</span> <span class="c"># i.e. my-stack</span>
+<span class="nv">STACK_SOURCE_VERSION_PARAMETER_NAME</span><span class="o">=</span> <span class="c"># i.e. SourceVersion</span>
+
+zip <span class="nt">-r9</span> deployment-package <span class="nv">$SOURCE_PATH</span>
+aws s3 <span class="nb">cp </span>deployment-package.zip s3://<span class="nv">$SOURCE_BUCKET_NAME</span>/<span class="nv">$SOURCE_KEY</span>
+<span class="nv">S3_VERSION</span><span class="o">=</span><span class="si">$(</span>aws s3api get-object <span class="nt">--bucket</span> <span class="nv">$SOURCE_BUCKET_NAME</span> <span class="nt">--key</span> <span class="nv">$SOURCE_KEY</span> getobjectoutfile | jq <span class="nt">-r</span> <span class="s1">'.VersionId'</span><span class="si">)</span>
+aws cloudformation deploy <span class="nt">--template-file</span> <span class="nv">$TEMPLATE_PATH</span> <span class="nt">--stack-name</span> <span class="nv">$STACK_NAME</span> <span class="nt">--parameter-overrides</span> <span class="nv">$STACK_SOURCE_VERSION_PARAMETER_NAME</span><span class="o">=</span><span class="nv">$S3_VERSION</span>
+</code></pre></div></div>
+
+<p>After the six variables are properly filled in, the script should properly zip everything up, upload the deployment package to S3, grab the new version ID, and deploy the changes to the CloudFormation template. Voila!</p>
+
+<p>For anyone reading this and wondering how to build all of this infrastructure, I do have some templates that would be a good starting point. For the versioned S3 bucket to hold deployment packages, I suggest using <a href="https://github.com/thomasstep/aws-cloudformation-reference/blob/03191a5fb35154e64b4187f15577a29a0ad4e6ca/s3/versioned-bucket.yml">this template</a>. For an API that uses a Lambda function for computing, I suggest using <a href="https://github.com/thomasstep/aws-cloudformation-reference/blob/03191a5fb35154e64b4187f15577a29a0ad4e6ca/lambda/basic/serverless-function-api.yml">this template</a>. It also contains the correct parameters to use a deployment package from a versioned S3 bucket. For anyone trying to learn AWS and wanting some additional help figuring things out, please donâ€™t hesitate to get in contact with me. I would be more than happy to help out where I can!</p>
+:ET

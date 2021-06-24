@@ -1,0 +1,109 @@
+I"Q5<p>Modern web applications need to scale well, both from a code and infrastructure perspective. While I believe that Lambda functions are a great platform to build off of for scalability, Fargate is also a valid option. With most developers being familiar with containers, Fargate gives us a great jumping-off point to run those containers in the cloud without getting in the way of how developers want to write applications. I’m bringing this up to mention that I understand the draw of developing with containers over developing for a Lambda function which is not as easy to run locally. Containers function the same in the cloud as they do on a local machine.</p>
+
+<p>Containers and Fargate might offer an excellent developer experience, but there is one thing that Fargate does not offer right out of the box that a Lambda function will; auto scaling. When I deploy code to a Lambda function, I’m done. AWS handles provisioning and scaling for me as well as other operational aspects. When I deploy a container to a Fargate service, I still have to handle the way it scales because AWS does not do that for me out of the box. I have written in the past about a <a href="https://thomasstep.com/blog/cloudformation-example-for-simple-fargate-app">simple Fargate service CloudFormation template</a>, but that template excluded auto scaling. I wanted to go back and add auto scaling in to give a better foundation.</p>
+
+<p>The template that I created is based on that original simple Fargate service template. The additions necessary were based around the auto scaling resources and a CloudWatch alarm to trigger the scaling. The auto scaling resources were an IAM role, an application auto scaling <code class="language-plaintext highlighter-rouge">ScalableTarget</code>, an application auto scaling <code class="language-plaintext highlighter-rouge">ScalingPolicy</code> to scale the service up, and another application auto scaling <code class="language-plaintext highlighter-rouge">ScalingPolicy</code> to scale the service down. The auto scaling target is meant to point the auto scaling policies at the right service and the scaling policies are meant to be triggered by an external event. The external event in my template’s case is a CloudWatch alarm.</p>
+
+<p>CloudWatch alarms can track metrics in AWS (built-in or user-defined) and trigger actions based on those metrics. For my template, I chose to scale up or down based on the number of requests received through the load balancer within one minute. If the amount of requests exceeds my predefined limit, the Fargate service is scaled up by adding a new task to help handle that load. After the amount of requests drops back below my predefined limit, the Fargate service is scaled back down. In this way, we can dynamically allocate the proper amount of computing resources behind a service.</p>
+
+<p>I chose to use the number of requests per minute in my template, but the entire purpose was not to say that scaling based on requests is the best idea. I simply want to give a baseline or a starting point and I hope that someone can take that template and tweak it to best suit their needs. Basing a scaling policy on requests also made it much easier for me to test that everything was functioning properly. All I needed to do to verify that my service would scale is send a few requests to it and monitor the number of tasks that Fargate had spun up for my service. As I send more requests, I can monitor the alarm’s dashboard and watch the auto scaling events being dispatched as another form of verification.</p>
+
+<p>I will add the auto scaling resources to this post but not the entire functioning template. To see the whole template, you can reference <a href="https://github.com/thomasstep/aws-cloudformation-reference/blob/master/fargate/auto-scaling/auto-scaling-service.yml">my aws-cloudformation-reference GitHub repo</a>.</p>
+
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="na">AutoScalingRole</span><span class="pi">:</span>
+    <span class="na">Type</span><span class="pi">:</span> <span class="s">AWS::IAM::Role</span>
+    <span class="na">Properties</span><span class="pi">:</span>
+      <span class="na">AssumeRolePolicyDocument</span><span class="pi">:</span>
+        <span class="na">Version</span><span class="pi">:</span> <span class="s1">'</span><span class="s">2012-10-17'</span>
+        <span class="na">Statement</span><span class="pi">:</span>
+          <span class="pi">-</span> <span class="na">Effect</span><span class="pi">:</span> <span class="s">Allow</span>
+            <span class="na">Principal</span><span class="pi">:</span>
+              <span class="na">Service</span><span class="pi">:</span>
+                <span class="pi">-</span> <span class="s">ecs-tasks.amazonaws.com</span>
+            <span class="na">Action</span><span class="pi">:</span>
+              <span class="pi">-</span> <span class="s1">'</span><span class="s">sts:AssumeRole'</span>
+      <span class="na">Path</span><span class="pi">:</span> <span class="s1">'</span><span class="s">/'</span>
+      <span class="na">Policies</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="na">PolicyName</span><span class="pi">:</span> <span class="s">root</span>
+          <span class="na">PolicyDocument</span><span class="pi">:</span>
+            <span class="na">Version</span><span class="pi">:</span> <span class="s1">'</span><span class="s">2012-10-17'</span>
+            <span class="na">Statement</span><span class="pi">:</span>
+              <span class="pi">-</span> <span class="na">Effect</span><span class="pi">:</span> <span class="s">Allow</span>
+                <span class="na">Action</span><span class="pi">:</span>
+                  <span class="pi">-</span> <span class="s">ecs:DescribeServices</span>
+                  <span class="pi">-</span> <span class="s">ecs:UpdateService</span>
+                  <span class="pi">-</span> <span class="s">cloudwatch:DeleteAlarms</span>
+                  <span class="pi">-</span> <span class="s">cloudwatch:DescribeAlarms</span>
+                  <span class="pi">-</span> <span class="s">cloudwatch:PutMetricAlarm</span>
+                <span class="na">Resource</span><span class="pi">:</span> <span class="s1">'</span><span class="s">*'</span>
+
+  <span class="na">AutoScalingTarget</span><span class="pi">:</span>
+    <span class="na">Type</span><span class="pi">:</span> <span class="s">AWS::ApplicationAutoScaling::ScalableTarget</span>
+    <span class="na">Properties</span><span class="pi">:</span>
+      <span class="na">MinCapacity</span><span class="pi">:</span> <span class="m">1</span>
+      <span class="na">MaxCapacity</span><span class="pi">:</span> <span class="kt">!Ref</span> <span class="s">MaxContainers</span>
+      <span class="na">ResourceId</span><span class="pi">:</span> <span class="kt">!Join</span>
+        <span class="pi">-</span> <span class="s1">'</span><span class="s">/'</span>
+        <span class="pi">-</span> <span class="pi">-</span> <span class="s">service</span>
+          <span class="pi">-</span> <span class="kt">!Ref</span> <span class="s">EcsCluster</span>
+          <span class="pi">-</span> <span class="kt">!GetAtt</span> <span class="s">FargateService.Name</span>
+      <span class="na">ScalableDimension</span><span class="pi">:</span> <span class="s">ecs:service:DesiredCount</span>
+      <span class="na">ServiceNamespace</span><span class="pi">:</span> <span class="s">ecs</span>
+      <span class="na">RoleARN</span><span class="pi">:</span> <span class="kt">!GetAtt</span> <span class="s">AutoScalingRole.Arn</span>
+
+  <span class="na">ScaleUpPolicy</span><span class="pi">:</span>
+    <span class="na">Type</span><span class="pi">:</span> <span class="s">AWS::ApplicationAutoScaling::ScalingPolicy</span>
+    <span class="na">Properties</span><span class="pi">:</span>
+      <span class="na">PolicyName</span><span class="pi">:</span> <span class="kt">!Sub</span> <span class="s1">'</span><span class="s">${FargateService}ScaleUpPolicy'</span>
+      <span class="na">PolicyType</span><span class="pi">:</span> <span class="s">StepScaling</span>
+      <span class="na">ScalingTargetId</span><span class="pi">:</span> <span class="kt">!Ref</span> <span class="s">AutoScalingTarget</span>
+      <span class="na">StepScalingPolicyConfiguration</span><span class="pi">:</span>
+        <span class="na">AdjustmentType</span><span class="pi">:</span> <span class="s">ChangeInCapacity</span>
+        <span class="na">Cooldown</span><span class="pi">:</span> <span class="m">60</span>
+        <span class="na">MetricAggregationType</span><span class="pi">:</span> <span class="s">Average</span>
+        <span class="na">StepAdjustments</span><span class="pi">:</span>
+          <span class="pi">-</span> <span class="na">MetricIntervalLowerBound</span><span class="pi">:</span> <span class="m">0</span>
+            <span class="na">ScalingAdjustment</span><span class="pi">:</span> <span class="m">1</span>
+  <span class="na">ScaleDownPolicy</span><span class="pi">:</span>
+    <span class="na">Type</span><span class="pi">:</span> <span class="s">AWS::ApplicationAutoScaling::ScalingPolicy</span>
+    <span class="na">Properties</span><span class="pi">:</span>
+      <span class="na">PolicyName</span><span class="pi">:</span> <span class="kt">!Sub</span> <span class="s1">'</span><span class="s">${FargateService}ScaleDownPolicy'</span>
+      <span class="na">PolicyType</span><span class="pi">:</span> <span class="s">StepScaling</span>
+      <span class="na">ScalingTargetId</span><span class="pi">:</span> <span class="kt">!Ref</span> <span class="s">AutoScalingTarget</span>
+      <span class="na">StepScalingPolicyConfiguration</span><span class="pi">:</span>
+        <span class="na">AdjustmentType</span><span class="pi">:</span> <span class="s">ChangeInCapacity</span>
+        <span class="na">Cooldown</span><span class="pi">:</span> <span class="m">60</span>
+        <span class="na">MetricAggregationType</span><span class="pi">:</span> <span class="s">Average</span>
+        <span class="na">StepAdjustments</span><span class="pi">:</span>
+          <span class="pi">-</span> <span class="na">MetricIntervalUpperBound</span><span class="pi">:</span> <span class="m">0</span>
+            <span class="na">ScalingAdjustment</span><span class="pi">:</span> <span class="s">-1</span>
+
+  <span class="na">AlarmHighRequests</span><span class="pi">:</span>
+    <span class="na">Type</span><span class="pi">:</span> <span class="s">AWS::CloudWatch::Alarm</span>
+    <span class="na">Properties</span><span class="pi">:</span>
+      <span class="na">ActionsEnabled</span><span class="pi">:</span> <span class="s">TRUE</span>
+      <span class="na">AlarmActions</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="kt">!Ref</span> <span class="s">ScaleUpPolicy</span>
+      <span class="na">AlarmDescription</span><span class="pi">:</span> <span class="kt">!Sub</span>
+        <span class="pi">-</span> <span class="s1">'</span><span class="s">Scale</span><span class="nv"> </span><span class="s">Up</span><span class="nv"> </span><span class="s">Alarm</span><span class="nv"> </span><span class="s">based</span><span class="nv"> </span><span class="s">on</span><span class="nv"> </span><span class="s">requests</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">${FargateServiceName}'</span>
+        <span class="pi">-</span> <span class="na">FargateServiceName</span><span class="pi">:</span> <span class="kt">!GetAtt</span> <span class="s">FargateService.Name</span>
+      <span class="na">ComparisonOperator</span><span class="pi">:</span> <span class="s">GreaterThanThreshold</span>
+      <span class="na">DatapointsToAlarm</span><span class="pi">:</span> <span class="m">2</span>
+      <span class="c1"># the dimensions can be found in the console after selecting a namespace to filter by</span>
+      <span class="na">Dimensions</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="na">Name</span><span class="pi">:</span> <span class="s">TargetGroup</span>
+          <span class="na">Value</span><span class="pi">:</span> <span class="kt">!GetAtt</span> <span class="s">TargetGroup.TargetGroupFullName</span>
+      <span class="na">EvaluationPeriods</span><span class="pi">:</span> <span class="m">3</span>
+      <span class="c1"># the metric name can be found in the console on the screen before a metric is graphed</span>
+      <span class="na">MetricName</span><span class="pi">:</span> <span class="s">RequestCountPerTarget</span>
+      <span class="c1"># the namespace can be found in the console on the first screen before filtering metrics</span>
+      <span class="na">Namespace</span><span class="pi">:</span> <span class="s">AWS/ApplicationELB</span>
+      <span class="na">OKActions</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="kt">!Ref</span> <span class="s">ScaleDownPolicy</span>
+      <span class="na">Period</span><span class="pi">:</span> <span class="m">60</span>
+      <span class="na">Statistic</span><span class="pi">:</span> <span class="s">Sum</span>
+      <span class="na">Threshold</span><span class="pi">:</span> <span class="m">3000</span>
+      <span class="na">TreatMissingData</span><span class="pi">:</span> <span class="s">ignore</span>
+      <span class="na">Unit</span><span class="pi">:</span> <span class="s">None</span> <span class="c1"># comes from the metric</span>
+</code></pre></div></div>
+:ET
