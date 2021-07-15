@@ -12,7 +12,7 @@ Last weekend I was meeting up with some friends from college when I received an 
 Your AWS account xxxxxxxxxxxx has exceeded 85% of the usage limit for one or more AWS Free Tier-eligible services for the month of July.
 ```
 
-At the time the Budget email was sent I had used 865,062 of 1,000,000 free SQS requests. The first thought that came to my mind was, "I'm glad that I have a budget set up." The second was, "How am I about to exceed 1 million SQS requests?" The third was, "Oh wow did Crow go viral?" Unfortunately, this was not the case.
+At the time the Budget email was sent I had used 865,062 of 1,000,000 free SQS requests. The first thought that came to my mind was, "I'm glad that I have a budget set up." The second was, "How am I about to exceed 1 million SQS requests?" The third was, "Oh wow did Crow go viral?" Unfortunately, Crow did not go viral.
 
 I have a few queues with Lambda consumers that react to certain events for [Crow Authentication](https://crowauth.com/). I set these up to decrease the amount of synchronous work being done on various API endpoints and therefore decrease the latency an end-user experiences. I have an SNS topic set up that feeds into a few queues from which a few different Lambda functions are invoked.
 
