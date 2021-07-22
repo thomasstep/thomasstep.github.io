@@ -1,3 +1,5 @@
+It is july 2021
+
 joined indie hackers
 thought i could do it
 coded away
