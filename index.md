@@ -18,4 +18,4 @@ I build in public and have contributed to open source. Some of my posts pertain 
 
 My email is thomas@thomasstep.com or tstep916@gmail.com (if the first one doesn't work).
 
-My social presence consists of [Twitter](https://twitter.com/tr33b3ard) (I'm new to Twitter so go easy on me), [LinkedIn](https://www.linkedin.com/in/thomasstep/), and [GitHub](https://github.com/thomasstep). Feel free to follow or connect with me and I will reciprocate.
+My social presence consists of [Twitter](https://twitter.com/tr33b3ard) (I'm new to Twitter so go easy on me), [LinkedIn](https://www.linkedin.com/in/thomasstep/), [GitHub](https://github.com/thomasstep), and [Strava](https://www.strava.com/athletes/50851495). Feel free to follow or connect with me and I will reciprocate.
