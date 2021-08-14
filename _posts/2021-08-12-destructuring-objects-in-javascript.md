@@ -129,7 +129,7 @@ console.log(second);
  */
 ```
 
-Destructuring this way requires us to provide new variables names and optionally provide default values (in this example the default behavior would not be encountered, I simply wanted to show that it is an option). ***CHECK THAT THIS IS TRUE***.
+Destructuring this way requires us to provide new variables names and optionally provide default values (in this example the default behavior would not be encountered, I simply wanted to show that it is an option).
 
 So far I have only shown examples with a flat object, but what about destructuring more complex nested objects?
 
