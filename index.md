@@ -22,4 +22,4 @@ My social presence consists of [Twitter](https://twitter.com/tr33b3ard) (I'm new
 
 ## Support and Help
 
-If my work has help you and you would like to help me, feel free to [buy me a coffee](https://www.buymeacoffee.com/thomasstep). I can also offer more [personalized help if that is what you are after](https://www.buymeacoffee.com/thomasstep/e/41426).
+If my work has helped you and you would like to help me, feel free to [buy me a coffee](https://www.buymeacoffee.com/thomasstep). I can also offer more [personalized help if that is what you are after](https://www.buymeacoffee.com/thomasstep/e/41426).
