@@ -3,3 +3,4 @@ _site
 Gemfile.lock
 *.gem
 /_drafts/guide-to-building-with-serverless-aws.md
+.jekyll-cache
