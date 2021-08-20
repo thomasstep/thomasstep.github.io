@@ -19,3 +19,7 @@ I build in public and have contributed to open source. Some of my posts pertain 
 My email is thomas@thomasstep.com or tstep916@gmail.com (if the first one doesn't work).
 
 My social presence consists of [Twitter](https://twitter.com/tr33b3ard) (I'm new to Twitter so go easy on me), [LinkedIn](https://www.linkedin.com/in/thomasstep/), [GitHub](https://github.com/thomasstep), and [Strava](https://www.strava.com/athletes/50851495). Feel free to follow or connect with me and I will reciprocate.
+
+## Support and Help
+
+If my work has help you and you would like to help me, feel free to [buy me a coffee](https://www.buymeacoffee.com/thomasstep). I can also offer more [personalized help if that is what you are after](https://www.buymeacoffee.com/thomasstep/e/41426).

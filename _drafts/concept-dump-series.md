@@ -1,0 +1,44 @@
+- api
+- git
+- operations / cloud infrastructure
+  - load balancer
+  - datastore
+  - cdn
+  - compute resources
+  - dns
+  - file storage
+  - api
+  - serverless
+  - queues
+  - event drive architecture
+  - managed service
+  - throughput
+  - high availability
+  - fault tolerance
+  - asynchronous processing
+  - distributed systems
+  - microservices
+- sql database
+  - index / key
+  - composite keys
+  - join
+  - select
+  - deduplication
+- ddb
+  - partition
+  - sort key
+  - scan
+  - query
+  - single table design
+- microservices
+  - patterns
+  - queues
+- system design
+  - databases nosql vs sql
+  - cap
+  - pie
+  - load balancer
+  - cdn
+  - security
+  - scaling compute
+  -
