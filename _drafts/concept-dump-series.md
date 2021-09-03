@@ -1,3 +1,19 @@
+"these are the things that you need to know. if you know just these things you'll be fine and then you'll be free to learn the things that you need to know when you need toknow them. obviuously there's more here than what's here but for today don't worry about those things"
+
+- programming
+  - for loops
+  - while loops
+  - if conditions
+  - switch conditions (pretty much just ifs)
+  - variables
+  - data types
+    - strings
+    - numbers
+    - booleans
+  - data structures
+    - maps/dictionaries/objects
+    - lists/arrays
+  - functions
 - api
 - git
 - operations / cloud infrastructure
