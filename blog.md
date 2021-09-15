@@ -4,7 +4,7 @@ title: thomasstep.com
 show_mailchimp_signup: true
 ---
 
-**To see my blog posts sorted by category, [please click here](/categories).**
+**Blog posts by [category](/categories).**
 
 ---
 

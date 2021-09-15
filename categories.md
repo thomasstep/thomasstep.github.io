@@ -46,11 +46,11 @@ The purpose of this snippet is to list all your posts posted with a certain cate
    {% for post in site.posts %}
      {% if post.tags contains category %}
      <li>
-       <h3>
+       <p>
          <a href="{{ post.url }}">
            {{ post.title }}
          </a>
-       </h3>
+       </p>
      </li>
      {% endif %}
    {% endfor %}

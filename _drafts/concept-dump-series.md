@@ -58,3 +58,8 @@
   - security
   - scaling compute
   -
+- k8s
+  - distro
+  - pod
+  - replica set
+  -
