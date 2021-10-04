@@ -2,6 +2,6 @@
 layout: post
 title:  "Title"
 author: Thomas
-tags: [ aws, databases, c++, containers, dev, ios, javascript, meta, ops, python, ruby, security, serverless, swift, travel ]
+tags: [ aws, c++, containers, databases, dev, guide to building with serverless aws, ios, javascript, meta, ops, python, ruby, security, serverless, swift, travel ]
 description: TBD
 ---

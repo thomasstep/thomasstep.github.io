@@ -29,6 +29,7 @@ Serverless provides advanced infrastructure benefits that used to be difficult t
 ## Introduction to the Cloud and AWS
 
 Boiled down to its core, cloud providers are simply offering computers and storage to anybody wanting to use their resources. Some companies that are large enough to benefit from economy of scale will own and manage their own data centers, but using a cloud provider mostly likely makes more financial sense before reaching that scale (and sometimes even afterward).
+
 For those of us who are smaller players, using a cloud provider fits the bill well. There is a low overhead for us because we do not need to work out the finer data center details or struggle with the overhead of purchasing servers. Also, there are performance benefits both in computation and reliability. Purchasing mass volumes of high-end servers for a smaller player makes little to no sense when compared to running the same service on a cloud provider's managed servers. Furthermore, purchasing enough servers and appropriately networking them to have failover and geographic redundancy would skyrocket the cost. At a scale like Amazon, Google, or Microsoft, it makes sense to have multiple data centers spread out all over the world with racks upon racks of servers and disks. For a bootstrapped startup, buying a single server to host an app is almost out of the question not to mention the operational overhead of getting it up and running.
 
 AWS is simply a cloud provider. The concepts used for building, deploying, and running applications on AWS can be abstracted out to any cloud provider. My goal is not to sell anyone specifically on using AWS, but I believe AWS currently has the best service offerings and has the largest community around it. Specific serverless services make arguing against AWS difficult especially with the cult-like following of some including Lambda and DynamoDB. On top of that, AWS makes DevOps available to even the smallest players with serverless CI/CD tools like CodeBuild, CodePipeline, and CodeDeploy.
@@ -483,7 +484,7 @@ In addition to the CloudWatch Alarms integration with SNS and Lambda, I wanted t
 
 Subscription filters can also be directly integrated with a Lambda function. While I have not personally used this integration before, I believe it is important to point out some of the possibilities. I imagine that this integration would be helpful for shortcutting an alarm. Instead of creating a metric filter, custom metric, alarm, and an SNS topic, we could simply subscribe a Lambda directly to the logs defined by a filter pattern and react.
 
-## Intermission - Exclude from blog post(s), include in full book
+## Intermission
 
 This is the end of the in-depth chapters. Thank you for hanging in since they were long chapters. If you have come this far you should now know what IAM, VPC, Lambda, API Gateway, DynamoDB, S3, and CloudWatch are at a high level. With those seven services, you should be able to get pretty far in the AWS world. Everything else should be simpler to learn and understand. The following chapters should be shorter in length but still build on what was discussed in the earlier chapters. The shorter chapters will mostly not contain separate sections since they are less versatile, more purpose built services rather than platforms.
 
