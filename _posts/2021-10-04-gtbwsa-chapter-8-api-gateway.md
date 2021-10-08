@@ -9,7 +9,7 @@ date: 2021-10-04 09:00:08 # this is used to properly sort the chapters
 
 This is a chapter from the Guide To Building With Serverless AWS that I wrote. For more information about the guide's intent and focuses, please read the Introduction Chapter.
 
-Table of Contents:
+**Table of Contents:**
 
 1. [Introduction](/blog/gtbwsa-chapter-1-introduction)
 2. [Serverless Introduction](/blog/gtbwsa-chapter-2-serverless-introduction)
