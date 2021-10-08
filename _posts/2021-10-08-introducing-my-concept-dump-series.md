@@ -69,7 +69,7 @@ Over time, I hope to add to this series beyond what I am launching with. The lis
 <!-- - Microservices -->
   <!-- - Patterns -->
   <!-- - Queues -->
-- [System Design]((/blog/concept-dump-system-design))
+- [System Design](/blog/concept-dump-system-design)
   - Databases
     - NoSQL
     - SQL
