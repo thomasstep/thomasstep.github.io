@@ -28,12 +28,12 @@ Over time, I hope to add to this series beyond what I am launching with. The lis
   - Switch Conditions
   - For Loops
   - While Loops
-<!-- - APIs
-- Git
-- SDLC
-  - Agile
-  - Testing
-  - CI/CD -->
+<!-- - APIs -->
+<!-- - Git -->
+<!-- - SDLC -->
+  <!-- - Agile -->
+  <!-- - Testing -->
+  <!-- - CI/CD -->
 - [Operations and Cloud Infrastructure](/blog/concept-dump-operations-and-cloud-infrastructure)
   - Load Balancer
   - Datastore
@@ -66,9 +66,9 @@ Over time, I hope to add to this series beyond what I am launching with. The lis
   - Scan
   - Query
   - Single Table Design
-<!-- - Microservices
-  - Patterns
-  - Queues -->
+<!-- - Microservices -->
+  <!-- - Patterns -->
+  <!-- - Queues -->
 - [System Design]((/blog/concept-dump-system-design))
   - Databases
     - NoSQL
@@ -81,8 +81,7 @@ Over time, I hope to add to this series beyond what I am launching with. The lis
   - Scaling Compute
     - Horizontal
     - Vertical
-<!-- - K8S
-  - Distro
-  - Pod
-  - Replica Set
-  - -->
+<!-- - K8S -->
+  <!-- - Distro -->
+  <!-- - Pod -->
+  <!-- - Replica Set -->
