@@ -9,3 +9,14 @@ i ran a one line shell command that they provided which downloaded and installed
 after that script my commodity server running Ubuntu was operating as a single node k8s cluster
 
 *write a paragraph about k3s*
+
+*write about helm*
+
+to test that this setup was functioning correctly i used a chart for a container called echo server
+it uses helm's artifact hub and pulls the chart
+all the chart does is spin up a container that listens on port 80 and replies with the request's info
+so run these helm commands to deploy the chart then curl localhost to see it working
+
+run these commands to rollback the deployment or delete it completely with this command
+
+just like that we've done it
