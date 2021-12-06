@@ -100,3 +100,5 @@ I have had fun learning vim and I feel like I have completed a rite of passage o
 - `V#G` highlights all lines from the current line to line # where # is a number
 - `vg_` highlights from current position to the last character in a line
 - `YP` duplicates a line below itself
+- `:%!python3 -m json.tool` formats an entire JSON file with correct indentation. I some how need this more than I ever thought I would
+- `:%s/^\( *\)\(\w\)/\1- \u\2/` adds a bullet point to the beginning of every line while retaining spaces

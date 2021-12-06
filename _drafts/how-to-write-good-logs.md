@@ -8,3 +8,5 @@ logs should match up with a feature or use case
 requests and responses from our server should be logged in full (probably debug)
 logging in loops?
 logs per function?
+
+use structured logs; this came up multiple times during re:Invent 2021 sessions (find in those notes and link them here)
