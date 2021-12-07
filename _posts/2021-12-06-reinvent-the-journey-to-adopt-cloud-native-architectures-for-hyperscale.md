@@ -6,13 +6,13 @@ tags: [ aws ]
 description: My notes about the 2021 re:Invent ARC314 session
 ---
 
-This is an overview of a session that I went to during re:Invent 2021. I start by providing the notes I took during the session, and then I will give my take and comments if I have any at the end.
+This is an overview of a session that I went to during [re:Invent 2021](/blog/reinvent-2021). I start by providing the notes I took during the session, and then I will give my take and comments if I have any at the end.
 
 Tuesday 14:00
 
 ARC314-R1
 
-Agenda:
+## Agenda:
 - There are certain best practices and architectures when reaching this scale
 - Why do you need a journey to adopt cloud-native architecture?
 - How to address hyperscale
@@ -24,13 +24,13 @@ Agenda:
 - Key challenges: time to market, scaling limits, inflated blast radius, increased dependencies, and complex deployments
   - Won't touch on all but two stand out: scale (start with monolith then hit a bottleneck) and inflated blast radius
 
-- Journey to adopt cloud-native architectures
+## Journey to adopt cloud-native architectures
 - They have published four blogs so far in a series with the name "The Journey To Adopt Cloud-Native Architectures For Hyperscale"
   - go.aws/32cCgCD
 - It's a journey so you need to have a long-term vision/goal
 - Focusing on cell-based architecture and domain-driven design (they haven't published these two concepts yet)
 
-Cell-based Architecture
+## Cell-based Architecture
 - Attempt at decentralizing arch
 - Instead of a load balancer routing to multiple nodes have a "cell router" that routes to a cell that contains a load balancer with multiple nodes
 - A cell should have minimum dependencies (no shared infra)
@@ -50,7 +50,7 @@ Cell-based Architecture
 - Tradeoffs for fine-grained or rough-grained cells in terms of cost, complexity, resiliency
 - Check out Route 53 Application Recovery Control
 
-Domain-driven, cloud-native architecture
+## Domain-driven, cloud-native architecture
 - "Monolith is not a bad design if it meets your needs"
 - When are microservices right?
   - When you need to independently scale certain features
@@ -102,6 +102,6 @@ Domain-driven, cloud-native architecture
 - Start small, learn, and iterate: take functionality out of a monolith, put into microservice
   - Sounds like the strangler pattern
 
-My notes:
+## My notes:
 
 Once again cell-based architectures came up, so this is a topic to look into and at least make sure would be possible with architectures moving forward.

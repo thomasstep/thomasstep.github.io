@@ -6,18 +6,18 @@ tags: [ aws ]
 description: My notes about the 2021 re:Invent API304 session
 ---
 
-This is an overview of a session that I went to during re:Invent 2021. I start by providing the notes I took during the session, and then I will give my take and comments if I have any at the end.
+This is an overview of a session that I went to during [re:Invent 2021](/blog/reinvent-2021). I start by providing the notes I took during the session, and then I will give my take and comments if I have any at the end.
 
 Wednesday 10:45
 
 API304
 
-Agenda:
+## Agenda:
 - Enterprise integration patterns
 - Event-driven architecture
 - Taco bell order middleware service
 
-Coupling: integration's magic word
+## Coupling: integration's magic word
 - Coupling is a measure of independent variability between connected systems
 - Amount of coupling is a matter of tradeoffs
 - Decoupling has a cost in design and runtime (more complexity and latency)
@@ -25,9 +25,9 @@ Coupling: integration's magic word
 - Temporal: synchronous vs asynchronous
 - "The appropriate level of coupling depends on the level of control you have over the endpoints" - [Gregor Hohpe](https://www.enterpriseintegrationpatterns.com/)
 
-Looking at various asynchronous models
+## Looking at various asynchronous models
 
-Synchronous request-response model
+## Synchronous request-response model
 - Advantages
   - Low latency
   - Simple
@@ -39,7 +39,7 @@ Synchronous request-response model
   - Receiver might get throttled under too heavy of a load
     - Thundering Herd
 
-Asynchronous point-to-point (queue)
+## Asynchronous point-to-point (queue)
 - Advantages
   - Decrease temporal coupling
     - Things aren't happening at the same time
@@ -61,12 +61,12 @@ Asynchronous point-to-point (queue)
       - Can sideline chatty tenant
       - Can throttle before the events are placed on the queue
 
-Asynchronous point-to-point (router)
+## Asynchronous point-to-point (router)
 - Sender sends to different channels (I think multiple queues)
 - Only listed disadvantages
   - Increases location coupling (need to know where all the channels are)
 
-Asynchronous message router model (event bus)
+## Asynchronous message router model (event bus)
 - Advantages
   - Reduces location coupling
 - Eventbridge
@@ -75,7 +75,7 @@ Asynchronous message router model (event bus)
   - Rules match events for consumption
   - Personal question: What's the difference between Eventbridge and SNS?
 
-Event-driven architecture
+## Event-driven architecture
 - Events are signals that a system's state has changed
 - Events occur in the past e.g. `orderCreated` (notice the past tense verb for naming)
 - Events cannot be changed (immutable)
@@ -84,13 +84,13 @@ Event-driven architecture
 - Sparse events with a lot of subscribers can create a lot of traffic trying to get more context on the event
   - This is because those services will need to reach out to other services to find missing context from the event
 
-Considerations with full-state descriptions
+## Considerations with full-state descriptions
 - Event schemas should be backward compatible
   - One-way door
 - Cost to calculate values can increase over time (how much data needs to be pulled from various places to create the event)
   - Dollar and latency costs
 
-Choreograph events between domains - loose coupling
+## Choreograph events between domains - loose coupling
 - Event uniqueness - we're in distributed systems now which can be nasty
   - Idempotency
     - Events can be delivered multiple times ("at least once" delivery)
@@ -102,7 +102,7 @@ Choreograph events between domains - loose coupling
   - Store result with the idempotency key
   - [AWS builder's library](https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/)
 
-Orchestrate a business process within a domain resulting in a published event - tighter coupling
+## Orchestrate a business process within a domain resulting in a published event - tighter coupling
 - Suggests using Step Functions for this
 - Optimized integrations are the Step Function supported ones
 - SDK integrations are newer (I'm guessing not as nice or easy to use)
@@ -113,12 +113,12 @@ Orchestrate a business process within a domain resulting in a published event - 
 - Run a job (`.sync`) with Step Functions
 - Uses pollers to act synchronously even though it really isn't
 
-Better together: orchestration and choreography
+## Better together: orchestration and choreography
 - Orchestration within business domain and choreography to publish results to other business domains
 
-Taco Bell guy takes the stage
+## Taco Bell guy takes the stage
 
-Taco Bell's order middleware (no-VPC app)
+## Taco Bell's order middleware (no-VPC app)
 - Orders come from delivery partners through webhook
 - Challenges
   - Handle scale
@@ -127,7 +127,7 @@ Taco Bell's order middleware (no-VPC app)
   - Validate product being available
   - Ability to cancel orders
 
-Used choreography approach
+## Used choreography approach
 - Auth event in API Gateway which pushes an event to Eventbridge
 - Event goes to order adaptation in Taco Bell format which creates another event
 - A Lambda attempts to accept the order: if fails, hit delivery API with failure; if succeeds, create another event
@@ -135,7 +135,7 @@ Used choreography approach
 - Decided this workflow was too complex
 - bit.ly/3nUmfbL helped them determine this
 
-Then tried to use orchestration
+## Then tried to use orchestration
 - API Gateway to Eventbridge still but now Eventbridge starts a Step Function instead of Lambdas sending out all those events
 - Wrote Lambdas very lean originally so the conversion to Step Function was easy
 - Retries are easier to handle
@@ -145,13 +145,13 @@ Then tried to use orchestration
   - Delivery partner sends release event when a driver is close
   - Callback token handler sends task token to workflow to resume order/cooking
 
-Development process and CI/CD
+## Development process and CI/CD
 - They use [serverless framework](https://www.serverless.com/) with a few plugins
 - [Middy middleware](https://github.com/middyjs/middy) for NodeJS, helps pull and cache parameters and secrets
 - Gitlab CI/CD
   - Each branch creates a new stack
 
-Testing
+## Testing
 - Unit tests on core business logic; not on every Lambda
 - Integration tests against live AWS resources
 - Mocked out external API calls to facilitate load testing and end-to-end happy path testing
@@ -159,21 +159,21 @@ Testing
   - Mocks for delivery API (if order not accepted) and POS API
 - Test Step Function workflows, run end-to-end, and validate results
 
-Monitoring/observability
+## Monitoring/observability
 - CloudWatch Logs
   - Started out logging a lot but later tuned it down
 - CloudWatch Insights
   - For querying logs at scale
 - CloudWatch Alarms
 
-Cost optimization
+## Cost optimization
 - "Utilized [express Step Function](https://docs.aws.amazon.com/step-functions/latest/dg/concepts-standard-vs-express.html) nested workflow"
 - Removed unnecessary Step Function state transitions
 - Used Lumigo to tune Lambda config
 
-Taco Bell and Robbie (the speaker) has a ["This Is My Architecture" video](https://www.youtube.com/watch?v=sezX7CSbXTg)
+## Taco Bell and Robbie (the speaker) has a ["This Is My Architecture" video](https://www.youtube.com/watch?v=sezX7CSbXTg)
 
-My notes:
+## My notes:
 
 [Lambda powertools](https://awslabs.github.io/aws-Lambda-powertools-python/latest/) has been brought up in multiple sessions by now, so it would probably be worthwhile to familiarize myself with it. Unfortunately, it seems to only be written in Python for the time being, which is not what I normally write my side projects in.
 

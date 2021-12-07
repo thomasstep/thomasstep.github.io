@@ -6,38 +6,38 @@ tags: [ aws ]
 description: My notes about the 2021 re:Invent SVS402 session
 ---
 
-This is an overview of a session that I went to during re:Invent 2021. I start by providing the notes I took during the session, and then I will give my take and comments if I have any at the end.
+This is an overview of a session that I went to during [re:Invent 2021](/blog/reinvent-2021). I start by providing the notes I took during the session, and then I will give my take and comments if I have any at the end.
 
 Wednesday 13:00
 
 SVS402-R1
 
-Resources: s12d.com/svs402-ri21
+Resources: [s12d.com/svs402-ri21](s12d.com/svs402-ri21)
 
-Agenda:
+## Agenda:
 - Thinking in events
 - Service-full serverless
 - Fabulous functions
 - Healthy serverless
 - Dev workflow
 
-Thinking in events
+## Thinking in events
 - Lambda wasn't called "serverless" when it was introduced, just an event-driven compute platform
 - When building there is often a reliance on synchronous execution which can get you into trouble
 - With distributed apps, complexity grows which means extra failure paths
   - So who is responsible for retries with multiple consecutive synchronous requests
 - Asynchronous would be synchronous with the client and asynchronous with the subsequent services
 - Async friends: SQS, SNS, Eventbridge
-  - s12d.com/events-queues-topics-streams
+  - [s12d.com/events-queues-topics-streams](s12d.com/events-queues-topics-streams)
 - Event = a signal that a system's state has changed
   - Commands / APIs are directed to a target but events are facts that others can observe
 - Event storming
-  - s12.com/eventbridge-storming
+  - [s12d.com/eventbridge-storming](s12d.com/eventbridge-storming)
 - Deciding on event context - fat vs thin ([further discussion in last talk](/blog/reinvent-building-next-gen-applications-with-event-driven-architectures))
   - Sending too many events = more traffic and complexity
   - Sending only metadata = needing to contact an API which introduces a dependency
 
-Service-full serverless (configuring managed services instead of writing code)
+## Service-full serverless (configuring managed services instead of writing code)
 - Use direct service integration from an event source
   - Use Lambda when transforming data not when transporting data
 - How much logic is in your code? Too much means Lambda-lith
@@ -46,7 +46,7 @@ Service-full serverless (configuring managed services instead of writing code)
 - Orchestration and choreography as config ([further discussion in last talk](/blog/reinvent-building-next-gen-applications-with-event-driven-architectures))
 - The fastest and lowest cost Lambda function is the one you remove and replace with a native service
 
-Fabulous functions
+## Fabulous functions
 - Invocation models: sync, async, event source mapping (polls stream/queue)
 - Async
   - Lambda has an internal queue
@@ -108,7 +108,7 @@ Fabulous functions
   - Uses Step Functions behind the scenes
   - Can also compare Graviton 2 to x86
 
-IaC
+## [IaC](/blog/gtbwsa-chapter-4-infrastructure-as-code)
 - Make sure to bake in security best practices from the start
   - No `*` permissions
 - [Serverless patterns collection on serverlessland.com](https://serverlessland.com/patterns)
@@ -129,7 +129,7 @@ IaC
 - Tip: use multiple stacks - split mutable and immutable resources; a single microservice does not need to be in one template
   - This can help speed up deployments
 
-Healthy serverless
+## Healthy serverless
 - "Everything fails, all the time"
 - Retry and failure handling
   - Need to be able to handle duplicates - idempotency
@@ -145,9 +145,9 @@ Healthy serverless
 - Use structured logs
 - [CloudWatch embedded metric format](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Embedded_Metric_Format_Specification.html)
   - It is asynchronous so it will not create extra overhead
-  - s12d.com/cwl-emf-client
+  - [s12d.com/cwl-emf-client](s12d.com/cwl-emf-client)
 - Query logs with CloudWatch Insights
-  - s12d.com/loginsights-examples
+  - [s12d.com/loginsights-examples](s12d.com/loginsights-examples)
     - Lambda specific queries
 - CloudWatch dashboards
 - Lambda extensions
@@ -158,11 +158,11 @@ Healthy serverless
 - [CloudWatch Lambda Insights](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Lambda-Insights-Getting-Started.html) - extra metrics on top of defaults
 - Lambda powertools
 
-Development workflow
+## Development workflow
 - Traditionally: write, save, run, validate
 - Do not try to emulate native services, do mock event payloads (for unit testing)
 
-My notes:
+## My notes:
 
 I was surprised that barely any of this information was new to me. It makes me hope that I would be considered an "advanced serverless developer." I have seen stress on structured logging a couple of times during this week which makes me think that I should bring that back as a big key. Also while I did not necessarily enjoy this session as a whole, I did like the rapid-fire list of topics in the "Healthy Serverless" section.
 

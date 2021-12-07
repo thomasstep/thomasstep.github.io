@@ -6,7 +6,7 @@ tags: [ aws ]
 description: My notes about the 2021 re:Invent ARC326 session
 ---
 
-This is an overview of a session that I went to during re:Invent 2021. I start by providing the notes I took during the session, and then I will give my take and comments if I have any at the end.
+This is an overview of a session that I went to during [re:Invent 2021](/blog/reinvent-2021). I start by providing the notes I took during the session, and then I will give my take and comments if I have any at the end.
 
 Monday 13:45
 
@@ -14,11 +14,11 @@ ARC326
 
 There is also an amazon Builder's Library series for this.
 
-https://aws.amazon.com/builders-library/beyond-five-9s-lessons-from-our-highest-available-data-planes/
+[https://aws.amazon.com/builders-library/beyond-five-9s-lessons-from-our-highest-available-data-planes/](https://aws.amazon.com/builders-library/beyond-five-9s-lessons-from-our-highest-available-data-planes/)
 
-10 things to go over:
+## 10 things to go over:
 
-1. Insist on the Highest Standards
+## 1. Insist on the Highest Standards
 - From code reviews to architectural patterns
 - "At the scale of billions/second, even 1 in a billion will happen all the time" - Dr. Werner Vogels
 - One particular area is deployment safety
@@ -37,7 +37,7 @@ https://aws.amazon.com/builders-library/beyond-five-9s-lessons-from-our-highest-
     6. One region
     7. Any further abstractions
 
-2. Cattle vs. Pets (How To Manage Systems)
+## 2. Cattle vs. Pets (How To Manage Systems)
 - Use resources as abstractions instead of knowing certain boxes or hosts
 - Deployment systems should be able to clone infrastructure between regions
 - Operators do (should) not have access to all regions (some are through automation only)
@@ -45,7 +45,7 @@ https://aws.amazon.com/builders-library/beyond-five-9s-lessons-from-our-highest-
 - Cloistered systems: systems with no general-purpose, interactive, or administrative access (like AWS Nitro)
 - Reduces the possibility of any untracked changes, improves security
 
-3. Limit the Blast Radius
+## 3. Limit the Blast Radius
 - Design with failure in mind
 - Regional isolation
 - Zonal isolation (AZs): use zonal isolation to link regions (incoming traffic is routed to healthy AZ)
@@ -54,7 +54,7 @@ https://aws.amazon.com/builders-library/beyond-five-9s-lessons-from-our-highest-
 - Shuffle sharding: each customer is given multiple partitions (or cells) for redundancy
   - If one partition fails, the customer's second partition begins to handle the traffic
 
-4. Circuit Breakers
+## 4. Circuit Breakers
 - Load shedding
   - Run load testing to find limits of components then embed load shedders around the bottlenecks
   - Load is shed whenever capacities are being reached
@@ -62,7 +62,7 @@ https://aws.amazon.com/builders-library/beyond-five-9s-lessons-from-our-highest-
   - If a service does look unhealthy, bullet counters preemptively replace it
   - Bullet counters know max amount of nodes that it is safe to replace at once so not every node is replaced at once
 
-5. Raising the Bar in Testing
+## 5. Raising the Bar in Testing
 - 1000s of unit tests, 100s of integration tests, preprod environments, roll-forward, and roll-back testing
 - AWS contributes ridiculous amounts of investment to testing
 - [S2N project](https://github.com/aws/s2n-tls) is a good example of how AWS devs operate since it is open source
@@ -71,7 +71,7 @@ https://aws.amazon.com/builders-library/beyond-five-9s-lessons-from-our-highest-
   - Automated reasoning and [Formal Verification](https://en.wikipedia.org/wiki/Formal_verification)
     - Can prove that code is correct for any possible set of inputs (mathematical proofs)
 
-6. Lifecycle Management (Credentials Management)
+## 6. Lifecycle Management (Credentials Management)
 - Common case for outages
 - Credentials need to be frequently rotated and expired
   - Using expired or mismatched credentials can be a source of outages
@@ -83,7 +83,7 @@ https://aws.amazon.com/builders-library/beyond-five-9s-lessons-from-our-highest-
 - Additional protection from fail-safe canary scanning
 - Make sure that new credentials are available before expiring credentials
 
-7. Modular Separation
+## 7. Modular Separation
 - Common example: control plane and data plane
 - Kinesis has a control plane API that deals with provisioning a Firehose/instance
   - Data plane is ingesting data
@@ -91,14 +91,14 @@ https://aws.amazon.com/builders-library/beyond-five-9s-lessons-from-our-highest-
   - Data plane uses a record store
   - Async workflows and record store are separated so that one going down does not affect the other API (data vs control)
 
-8. Static Stability (I missed some of what this actually is)
+## 8. Static Stability (I missed some of what this actually is)
 - The availability of a system relies on the availability of its dependencies
 - Managing dependencies
 - In the Kinesis example from #7: a metadata store used by both control and data plane APIs could take down both
   - Instead have a metadata store relied on by the control plane and a metadata puller (copy of metadata) relied on by the data plane API
     - Almost like a smaller copy/cache of persistent metadata
 
-9. (Principal of) Constant Work
+## 9. (Principal of) Constant Work
 - Biggest risk in any system is change and dynamism
 - Dynamism can be new code, new code paths not executed, unexpected scaling
 - Risk is often proportionate to rates of change in systems
@@ -113,7 +113,7 @@ https://aws.amazon.com/builders-library/beyond-five-9s-lessons-from-our-highest-
   - He claims that doing something like this is only a few thousand dollars per year for a couple of thousand config files in S3...
   - I am not sure that this example was a good one
 
-10. Retries
+## 10. Retries
 - Side effect: thundering herd
   - System is overloaded, clients retry, the system sends failures because it is overloaded
   - Vicious cycle
@@ -126,7 +126,7 @@ https://aws.amazon.com/builders-library/beyond-five-9s-lessons-from-our-highest-
   - As service starts recovering again, the client can start sending and retrying again
   - AWS SDKs have this and it can be enabled through the config
 
-My notes:
+## My notes:
 
 I am 100% onboard with Cattle vs. Pets. I think naming things gets finicky and makes it more difficult to replicate certain resources. My preference is to let CloudFormation generate names for as many resources as it can. For resources that require a name, I try to use a unique string like the CloudFormation Stack's name in the resource's name.
 

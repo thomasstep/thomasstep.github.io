@@ -6,7 +6,7 @@ tags: [ aws ]
 description: My notes about the 2021 re:Invent ARC317 session
 ---
 
-This is an overview of a session that I went to during re:Invent 2021. I start by providing the notes I took during the session, and then I will give my take and comments if I have any at the end.
+This is an overview of a session that I went to during [re:Invent 2021](/blog/reinvent-2021). I start by providing the notes I took during the session, and then I will give my take and comments if I have any at the end.
 
 Thursday 11:30
 
@@ -14,11 +14,11 @@ ARC317-R2
 
 Seth Eliot and Jennifer Moran
 
-Agenda:
+## Agenda:
 - Disaster Recovery (DR) and DR objectives
 - DR strategies
 
-DR and DR objectives
+## DR and DR objectives
 - "We needed to build systems that embrace failure as a natural occurrence" - Dr. Werner Vogels
 - Disaster events are natural, technical, or human error
 - Planning for how we recover, what it costs, what it looks like, how long it takes
@@ -49,7 +49,7 @@ DR and DR objectives
   - Traffic would need to be rerouted
   - Another option is active-active where both regions are taking on traffic
 
-Strategies for DR
+## Strategies for DR
 - Think about DR in layers - not only multi-region, could be multi-AZ then only data backup is multi-region
 - Different strategies with varying RPO and RTO
   - From long to short times: backup and restore, pilot light, warm standby, and active-active
@@ -74,27 +74,27 @@ Strategies for DR
   - DDB global tables - all tables accept writes and handle replication
   - "Replication is your friend until it's not" (deletions will be replicated) so use point in time backups
 
-Failover is one thing, what about failback?
+## Failover is one thing, what about failback?
 - Two ways to do that
 - If possible, blow away original primaries and remake the original DB in the first region out of the failed-over region
 - With huge datasets that is not good so you will need to set up some sort of automation to replicate the failover region (which is now handling traffic) to the original region
 
-I wonder what architectures for fully serverless apps looks like
+## I wonder what architectures for fully serverless apps looks like
 - He actually went over this
 - Route 53 to API Gateways in both regions with Lambdas and global DDB tables
 - So pretty much stacks in each region for failover you want with Route 53 handling routing
 - Can also use reserved concurrency and provisioned concurrency depending on how you want to handle cold starts
 
-Game days - simulate failure or event to test systems
+## Game days - simulate failure or event to test systems
 - Planning -> execution -> analysis
 - Get people involved, give an overview and team member roles
 
-Links:
+## Links:
 - bit.ly/DR_AWS
 - wellarchitectedlabs.com/reliability
 - bit.ly/aws-dr-blog
 
-My notes:
+## My notes:
 
 I thought that this session gave good alternative architectures compared to cell-based architectures for failover reasons. I do not think that anything I heard here was necessarily groundbreaking or new for me personally, and it was also unfortunate that these architectures were focused less on serverless architectures. This will be a great reference point whenever I directly need it in the future for non-serverless workloads.
 

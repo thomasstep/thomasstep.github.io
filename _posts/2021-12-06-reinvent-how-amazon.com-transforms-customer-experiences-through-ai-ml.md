@@ -6,7 +6,7 @@ tags: [ aws ]
 description: My notes about the 2021 re:Invent INO202 session
 ---
 
-This is an overview of a session that I went to during re:Invent 2021. I start by providing the notes I took during the session, and then I will give my take and comments if I have any at the end.
+This is an overview of a session that I went to during [re:Invent 2021](/blog/reinvent-2021). I start by providing the notes I took during the session, and then I will give my take and comments if I have any at the end.
 
 Wednesday 16:00
 
@@ -14,13 +14,13 @@ INO202
 
 Choong Lee and Laura Squier
 
-How Amazon approaches the idea of applying AI/ML to everything
+## How Amazon approaches the idea of applying AI/ML to everything
 
-Agenda:
+## Agenda:
 - Key use cases
 - Lessons learned
 
-AI/ML can be used now because we have enough data volume and velocity
+## AI/ML can be used now because we have enough data volume and velocity
 - What powers Prime one-day shipping
   - 400 million products are forecasted everyday down to the zip code level
   - Fulfillment centers, robots, trailers, and delivery vans all come into play
@@ -48,7 +48,7 @@ AI/ML can be used now because we have enough data volume and velocity
 - Robots move to pickers (humans) based on the probability that they will need a certain item they hold
 - Robots present the correct cubby to the picker
 
-What other customer experiences are transformed through AI/ML
+## What other customer experiences are transformed through AI/ML
 - Moving from a reactive approach to a proactive approach
 - Food allergen or health and safety risks on items
   - They used to gather feedback from customers, identify and tag items with concerns, then suppress items and notify regulatory bodies
@@ -61,7 +61,7 @@ What other customer experiences are transformed through AI/ML
   - If collectible, that model knows whether or not the item needs additional protective packaging
 - Teams at Amazon use AWS tech to build and develop new models in weeks
 
-What did Amazon learn was most important to get right in the ML journey?
+## What did Amazon learn was most important to get right in the ML journey?
 - The hallmark of Amazon is speed and scale
 - At that speed and scale, traditional algorithms won't work
 - There are hurdles for businesses that are not already using AI/ML
@@ -89,6 +89,6 @@ What did Amazon learn was most important to get right in the ML journey?
   - Scaling
     - Remove the blockers to the path to deploying solutions to production
 
-My notes:
+## My notes:
 
 I am new to AI/ML. This session made me think that AI/ML was more of a business-related technology than a developer-related one. I am sure that there are applications for both, but I found it strange that they presented much more of the business side of things especially given the venue.
