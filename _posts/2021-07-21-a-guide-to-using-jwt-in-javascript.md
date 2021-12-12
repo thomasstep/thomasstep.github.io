@@ -60,7 +60,7 @@ Back to the task at hand. As you might have guessed by now, the public key shoul
 
 ## Creating a JWKS
 
-[JWKS stands for JSON Web Key Set](https://datatracker.ietf.org/doc/html/rfc7517) and they are a convenient way to distribute public keys. [Here is an example of a JWKS in the wild.](https://crowauth.com/v1/jwks.json) The idea here is that JWKSs can be hosted as a simple JSON file to then be accessed by anything using a corresponding JWT. Building them off of public keys in `jose` is just as easy as creating the initial key pairs.
+[JWKS stands for JSON Web Key Set](https://datatracker.ietf.org/doc/html/rfc7517) and they are a convenient way to distribute public keys. [Here is an example of a JWKS in the wild.](https://crowauth.thomasstep.com/v1/jwks.json) The idea here is that JWKSs can be hosted as a simple JSON file to then be accessed by anything using a corresponding JWT. Building them off of public keys in `jose` is just as easy as creating the initial key pairs.
 
 If the public key is in a file (if it was created using the command line), then the file will need to be read in, converted to the Node `crypto` library's representation of a key, and converted using `jose`.
 
@@ -186,7 +186,7 @@ eyJhbGciOiJSUzI1NiJ9.eyJteUNsYWltIjp0cnVlLCJpc3MiOiJodHRwczovL2V4YW1wbGUuY29tIiw
 
 The payload (which is anything custom that I want to be added to the JWT) is the piece that looks like `{ myClaim: true }`. The server gets to decide what it wants to add, and that payload will be available after verifying the JWT in another server. The other claims that are set are `iss` (Issuer), `sub` (Subject), `aud` (Audience), `exp` (Expiration Time), and `iat` (Issued At). The protected header is pretty self-explanatory but there is [more information](https://datatracker.ietf.org/doc/html/rfc7519#section-5) and [an example](https://datatracker.ietf.org/doc/html/rfc7519#section-3.1) in the RFC.
 
-`iss` should be set to your service's URL. For example, [Crow Authentication](https://crowauth.com/) sets the Issuer to `https://api.crowauth.com` which is the API URL. This claim is optional.
+`iss` should be set to your service's URL. For example, [Crow Authentication](https://crowauth.thomasstep.com/) sets the Issuer to `https://api.crowauth.thomasstep.com` which is the API URL. This claim is optional.
 
 `sub` should uniquely identify the principal that is the subject of the JWT. This could be a user's ID or email address. This claim is optional.
 
@@ -206,7 +206,7 @@ At a high level, we need to grab the distributed public key then verify the JWT 
 const { createRemoteJWKSet } = require('jose/jwks/remote');
 const { jwtVerify } = require('jose/jwt/verify');
 
-const jwks = createRemoteJWKSet(new URL('https://crowauth.com/v1/jwks.json'));
+const jwks = createRemoteJWKSet(new URL('https://crowauth.thomasstep.com/v1/jwks.json'));
 const { payload, protectedHeader } = await jwtVerify(jwt, jwks); // The jwt variable needs to be passed in from somewhere; cookie, hard coded, parameter, etc.
 ```
 
@@ -258,4 +258,4 @@ You've done it. Good job. Hopefully, this guide made learning about JWTs with Ja
 
 Understanding JWTs and how to operate with them was enough for this guide. I will be putting out another guide soon about using JWTs with web applications. That guide will cover how to authenticate users, where JWTs should be stored, and the relationships between the authentication server, browser, and application servers. Whenever it is written and published, I will edit this post with a link to it.
 
-If you enjoyed this guide and it was helpful, please let me know somehow. Send an email, tweet at me, comment on one of the cross-posts (if you're not reading this in [my personal blog](https://thomasstep.com/)), whatever floats your boat. If it wasn't helpful, there are errors, or you have suggestions, the same rule applies. If you need authentication for a new web application and this is your first introduction to it, might I suggest saving yourself the hassle and going with an off-the-shelf solution like [Crow Authentication](https://crowauth.com/)? Until next time!
+If you enjoyed this guide and it was helpful, please let me know somehow. Send an email, tweet at me, comment on one of the cross-posts (if you're not reading this in [my personal blog](https://thomasstep.com/)), whatever floats your boat. If it wasn't helpful, there are errors, or you have suggestions, the same rule applies. If you need authentication for a new web application and this is your first introduction to it, might I suggest saving yourself the hassle and going with an off-the-shelf solution like [Crow Authentication](https://crowauth.thomasstep.com/)? Until next time!

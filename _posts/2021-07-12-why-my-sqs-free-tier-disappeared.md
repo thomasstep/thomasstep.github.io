@@ -14,7 +14,7 @@ Your AWS account xxxxxxxxxxxx has exceeded 85% of the usage limit for one or mor
 
 At the time the Budget email was sent I had used 865,062 of 1,000,000 free SQS requests. The first thought that came to my mind was, "I'm glad that I have a budget set up." The second was, "How am I about to exceed 1 million SQS requests?" The third was, "Oh wow did Crow go viral?" Unfortunately, Crow did not go viral.
 
-I have a few queues with Lambda consumers that react to certain events for [Crow Authentication](https://crowauth.com/). I set these up to decrease the amount of synchronous work being done on various API endpoints and therefore decrease the latency an end-user experiences. I have an SNS topic set up that feeds into a few queues from which a few different Lambda functions are invoked.
+I have a few queues with Lambda consumers that react to certain events for [Crow Authentication](https://crowauth.thomasstep.com/). I set these up to decrease the amount of synchronous work being done on various API endpoints and therefore decrease the latency an end-user experiences. I have an SNS topic set up that feeds into a few queues from which a few different Lambda functions are invoked.
 
 The way I originally understood this integration, was that SNS broadcasted something, SQS received the event, SQS stored the event until a Lambda could consume it, and then a Lambda would act on the information in the request. Once that email hit my inbox I realized that something must be going on underneath the hood that would explain the huge amount of API being made on my behalf because a quick check of my database told me that Crow did not in fact go viral.
 

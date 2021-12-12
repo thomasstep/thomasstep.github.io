@@ -4,13 +4,13 @@ title: Projects And Services
 hide_mailchimp_signup: true
 ---
 
-# [Papyrus](https://papyrusmenus.com/)
+# [Papyrus](https://papyrus.thomasstep.com/)
 
 Papyrus was spawned after a terrible QR code menu experience that I had at a local restaurant. I wanted to make a simple and reliable solution to this. I am currently marketing mostly to local restaurants, but the service is obviously open an available to all.
 
 The infrastructure stack is totally serverless. From the APIs using Lambda to the file storage using S3. Authentication for this application is through Crow Authentication. Back end is Node, front end is Next.js and Tailwind CSS.
 
-# [Crow Authentication](https://crowauth.com/)
+# [Crow Authentication](https://crowauth.thomasstep.com/)
 
 Crow Authentication is provides easy authentication as a service through a set of intuitive APIs. Create an application in Crow Auth and have a deployed application with authentication in minutes.
 

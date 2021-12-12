@@ -6,7 +6,7 @@ tags: [ aws, dev, javascript, ops, serverless ]
 description: Upload a file to AWS S3 with presigned URLs
 ---
 
-I recently finished building an application that allowed users to [upload PDFs that I can then host and direct others to via a QR code](https://papyrusmenus.com/). I knew that I wanted to build the application using AWS and I figured that S3 would be my best option for storing the uploaded files, but I had never dealt with uploading files. The solution turned out to be easier than I expected, but it also was not super straightforward.
+I recently finished building an application that allowed users to [upload PDFs that I can then host and direct others to via a QR code](https://papyrus.thomasstep.com/). I knew that I wanted to build the application using AWS and I figured that S3 would be my best option for storing the uploaded files, but I had never dealt with uploading files. The solution turned out to be easier than I expected, but it also was not super straightforward.
 
 It turns out that handling an upload with HTML is just as easy as creating an [`input` tag with the type set to `file`](https://developer.mozilla.org/en-US/docs/Web/API/File/Using_files_from_web_applications). The `input` tag draws the `Browse...` button that everyone already knows and handles bringing up a user's local file storage for choosing a file. I added an `onChange` event handler to the `input` tag which pulled the files from the event payload provided, verified the file type uploaded, verified that the file did not surpass my app's maximum file size limit, then saved the file's binary contents as the state. I subsequently had another button that uploaded the file selected, but for now, here is the code that handled a user selecting a file to upload.
 
