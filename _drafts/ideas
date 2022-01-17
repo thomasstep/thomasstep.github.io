@@ -1,6 +1,5 @@
-- talk about updates to crow-api; fully fledged construct now. ive worked through a lot of the problems and written tests which is what i talked about in the last post about it
-- been using the cdk a lot lately; need to start the cdk reference repo
 - started using api gateway models much more and had great success with them; give examples in cdk ref repo
+  - link back to the updates post
 - using the ddb document client in sdk v3; examples
-- cdk direct integration between api gateway and sns
 - writing cdk tests
+  - link back  to the updates post
