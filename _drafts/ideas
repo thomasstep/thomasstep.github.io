@@ -1,5 +1,3 @@
-- started using api gateway models much more and had great success with them; give examples in cdk ref repo
-  - link back to the updates post
 - using the ddb document client in sdk v3; examples
 - writing cdk tests
   - link back  to the updates post
