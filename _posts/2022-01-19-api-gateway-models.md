@@ -12,7 +12,7 @@ I have written many APIs and configured many API Gateways to go with them. What 
 
 Models are a way to define the accepted body using JSON and a syntax called [JSON schema](https://json-schema.org/). That is about as complicated as they are. Once you have a schema in mind, the syntax is also fairly straightforward. I will show an example of a JSON schema that I wrote for a CDK application and then explain the different pieces.
 
-```typescript
+```
 {
   schema: apigateway.JsonSchemaVersion.DRAFT4,
   title: 'mySchema',
