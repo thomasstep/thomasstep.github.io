@@ -34,12 +34,12 @@ Remember that these are simply examples and you can change your code however you
 **Table of Contents:**
 
 1. [Creating the Document Client](#creating-the-document-client)
-2. [`PutItem`](#putitem)
-3. [`BatchWriteItem`](#batchwriteitem)
-4. [`GetItem`](#getitem)
-5. [`Query`](#query)
-6. [`UpdateItem`](#updateitem)
-7. [`DeleteItem`](#deleteitem)
+2. [PutItem](#putitem)
+3. [BatchWriteItem](#batchwriteitem)
+4. [GetItem](#getitem)
+5. [Query](#query)
+6. [UpdateItem](#updateitem)
+7. [DeleteItem](#deleteitem)
 
 ---
 
