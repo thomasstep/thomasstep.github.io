@@ -208,7 +208,7 @@ await documentClient.update({
     secondaryId: 'secondaryId',
   },
   ...updates,
-})
+});
 ```
 
 ## `DeleteItem`
