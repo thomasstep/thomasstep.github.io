@@ -22,4 +22,4 @@ The last large change that I wanted to bring up in this post was the addition of
 
 That is all for now. Overall, I am much happier with the state of `crow-api` now compared to the state it was in when I wrote my last post about it. I plan on writing separate posts about certain topics that I have discussed in this one, and whenever I write those posts I will do my best to come back through and add some links in where they need to exist. Please check out [`crow-api`](https://github.com/thomasstep/crow-api) to see if it fits your needs, and if you have any questions or comments please send them my way through GitHub or even email.
 
-EDIT: I backfilled links for [models](/blog/api-gateway-models) and [tests](/blog/how-to-write-aws-cdk-tests).
+EDIT: I back filled links for [models](/blog/api-gateway-models) and [tests](/blog/how-to-write-aws-cdk-tests).
