@@ -157,10 +157,6 @@ const item = res.Item;
 
 [AWS Documentation](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_Query.html)
 
-explain each piece
-  filter Only return items with a value >= 3
-explain that only hello and value would return not rings (from batch example)
-
 There are some additional fields in `query` that might seem confusing at first. `KeyConditionExpression` for a `query` needs to define the value of the partition key and can optionally specify a comparison with a value for the sort key. In my example, the sort key is simply compared with equals (`=`) to the value (`secondaryId`) but I could have just as easily used any of the supported [key condition expressions](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Query.html#Query.KeyConditionExpressions).
 
 The next confusing parts are the `ExpressionAttributeNames` and `ExpressionAttributeValues`. Each is a way to dynamically reference a value in the `KeyConditionExpression` without needing to do string substitution. With the Document Client, this is straightforward, but for some context, without the Document Client, we would have needed to add data types to the values in `ExpressionAttributeValues`. The strings to be referenced by `ExpressionAttributeNames` should be prefixed with a hash sign (`#`) and `ExpressionAttributeValues` should be prefixed with a colon (`:`). The prefix characters are not a convention, they are explicitly stated in the documentation.
