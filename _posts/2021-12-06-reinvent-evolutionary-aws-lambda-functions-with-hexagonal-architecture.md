@@ -6,6 +6,8 @@ tags: [ aws ]
 description: My notes about the 2021 re:Invent ARC302 session
 ---
 
+Edit: I have since written a post about [implementating hexagonal architecture](/blog/how-i-implement-hexagonal-architecture-in-aws-lambda) if you would rather see code.
+
 This is an overview of a session that I went to during [re:Invent 2021](/blog/reinvent-2021). I start by providing the notes I took during the session, and then I will give my take and comments if I have any at the end.
 
 Tuesday 16:15
