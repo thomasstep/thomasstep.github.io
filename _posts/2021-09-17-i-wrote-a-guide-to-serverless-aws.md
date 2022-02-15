@@ -6,7 +6,7 @@ tags: [ aws, databases, containers, dev, meta, ops, serverless ]
 description: Pre-release for my Serverless AWS Guide
 ---
 
-EDIT: [The guide has been released!](/blog/gtbwsa-chapter-1-introduction)
+EDIT: [The guide has been released](/blog/gtbwsa-chapter-1-introduction) and [the eBook has been released.](https://thomasstep.gumroad.com/l/serverless-guide)
 
 To newcomers, AWS might seem like a big confusing jumble of buzzwords and weird service names. When I started my journey into learning AWS and cloud engineering, I thought the same thing. I started my journey as a software engineer with some networking and traditional operations experience, but the cloud and its constituents were still very much foreign to me. Fast forward two years and I have learned more than I ever thought I would about AWS. I have worked with and weeded through a lot of the AWS services, and I have somewhat strong opinions about how to build workloads and which services are worth my time.
 

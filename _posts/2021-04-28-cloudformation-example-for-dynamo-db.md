@@ -6,6 +6,8 @@ tags: [ aws, databases, ops, serverless ]
 description: Introduction to DynamoDB and its powerful configuration
 ---
 
+Edit: If you would like to read more about interacting with a DynamoDB table, I wrote a post about using the Javascript AWS SDK [DynamoDB Document Client](/blog/how-to-use-the-dynamodb-document-client)
+
 A while back I wanted to create a CloudFormation template for a DynamoDB table because that seemed like a missing piece in my serverless stack. It seems like everywhere I turn someone new is extolling the beauty and efficiency that is DynamoDB. I'll add some more commentary below, but without further ado, here is a quick and easy example for a DynamoDB table.
 
 ```yml
