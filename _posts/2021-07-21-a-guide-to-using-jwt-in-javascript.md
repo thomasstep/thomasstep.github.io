@@ -12,7 +12,15 @@ JWTs are a convenient way for us to store a small bit of public information gene
 
 For simplicity, I will assume that the intent of signing and verifying JWTs is for authentication purposes. While JWTs can be used for other reasons, I imagine authentication is the widest used case and what anyone who found this article is planning on doing. I am also going to assume that you have none of this set up yet. I will walk you through the following: creating public and private keys, creating a JWKS, signing a JWT, and finally verifying a JWT.
 
-One prerequisite for all of this is the npm package `jose`
+The one prerequisite for all of this is the npm package `jose` but similar operations can be done in any fully featured library.
+
+**Table of Contents:**
+
+- [Creating Public and Private Keys](#creating-public-and-private-keys)
+- [Creating a JWKS](#creating-a-jwks)
+- [Signing a JWT](#signing-a-jwt)
+- [Verifying a JWT](#verifying-a-jwt)
+- [The End](#the-end)
 
 ## Creating Public and Private Keys
 
