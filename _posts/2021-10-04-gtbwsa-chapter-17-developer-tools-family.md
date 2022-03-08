@@ -5,6 +5,7 @@ author: Thomas
 tags: [ guide to building with serverless aws ]
 description: Explaining how to run CI/CD pipelines on AWS
 date: 2021-10-04 09:00:17 # this is used to properly sort the chapters
+redirect_to: https://thomasstep.gumroad.com/l/serverless-guide
 ---
 
 This is a chapter from the Guide To Building With Serverless AWS that I wrote. For more information about the guide's intent and focuses, please read the Introduction Chapter.
