@@ -4,11 +4,17 @@ title: Projects And Services
 hide_mailchimp_signup: true
 ---
 
+# [Calendar API](https://rapidapi.com/tstep916/api/calendar22)
+
+My calendar API was started out of a desire to create a scheduling SaaS. I naturally needed some way to keep track of events and places for users, so I decided to create a reusable service for that purpose that could also be used again in the future.
+
+Calendar API is (unsurprisingly) completely serverless. Based on API Gateway, Lambda, and DynamoDB. The data model for this one was particularly interesting, and I will hopefully write up an architectural review of the service soon.
+
 # [Papyrus](https://papyrus.thomasstep.com/)
 
 Papyrus was spawned after a terrible QR code menu experience that I had at a local restaurant. I wanted to make a simple and reliable solution to this. I am currently marketing mostly to local restaurants, but the service is obviously open an available to all.
 
-The infrastructure stack is totally serverless. From the APIs using Lambda to the file storage using S3. Authentication for this application is through Crow Authentication. Back end is Node, front end is Next.js and Tailwind CSS.
+The infrastructure stack is totally serverless. From the APIs using Lambda to the file storage using S3. Authentication for this application is through Crow Authentication. Back end is Node, front end is Next.js and Tailwind CSS. I wrote up a short post about some of the more interesting decisions I made and flows that I used while build Papyrus that [you can read here](/blog/papyrus-architecture).
 
 # [Crow Authentication](https://crowauth.thomasstep.com/)
 
