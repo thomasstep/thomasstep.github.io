@@ -56,9 +56,50 @@ Overall, this API was designed much better than ones I have created in the past 
 
 api gateway direct integrations
 
+I have previously implemented API Gateway Service Proxy Integrations, but those prior configurations were nothing like what I did for the calendar API. This time around, I wanted to get deeper into Velocity and actually implement full endpoints instead of simple, internal-use-only endpoints that I had done before. Velocity might not be the nicest language to work with, but I set out to understand more of the capabilities with this feature, not with time efficiency in mind. For that reason, I do not recommend going the service proxy integration route for any endpoint with data transformation.
+
+I wrote service proxy integrations for two main types of actions: reading from DynamoDB and putting events to an SNS topic. I had previously configured DynamoDB service proxy integrations, so I was not too worried about getting the integration working correctly. Especially with the CDK, the integration configuration is fairly straightforward and there is even an example on the `apigateway.AwsIntegration` class's documentation page.
+
+The one part about setting up the DynamoDB integration that was slightly tricky was around setting default values. For example, if there is an optional attribute in an item, I wanted to either exclude it from a response or provide a default value. I could not find any solid examples of this when I looked. Instead what I ended up doing was setting a variable's value based on a condition that included looking for a value. There was a weird bit of Velocity syntax involved with casting an undefined value as a string, which you can see in the example.
+
+```
+#set($inputRoot = $input.path('$'))
+#if ( "$!inputRoot.Item.optionalAttribute.S" == "" )
+  #set($optionalAttribute = "defaultValue")
+#else
+  #set($optionalAttribute = $inputRoot.Item.optionalAttribute.S)
+#end
+```
+
+Another nice lesson I learned from integrating with DynamoDB was how to override an integration response's status code, which is especially useful when querying for items by their keys. Let's assume that I had a data model with a simple key-value pair in DynamoDB with the key named `id`. If the `id` does not exist, then I would want to return a `404 Not Found`. However, DynamoDB will still return a `200` on a `GetItem` even if the item does not exist. What I ended up doing was checking for the `id` (much like the previous example) then overriding the status code without returning anything.
+
+```
+#if ( "$!inputRoot.Item.id.S" == "" )
+  #set($context.responseOverride.status = 404)
+#else
+{
+  "hello": "world"
+}
+#end
+```
+
+Configuring the SNS integration was not as straightforward as I had hoped it would be. Apparently configuring any service proxy integration with anything other than DynamoDB is difficult because we need to reference the underlying API, which is not near as easy to navigate as the SDKs and CLI. In order to minimize the amount of duplicate content I post, [here is the post I wrote specifically about this subject](/blog/aws-cdk-example-for-api-gateway-and-sns-integration).
+
+After all is said and done, I do not think that I would put a huge emphasis on service proxy integrations especially for commonly used endpoints. The decreased latency benefit might exist, but I did not experience it except when dealing with Lambda cold starts. However, making requests to an endpoint using a service proxy integration compared to a warm Lambda showed negligible benefits in my opinion. Where I do still see service proxy integrations fitting in nicely is for smaller APIs that would not require Lambda otherwise to alleviate maintaining a code base, or for infrequently used but still latency-sensitive APIs since cold starts are not a problem.
+
 ## Authentication
 
 auth and api keys for rapid api and personal use
+
+As I previously mentioned, before I started coding this service out, I knew that I wanted to offer it on RapidAPI. I have [publish APIs on RapidAPI before](/blog/i-published-an-api-through-rapid-api), but this time I wanted to build out something much more than the earlier simple APIs. I like to iterate on things and this was just another iteration. While designing this API, I knew that it would require some form of authentication, which was not something that I had previously done or even looking into with RapidAPI.
+
+Of course I have [Crow Authentication](https://crowauth.thomasstep.com/) whenever I need it, but using Crow would have been overkill and I did not like the idea of authenticating with a JWT for this. Remember, I built this API as a reusable service for some of my other projects which would presumably already need to handle authentication presumably through Crow with JWTs. API keys came to mind instead. API keys are not a great form of authentication in the way that API Gateway offers them though. API Gateway does not map many API keys to one unique identity, at least not that I know of, and I wanted to cover the use case of losing or rotating API keys without losing access to data.
+
+I think of JWT authentication more like authenticating a specific user where API key authentication is more like authenticating an application or workload. Let's say I wanted to use the calendar API with [Elsewhere](https://elsewhere.thomasstep.com/). Elsewhere does not have an email address or other uniquely identifying piece of information other than its name, which is something I would expect in a JWT. Instead an API key mapping to the workload itself seems more appropriate. With API keys, I can grant multiple API keys to Elsewhere and map them back to Elsewhere as an entity using a mostly-static database.
+
+What I ended up configuring on the API Gateway was both API key authentication and a custom Lambda authorizer. API Gateway first validates API keys then sends a request to the Lambda authorizer. I could then authenticate an API key in my authorizer Lambda against a known entity in my database. The database items are simple key-value pairs with keys being valid API keys and the values being the unique identity being authenticated.
+
+Using API keys also works well integrating with RapidAPI. However, if I authenticate for the calendar API's entities based on API keys, wouldn't all RapidAPI users be able to access all other users' resources? This is where I needed to start leaning on RapidAPI's own authentication. For every RapidAPI request, there are a few headers injected that get passed to my calendar API. The headers that I rely on are `X-RapidAPI-Proxy-Secret` and `X-RapidAPI-User`.
 
 ## Hexagonal Architecture
 
