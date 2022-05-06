@@ -1,10 +1,9 @@
-
 ---
 layout: post
-title:  "Title"
+title: "Why do AWS Syntetics Canaries Cost So Much"
 author: Thomas
 tags: [ aws, dev, meta, ops, serverless ]
-description: TBD
+description: Asking about reasons for pricing an AWS service and offering an alternative
 ---
 
 *This post is meant to be an openly published question to AWS.*
