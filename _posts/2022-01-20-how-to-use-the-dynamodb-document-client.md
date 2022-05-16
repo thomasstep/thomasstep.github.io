@@ -153,6 +153,8 @@ const res = await documentClient.get({
 const item = res.Item;
 ```
 
+Edit: In one of [my recent livestreams](https://www.youtube.com/watch?v=cXrMrrt4Ucg) I came across a problem where `GetItem` was returning an empty object instead of a string set. It took me a while to dig down the rabbit hole but I finally figured out what was going on. The Document Client correctly unmarshalls the string set into a Javascript `Set` type, but whenever a `Set` is logged (or returned the API Gateway for that matter) it is represented as an empty object. The problem was not that the data returned was an empty object, just that it was represented as one. The solution is to convert the `Set` to an `Array` (using something like `Array.from(item.stringSetAttribute)`) before logging or returning the value. Shout out to [this GitHub issue and comment](https://github.com/aws/aws-sdk-js-v3/issues/3271#issuecomment-1100625848) that brought me to my understanding.
+
 ## `Query`
 
 [AWS Documentation](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_Query.html)
