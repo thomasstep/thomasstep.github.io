@@ -2,7 +2,7 @@
 layout: post
 title:  "Making a Pop-Up Window With Tailwind CSS"
 author: Thomas
-tags: [ dev, javascript ]
+tags: [ dev, javascript, front end ]
 description: Using TailwindCSS to create a pop-up window
 ---
 

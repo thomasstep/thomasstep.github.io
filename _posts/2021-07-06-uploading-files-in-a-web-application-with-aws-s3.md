@@ -2,7 +2,7 @@
 layout: post
 title:  "Upload Files in a Web Application with AWS S3"
 author: Thomas
-tags: [ aws, dev, javascript, ops, serverless ]
+tags: [ aws, dev, javascript, ops, serverless, front end ]
 description: Upload a file to AWS S3 with presigned URLs
 ---
 

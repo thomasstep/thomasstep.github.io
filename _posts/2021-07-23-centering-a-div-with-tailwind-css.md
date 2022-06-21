@@ -2,7 +2,7 @@
 layout: post
 title:  "Centering a Div With Tailwind CSS"
 author: Thomas
-tags: [ dev ]
+tags: [ dev, front end ]
 description: Use CSS to position an element in the center of a web page
 ---
 

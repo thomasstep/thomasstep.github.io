@@ -2,7 +2,7 @@
 layout: post
 title:  "How to Make a Form With HTML, React, and Tailwind CSS"
 author: Thomas
-tags: [ dev, javascript ]
+tags: [ dev, javascript, front end ]
 description: Create forms using HTML, React, and Tailwind CSS
 ---
 

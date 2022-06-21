@@ -2,7 +2,7 @@
 layout: post
 title:  "Working With Next.js Router's Query"
 author: Thomas
-tags: [ dev, javascript ]
+tags: [ dev, javascript, front end ]
 description: Solution for router.query showing as undefined.
 ---
 

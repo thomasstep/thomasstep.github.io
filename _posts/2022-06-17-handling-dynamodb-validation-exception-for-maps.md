@@ -29,7 +29,7 @@ try {
       err.name === 'ValidationException'
       && err.message === 'The document path provided in the update expression is invalid for update'
     ) {
-      // If one of the stats has not yet been created,
+      // If one of the attributes has not yet been created,
       //   create them as empty maps...
       const emptyMapUpdateParams = constructEmptyMapUpdates(stats);
       await documentClient.update({
