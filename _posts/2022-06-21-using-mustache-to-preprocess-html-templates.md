@@ -10,6 +10,7 @@ While working on one of my recent projects I came across the need to templatize 
 
 Years ago I had heard of something called Mustache which is a templating engine somewhat similar to something like Jinja. I started looking into it because I wanted something quick and lightweight to setup. I am not using anything special from the Mustache syntax other than the double brackets (`{{ }}`) to preprocess my HTML files. Here is what one of my templates might look like.
 
+{% raw %}
 ```html
 <html>
   <head>
@@ -19,6 +20,7 @@ Years ago I had heard of something called Mustache which is a templating engine 
   </body>
 </html>
 ```
+{% endraw %}
 
 The goal is to have a central configuration that all of my templates can read from and pass to Mustache. The keys in the configuration are simply matched with the template and the values are passed in. If my configuration looked like `{ "planet": "world" }`, then my resulting HTML should look like the following.
 
