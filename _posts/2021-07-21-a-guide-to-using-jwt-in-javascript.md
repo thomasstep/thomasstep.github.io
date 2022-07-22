@@ -14,6 +14,8 @@ For simplicity, I will assume that the intent of signing and verifying JWTs is f
 
 The one prerequisite for all of this is the npm package `jose` but similar operations can be done in any fully featured library.
 
+Creating a service like this from scratch can be difficult. I know because I have done it several times. My latest iteration [is available on GitHub](https://github.com/thomasstep/authentication-service) and I have been [streaming my progress on Youtube](https://www.youtube.com/watch?v=2ZhespSstvw&list=PLzcYUWwW5dVAnlFo1ZLdkCCRMNMwiPKeH). If you would like to skip writing all of this on your own, feel free to use my service. It is completely open source, runs on serverless infrastructure to minimize cost, and I would be more than happy to help you set it up.
+
 **Table of Contents:**
 
 - [Creating Public and Private Keys](#creating-public-and-private-keys)

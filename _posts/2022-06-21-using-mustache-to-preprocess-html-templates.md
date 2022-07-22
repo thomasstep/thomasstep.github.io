@@ -8,7 +8,7 @@ description: Code example of how to use Mustache and HTML templates
 
 While working on one of my recent projects I came across the need to templatize some of the information that I was using in HTML files. I am attempting to make my front end without any frameworks like Next.js but instead with simple HTML, CSS, and vanilla Javascript. We'll see how everything turns out but that'll be a topic of discussion for another post.
 
-Years ago I had heard of something called Mustache which is a templating engine somewhat similar to something like Jinja. I started looking into it because I wanted something quick and lightweight to setup. I am not using anything special from the Mustache syntax other than the double brackets (`{{ }}`) to preprocess my HTML files. Here is what one of my templates might look like.
+Years ago I had heard of something called Mustache which is a templating engine somewhat similar to something like Jinja. I started looking into it because I wanted something quick and lightweight to setup. I am not using anything special from the Mustache syntax other than the double brackets {% raw %}(`{{ }}`){% endraw %} to preprocess my HTML files. Here is what one of my templates might look like.
 
 {% raw %}
 ```html
