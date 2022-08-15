@@ -4,6 +4,14 @@ title: Projects And Services
 hide_mailchimp_signup: true
 ---
 
+# [Site Analytics](https://github.com/thomasstep/site-analytics)
+
+As part of my move away from Google Analytics I wanted to create my own site analytics service. This is a free and open-source version of that service. I plan on created a managed version in the future if there is desire (email me if you would like a managed version). The design and documentation in the README was meant to serve as an extension of this blog and projects page so that the documentation for the service lives with the code.
+
+# [Authentication Service](https://github.com/thomasstep/authentication-service)
+
+I decided to redesign and open source Crow Authentication. This is the result. The design and documentation in the README was meant to serve as an extension of this blog and projects page so that the documentation for the service lives with the code.
+
 # [Calendar API](https://rapidapi.com/tstep916/api/calendar22)
 
 My calendar API was started out of a desire to create a scheduling SaaS. I naturally needed some way to keep track of events and places for users, so I decided to create a reusable service for that purpose that could also be used again in the future.
