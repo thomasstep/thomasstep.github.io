@@ -7,7 +7,7 @@ description: How to use the DynamoDB SDK with Golang
 ---
 
 - [Basics](#basics)
-- [Marshalling](#marshalling)
+- [Marshaling](#marshaling)
 - [Expressions](#expressions)
 - [Representing Entities](#representing-entities)
 - [String Sets](#string-sets)
@@ -73,7 +73,7 @@ The main point of those wrappers is to show how much boilerplate is involved in 
 
 That's honestly about it for the lower-level DynamoDB topics. It was easy to get up and running. There are however two more specific areas that I wanted to discuss. One involves representing entities that are also transparent to users. The other is how DynamoDB handles `Set` types.
 
-### Marshalling
+### Marshaling
 
 Coming from Node, I heavily relied upon the Document Client to marshal DynamoDB types for me. I have manually marshaled in the past and it is not fun. I was worried that I was going to have to manually marshal or write a package to do it in Go, but luckily, [AWS provides a package](https://pkg.go.dev/github.com/aws/aws-sdk-go-v2/feature/dynamodb/attributevalue) to handle that for us. It is called `attributevalue`. I tended to use the `MarshalMap` function the most. The idea of it is that we can feed in an arbitrary struct and `attributevalue.MarshalMap` will be able to tell the types of the struct's members and create an appropriate map of `AttributeValue`s that we can directly feed into a DynamoDB operation. Here is what that might look like in action.
 
