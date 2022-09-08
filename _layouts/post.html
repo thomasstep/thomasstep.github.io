@@ -2,6 +2,10 @@
 layout: default
 ---
 
+<p>
+     <a href="/blog">&lt;- Blog</a>
+</p>
+
 {% if page.tags contains "aws" %}
      <div style="background-color: rgb(226 232 240); margin: 20px; padding: 20px;">
           <p style="margin: 0px;">
@@ -10,7 +14,6 @@ layout: default
      </div>
 {% endif %}
 
-<small>{{ page.date | date: "%-d %B %Y" }}</small>
 <h1>{{ page.title }}</h1>
 
 {{content}}

@@ -1,7 +1,6 @@
 ---
 layout: default
 title: Pomodoro Noise Support
-hide_mailchimp_signup: true
 ---
 
 # Pomodoro Noise Support
