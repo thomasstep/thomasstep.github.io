@@ -1,7 +1,6 @@
 ---
 layout: default
 title: Pomodoro Noise Privacy Policy
-hide_mailchimp_signup: true
 ---
 
 # Privacy Policy

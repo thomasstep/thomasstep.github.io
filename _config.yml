@@ -1,8 +1,13 @@
 title: Thomas Step
-description: This is where I share my thoughts and experiences that I encounter developing software.
-url: https://thomasstep.com
 author: Thomas Step
-theme: jekyll-theme-minimal
+email: tstep916@gmail.com
+description: >- # this means to ignore newlines until "baseurl:"
+  This is where I share my thoughts and experiences that I encounter developing software.
+baseurl: "" # the subpath of your site, e.g. /blog
+domain: thomasstep.com
+url: https://thomasstep.com # the base hostname & protocol for your site, e.g. http://example.com
+
+github_username:  thomasstep
 github:
   is_user_page: true
   owner_url: https://github.com/thomasstep
@@ -12,7 +17,10 @@ collections:
     output: true
     permalink: /blog/:title
 
+# Build settings
+remote_theme: pages-themes/primer@v0.6.0
 plugins:
+  - jekyll-remote-theme
   - jekyll-sitemap
   - jekyll-redirect-from
   - jekyll-feed

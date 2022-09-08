@@ -1,4 +1,30 @@
 ---
 ---
 
-@import "jekyll-theme-minimal";
+@import "{{ site.theme }}";
+@import "fonts";
+
+body {
+  background-color: #fff;
+  padding:50px;
+  font: 16px/1.5 'Lato', sans-serif;
+  letter-spacing: .005em;
+  color:#727272;
+  font-weight:400;
+  margin: 0 auto;
+  max-width: 55em;
+  line-height: 1.5;
+}
+
+a {
+  color: #149546;
+}
+
+.markdown-body {
+  font: 18px/1.5 'Lato', sans-serif;
+  letter-spacing: .005em;
+}
+
+.markdown-body p {
+  margin-bottom: 20px;
+}
