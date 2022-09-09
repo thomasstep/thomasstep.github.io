@@ -1,7 +1,6 @@
 ---
 layout: default
 title: Blog Categories
-hide_mailchimp_signup: true
 ---
 
 {% comment %}
@@ -40,7 +39,13 @@ The purpose of this snippet is to list all your posts posted with a certain cate
 {% endcomment %}
 {% for category in categories %}
   <h2 id="{{ category }}">
-    {{ category | capitalize }}
+    {% if category == "aws" %}
+      AWS
+    {% elsif category == "ios" %}
+      iOS
+    {% else %}
+      {{ category | capitalize }}
+    {% endif %}
   </h2>
   <ul>
    {% for post in site.posts %}
