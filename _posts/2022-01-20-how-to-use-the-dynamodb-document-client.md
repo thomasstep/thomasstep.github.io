@@ -191,21 +191,22 @@ const items = res.Items;
 
 [AWS Documentation](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_UpdateItem.html)
 
-Updating an item is fairly simple. We pass in the partition and sort key as the `Key`'s value and any updates to attributes as key-value pairs at the top level of the payload.
+Updating an item is fairly simple but involves a couple extra parameters. We pass in the partition and sort key as the `Key`'s value but any updates need to be conveyed using an `UpdateExpression`. `UpdateExpression`s can update any data type but they use different syntax depending on the type, but I will not cover that here because that is one area that AWS documents well. In addition to an `UpdateExpression`, we can also choose to dynamically pass in attribute keys and values using the `ExpressionAttributeNames` and `ExpressionAttributeValues` parameters, respectively. This gives a much cleaner feel as opposed to building a string with the keys and values directly inserted into the `UpdateExpression`.
 
 ```javascript
-const updates = {
-  hello: 'moon',
-  value: 300,
-};
-
 await documentClient.update({
   TableName: process.env.TABLE_NAME,
   Key: {
     id: 'myUniqueId',
     secondaryId: 'secondaryId',
   },
-  ...updates,
+  UpdateExpression: 'SET #helloAttr :planet',
+  ExpressionAttributeNames: {
+    '#helloAttr': 'hello',
+  },
+  ExpressionAttributeValues: {
+    ':planet': 'jupiter',
+  },
 });
 ```
 
