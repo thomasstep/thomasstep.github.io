@@ -16,3 +16,5 @@ Once on the page, click "Install".
 ![Picture of Giphy for LiveChat after installation](/assets/img/giphy-for-livechat-installed.png)
 
 Just like that you are ready to start sending gifs in chats. Whenever a chat begins you will find the Giphy icon as a chat widget near the text box. Click the icon and search for the perfect gif.
+
+![Picture of Giphy for LiveChat in the message box](/assets/img/giphy-for-livechat-message-box.png)
