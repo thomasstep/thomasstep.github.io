@@ -1,7 +1,6 @@
 ---
 layout: default
-title: thomasstep.com
-show_mailchimp_signup: true
+title: Blog
 ---
 
 **Blog posts by [category](/categories).**

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Home
+title: Thomas Step's Blog
 ---
 
 ## Introduction
