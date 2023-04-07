@@ -283,6 +283,7 @@ One additional piece to note, the `onDragEnd` function is one passed in if you a
 
 It's also possible to add some level of customization to a `Marker` by changing the icon in the middle of the bubble. Google has something called advanced markers, but when I was looking into them they didn't seem well-featured. Maybe by the time you're reading this, they will be ready for production and you can style markers even further.
 
+{% raw %}
 ```jsx
 <Wrapper
   apiKey={yourApiKey}
@@ -309,6 +310,7 @@ It's also possible to add some level of customization to a `Marker` by changing 
   </Map>
 </Wrapper>
 ```
+{% endraw %}
 
 Of course, doing this means that you will need to have the Material Icons font downloaded somewhere on your page, like in the `<head>` of your document. Something like this should do the trick.
 
