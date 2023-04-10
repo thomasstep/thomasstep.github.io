@@ -10,6 +10,8 @@ The other day I spun up an RDS cluster in a VPC and wanted to connect to it to m
 ```bash
 $ sudo yum install -y https://dev.mysql.com/get/mysql57-community-release-el7-11.noarch.rpm
 $ sudo yum install -y mysql-community-client
+# Run the following line if you get a GPG error and then run the previous line again
+$ rpm --import https://repo.mysql.com/RPM-GPG-KEY-mysql-2022
 $ mysql -u MY_USER -p`MY_PASSWORD` -h MY_HOST -P 3306
 mysql> show databases;
 ```
