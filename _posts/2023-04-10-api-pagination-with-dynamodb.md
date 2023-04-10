@@ -134,6 +134,6 @@ if len(queryRes.LastEvaluatedKey) != 0 {
 }
 ```
 
-### 8. Return the encoded string as the `nextToken`.
+### 6. Return the encoded string as the `nextToken`.
 
 How you do this is up to you and your API framework.
