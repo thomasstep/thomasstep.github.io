@@ -3,6 +3,10 @@ layout: default
 title: Projects And Services
 ---
 
+# [Sweatspaces](https://sweatspaces.com)
+
+Sweatspaces is a marketplace for home gyms. Users can list their home gym or rent out existing home gyms. The app is built using event-driven microservices. Main infrastructure is AWS API Gateway, Lambda, SNS, S3, and MongoDB. There are 6 microservices. The front end is Next.js and designed with MUI.
+
 # [Site Analytics](https://github.com/thomasstep/site-analytics)
 
 As part of my move away from Google Analytics I wanted to create my own site analytics service. This is a free and open-source version of that service. I plan on created a managed version in the future if there is desire (email me if you would like a managed version). The design and documentation in the README was meant to serve as an extension of this blog and projects page so that the documentation for the service lives with the code. I also [streamed](https://www.youtube.com/watch?v=veCyV07dsg4&list=PLzcYUWwW5dVDA6mja1de7d2A2L9gppkFL) most of the time whenever I coded this.
