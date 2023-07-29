@@ -5,7 +5,7 @@ title: Projects And Services
 
 # [Sweatspaces](https://sweatspaces.com)
 
-Sweatspaces is a marketplace for home gyms. Users can list their home gym or rent out existing home gyms. The app is built using event-driven microservices. Main infrastructure is AWS API Gateway, Lambda, SNS, S3, and MongoDB. There are 6 microservices. The front end is Next.js and designed with MUI.
+Sweatspaces is a marketplace for home gyms. Users can list their home gym or rent out existing home gyms. The app is built using event-driven microservices. Main infrastructure is AWS API Gateway, Lambda, SNS, S3, and MongoDB. There are 6 microservices. The front end is Next.js and designed with MUI. The application is fully integrated with Stripe to accept payments.
 
 # [Site Analytics](https://github.com/thomasstep/site-analytics)
 

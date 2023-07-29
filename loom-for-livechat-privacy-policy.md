@@ -1,10 +1,10 @@
 ---
 layout: default
-title: Giphy for LiveChat Privacy Policy
+title: Loom for LiveChat Privacy Policy
 ---
 
 <h2>Privacy Policy</h2>
-<p><strong>Effective date:</strong> 10/14/2022</p>
+<p><strong>Effective date:</strong> 07/29/2023</p>
 <h3>1. Introduction</h3>
 <!-- <p>These Privacy Policy (“Privacy Policy”) apply to the use of the website and products provided by Thomas Step Software (hereinafter also referred as “we” or “us”). Our registered office is at <address>, registered no.: <number>.</p> -->
 <p>These Privacy Policy (“Privacy Policy”) apply to the use of the website and products provided by Thomas Step Software (hereinafter also referred as “we” or “us”).</p>

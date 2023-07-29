@@ -7,7 +7,7 @@ title: Giphy for LiveChat Installation
 
 ### 1. Install the app from the LiveChat Marketplace
 
-Go to the [marketplace](https://my.livechatinc.com/marketplace/) and search for "Giphy for LiveChat".
+Go to the [marketplace](https://www.livechat.com/marketplace/apps/giphy-for-livechat/#description) and search for "Giphy for LiveChat".
 
 ![Picture of Giphy for LiveChat before installation](/assets/img/giphy-for-livechat-uninstalled.png)
 
