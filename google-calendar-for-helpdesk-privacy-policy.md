@@ -22,7 +22,9 @@ title: Google Calendar for HelpDesk Privacy Policy
 <p>We may make changes to this Privacy Policy in the future. You should check this page from time to time to ensure you are aware of any changes. Where appropriate we may notify you of such changes.</p>
 <h3>2. Information we may collect about you</h3>
 <p>We collect and process the following information which may include your personal data.</p>
-<p>Your name, last name, email address, phone number, contact data, device’s ID, your user preferences as well as all the data (including personal data) you supply to us and information provided by you when using the Service or website.</p>
+<p>Your name, last name, email address, device’s ID, your user preferences as well as all the data (including personal data) you supply to us and information provided by you when using the Service or website.</p>
+<p>We collect and process the following Google user data.</p>
+<p>Your email address, calendar names, calendar events as well as all the data (including personal data) you supply to us and information provided by you when using the Service or website.</p>
 <h3>3. Collecting, processing and using personal data</h3>
 <p>We only store and process your personal data when you have voluntarily supplied us with it such as by filling in a contact form or signing up to the Service. Your personal data will only be disclosed or otherwise transmitted if this is necessary to implement the contract, render our Services or you have given your prior consent.</p>
 <p>Since we use LiveChat, Inc.’s Services you may be interested in reviewing their privacy policy available under the following links:<br>
