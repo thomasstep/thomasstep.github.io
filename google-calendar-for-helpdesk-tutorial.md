@@ -32,3 +32,7 @@ title: Google Calendar for HelpDesk Tutorial
 7. All meetings past, present, and future are kept track of in the widget's section.
 
 ![Screenshot of Google for HelpDesk icon](/assets/img/google-for-helpdesk-section-update.png)
+
+### Privacy Policy
+
+The privacy policy for this application can be found [here](/google-calendar-for-helpdesk-privacy-policy).
