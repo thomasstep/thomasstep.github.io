@@ -33,6 +33,4 @@ title: Google Calendar for HelpDesk Tutorial
 
 ![Screenshot of Google for HelpDesk icon](/assets/img/google-for-helpdesk-section-update.png)
 
-### Privacy Policy
-
-The privacy policy for this application can be found [here](/google-calendar-for-helpdesk-privacy-policy).
+[Privacy Policy](/google-calendar-for-helpdesk-privacy-policy)
