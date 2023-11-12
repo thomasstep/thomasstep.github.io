@@ -1,7 +1,8 @@
 ---
-layout: default
 title: Google Calendar for HelpDesk Tutorial
 ---
+
+![HelpDesk Logo](/assets/img/helpdesk-logo.png)
 
 ### How to Use Google Calendar for HelpDesk
 
