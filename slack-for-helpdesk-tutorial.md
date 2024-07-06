@@ -5,6 +5,8 @@ title: Slack for HelpDesk Tutorial
 
 The first section of this page is a small FAQ followed by instructions for how to install and use Slack for HelpDesk.
 
+**Contact:** If you need any help at all, please feel free to reach out to me (the creator) at thomas@thomasstep.com.
+
 ### FAQ
 
 **Q:** Why can't I see any Slack messages whenever tickets are created?
