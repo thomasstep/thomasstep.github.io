@@ -1,2 +1,0 @@
-something here in rule #3 https://www.nateliason.com/blog/decomplication that bad people will tell you something is still complicated and you need to keep paying them in order to do it instead of setting you up for success. look for that in the company you are buying a product or service from.
-  everything is becoming "overly complicated" because complex topics mean areas to write content. content means eyes which means money
