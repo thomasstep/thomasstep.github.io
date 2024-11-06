@@ -20,12 +20,17 @@ type Example struct {
 
 One tricky bit of using BSON that you will quickly encounter is the [data types](https://www.mongodb.com/docs/drivers/go/current/fundamentals/bson/) (corresponding Go documentation [link](https://pkg.go.dev/go.mongodb.org/mongo-driver@v1.17.1/bson)). For super simple Mongo operations, you can probably get around using these, but whenever you start needing to build more complex queries, the BSON data types start to come into play. `D` is an ordered BSON document (think of a map/dictionary/object where the order of the keys matters). `M` is an unordered BSON document (think of a map/dictionary/object where the order of the keys doesn't matter, which is how most of us think of those data structures). `A` is an ordered BSON array. `E` is a single element inside of a `D` type. Types `D` and `E` were where I had the most difficulty. If you are building a `D` type, you can normally simply create it as an object without individually constructing the `E`s.
 
+
+{% raw %}
 ```go
 bson.D{{"startTime", 1}, {"endTime", 1}, {"_id", 1}}
 ```
+{% endraw %}
 
 However, if you want to conditionally add onto a `D` type, then you need to specifically construct an `E`.
 
+
+{% raw %}
 ```go
 filter := bson.D{{"startTime", 1}, {"endTime", 1}}
 
@@ -42,6 +47,7 @@ if conditionMet {
  )
 }
 ```
+{% endraw %}
 
 Notice how I needed to `append` a `bson.E`. This took me much longer than I care to admit to figure out, and I'm still doubting whether or not this is the correct way to handle this.
 
@@ -63,6 +69,8 @@ filter := bson.M{
 
 Adding new elements to a `bson.M` type is the same as if it were a `map`.
 
+
+{% raw %}
 ```go
 filter := bson.M{
   "location": bson.M{
@@ -81,6 +89,7 @@ filter["_id"] = bson.D{{
   Value: oid,
 }}
 ```
+{% endraw %}
 
 I did not use any `A` data types in my code for this project, but I would imagine that they behave similarly to a native Go array or slice.
 
