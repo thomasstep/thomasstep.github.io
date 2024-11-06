@@ -260,6 +260,7 @@ export default Marker;
 
 One additional piece to note, the `onDragEnd` function is one passed in if you are storing and updating the locations of the `Marker`s being drawn. Otherwise, you can remove that piece. It took me an untrivial amount of time to get working which is why I left it. You will also need to add the `draggable` prop on the `Marker` to get passed into the `options`. It might look something like this.
 
+{% raw %}
 ```jsx
 <Wrapper
   apiKey={yourApiKey}
@@ -280,6 +281,7 @@ One additional piece to note, the `onDragEnd` function is one passed in if you a
   </Map>
 </Wrapper>
 ```
+{% endraw %}
 
 It's also possible to add some level of customization to a `Marker` by changing the icon in the middle of the bubble. Google has something called advanced markers, but when I was looking into them they didn't seem well-featured. Maybe by the time you're reading this, they will be ready for production and you can style markers even further.
 
